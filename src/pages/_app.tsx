@@ -1,5 +1,5 @@
+import ImageShowComponent from "@/components/ImageShowComponent";
 import Footer from "@/components/footer/Footer";
-import Modal from "@/components/modal/Modal";
 import SubmitOrderModel from "@/components/modal/SubmitOrderModel";
 import Navbar from "@/components/navbar/Navbar";
 import ToasterProvider from "@/providers/ToasterProvider";
@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className="min-h-[100vh] flex flex-col justify-between">
       <ToasterProvider />
+      <ImageShowComponent />
       <SubmitOrderModel />
       <Navbar />
       <div className="flex-1">

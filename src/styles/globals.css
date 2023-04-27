@@ -7,3 +7,28 @@ body,
 :root {
   height: 100%;
 }
+
+.swiper-scrollbar {
+  top: 1rem;
+}
+
+.scrollbar::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 5px;
+}
+.scrollbar::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #ececec;
+  box-shadow: 0 0 2px;
+}
+.scrollbar::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: #757575;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+}
+
+.swiper-slide-thumb-active {
+  transition: all ease 0.2s;
+  border: 2px solid rgb(249 115 22);
+}

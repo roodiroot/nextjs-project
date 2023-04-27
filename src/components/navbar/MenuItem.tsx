@@ -14,8 +14,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ label, to }) => {
   return (
     <Link
       href={to}
-      className={`  cursor-pointer hover:text-orange-400 transition ${
-        router.asPath === to ? "text-orange-500 font-medium" : "text-slate-700"
+      className={`cursor-pointer hover:text-orange-400 transition ${
+        router.pathname === to
+          ? "text-orange-500 font-medium"
+          : "text-slate-700"
       } `}
     >
       {label}

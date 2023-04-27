@@ -6,7 +6,11 @@ import Button from "../navbar/Button";
 import Input from "../inputs/Input";
 import InputClient from "../inputs/InputClient";
 
-const FeedbackForm = () => {
+interface FeedbackFormProps {
+  className?: string;
+}
+
+const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -38,17 +42,19 @@ const FeedbackForm = () => {
   };
   return (
     <div
-      className="
-      w-full 
-    bg-slate-100 
-    rounded-sm 
-    md:py-8  
-    md:px-10 
-    lg:px-16 
-    sm:py-4 
-    sm:px-8 
-    py-2 
-    px-4"
+      className={`
+      ${className}
+        w-full 
+      bg-slate-100 
+        rounded-md 
+        md:py-8  
+        md:px-10 
+        lg:px-16 
+        sm:py-4 
+        sm:px-8 
+        py-2 
+        px-4
+      `}
     >
       <h3
         className="

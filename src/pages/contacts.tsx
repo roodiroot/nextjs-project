@@ -1,5 +1,107 @@
+import Container from "@/components/Container";
+import Heading from "@/components/Heading";
+import FeedbackForm from "@/components/hello-page/FeedbackForm";
+import MapComponent from "@/components/utils-component/Map";
+import SocialIcons from "@/components/utils-component/SocialIcons";
+
 const Contacts = () => {
-  return <div>Contacts</div>;
+  return (
+    <div>
+      <Container>
+        <div className="py-12">
+          <Heading title="Контакты" />
+        </div>
+        <div className="flex flex-col md:flex-row  items-start gap-8 mb-12">
+          <div className="w-full flex-1 flex flex-col sm:flex-row items-start gap-4">
+            <div className="flex-1 items-start">
+              <div className="text-slate-500 mb-4">Телефоны:</div>
+              <div className="text-slate-900 font-medium text-lg  inline-block cursor-pointer">
+                <a href="tel:89153294209">8 (915) 329-42-09</a>
+              </div>
+            </div>
+            <div className="flex-1 items-start">
+              <div className="text-slate-500 mb-4">Электронная почта:</div>
+              <div className="text-slate-900 font-semibold">
+                <a href="mailto:info@kondish.su">info@kondish.su</a>
+              </div>
+              <div className="text-slate-900 font-semibold">
+                <a href="mailto:sale@kondish.su">sale@kondish.su</a>
+              </div>
+            </div>
+          </div>
+          <div className="w-full flex-1 flex  flex-col sm:flex-row items-start gap-4">
+            <div className="flex-1 items-start">
+              <div className="text-slate-500 mb-4">Мессенджеры:</div>
+              <SocialIcons />
+            </div>
+            <div className="flex-1 items-start">
+              <div className="text-slate-500 mb-4">График работы:</div>
+              <div className="text-slate-900 font-semibold">
+                Ежедневно с 08:00 до 22:00
+              </div>
+              <div className="text-slate-500 text-sm">
+                без праздников и выходных
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full mb-12">
+          <div className="w-full h-[400px] bg-green-300/40 rounded-md mb-4 relative overflow-hidden">
+            <MapComponent />
+          </div>
+          <div className="text-slate-500">Адрес сервисного цента:</div>
+          <div className="text-slate-900 font-semibold">
+            ул. Симоновский Вал, 20, корп. 2, Москва, Россия
+          </div>
+        </div>
+        <div className="w-full flex flex-col md:flex-row gap-8 mb-12">
+          <div className="flex-1 flex flex-col justify-between">
+            <div className="text-2xl mb-5 font-medium">Оплата</div>
+            <div className="mb-3">
+              Нашими клиентами могут стать как физические лица, так и
+              юридические.
+            </div>
+            <ul className="mb-3">
+              <li className="mb-1">Для физических лиц:</li>
+              <li className="mb-1">— Наличный расчет;</li>
+              <li className="mb-1">— Наличный расчет при получении товара;</li>
+              <li className="mb-1">— Денежный перевод на карту Сбербанка;</li>
+            </ul>
+            <ul className="mb-3">
+              <li className="mb-1">Для юридических лиц:</li>
+              <li className="mb-1">— Наличный расчет;</li>
+              <li className="mb-1">— Безналичный расчет;</li>
+              <li className="mb-1">— Оплата картой;</li>
+            </ul>
+          </div>
+          <div className="flex-1 flex-col justify-between">
+            <div className="text-2xl mb-5 font-medium">Наши реквизиты</div>
+            <div className="mb-3">
+              Полное наименование предприятия: Индивидуальный предприниматель
+              Семочкина Наталья Николаевна»
+            </div>
+            <div className="mb-3">
+              Краткое наименование предприятия: ИП Семочкина Наталья Николаевна
+            </div>
+            <div className="mb-3">
+              Юридический адрес: ул. Симоновский Вал, 20, корп. 2, Москва,
+              Россия
+            </div>
+            <div className="mb-3">
+              Фактический адрес: ул. Симоновский Вал, 20, корп. 2, Москва,
+              Россия
+            </div>
+            <div className="mb-3">ИНН: 132401061863</div>
+            <div className="mb-3">ОГРН: 321774600804595</div>
+            <div className="mb-3">
+              Руководитель: Семочкина Наталья Николаевна
+            </div>
+          </div>
+        </div>
+        <FeedbackForm className="mb-12" />
+      </Container>
+    </div>
+  );
 };
 
 export default Contacts;

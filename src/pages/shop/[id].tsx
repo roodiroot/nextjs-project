@@ -1,0 +1,314 @@
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+import { TbHandClick } from "react-icons/tb";
+
+import Container from "@/components/Container";
+import Heading from "@/components/Heading";
+import SliderPhotos from "@/components/card-product/SliderPhotos";
+import Button from "@/components/navbar/Button";
+import Teg from "@/components/shop/Teg";
+import useSelectProduct from "@/hooks/useSelectProduct";
+import useBasketStore from "@/hooks/useBasketStore";
+import { toast } from "react-hot-toast";
+import { submitHaveBasket } from "@/components/shop/CardList";
+
+// const product = {
+//   id: 3,
+//   name: "Royal Clima RCI-TWN22HN",
+//   price: 33000,
+//   logo: "https://www.clima-vent.com/images/thumbnails/647/600/detailed/21/Triumph_Inverter_Royal_Clima_2021_dk46-fl_jyls-jf.jpg",
+//   imges: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"],
+//   brandId: 2,
+//   typeId: 1,
+//   descriptions: [
+//     {
+//       id: 45,
+//       productId: 3,
+//       title: "Габариты внутреннего блока: мм",
+//       description: "715x285x194",
+//     },
+//     {
+//       id: 44,
+//       productId: 3,
+//       title: "Мин. температура за окном",
+//       description: "-15 С",
+//     },
+//     {
+//       id: 43,
+//       productId: 3,
+//       title: "Тип Фреона:",
+//       description: "R410A",
+//     },
+//     {
+//       id: 42,
+//       productId: 3,
+//       title: "Вес внутреннего блока: кг.",
+//       description: "7.5",
+//     },
+//     {
+//       id: 41,
+//       productId: 3,
+//       title: "Ионизация воздуха:",
+//       description: "да",
+//     },
+//     {
+//       id: 40,
+//       productId: 3,
+//       title: "Дезодорирующий фильтр:",
+//       description: "да",
+//     },
+//     {
+//       id: 39,
+//       productId: 3,
+//       title: "Производитель:",
+//       description: "Китай",
+//     },
+//     {
+//       id: 38,
+//       productId: 3,
+//       title: "Тип компрессора:",
+//       description: "не инвертор",
+//     },
+//     {
+//       id: 37,
+//       productId: 3,
+//       title: "Наличие WiFi:",
+//       description: "да (опция)",
+//     },
+//     {
+//       id: 36,
+//       productId: 3,
+//       title: "Мощность охлаждения: кВт.",
+//       description: "2.4",
+//     },
+//     {
+//       id: 35,
+//       productId: 3,
+//       title: "Мощность обогрева: кВт.",
+//       description: "2.6",
+//     },
+//     {
+//       id: 34,
+//       productId: 3,
+//       title: "Макс. длина трубы: м.",
+//       description: "25",
+//     },
+//     {
+//       id: 33,
+//       productId: 3,
+//       title: "Уровень шума: дб.",
+//       description: "26",
+//     },
+//     {
+//       id: 32,
+//       productId: 3,
+//       title: "Класс энегроэффективности:",
+//       description: "A++/A+",
+//     },
+//     {
+//       id: 31,
+//       productId: 3,
+//       title: "Площадь помещения: м².",
+//       description: "24",
+//     },
+//   ],
+//   brand: {
+//     id: 2,
+//     name: "Royal Clima",
+//     brandСountry: "Шведция",
+//   },
+//   type: {
+//     id: 1,
+//     typeName: "Сплит-Система",
+//   },
+// };
+
+const ProductPage = () => {
+  const store = useSelectProduct();
+  const basket = useBasketStore();
+  const router = useRouter();
+  const [disabled, setDisabled] = useState(
+    submitHaveBasket(Number(router.query.id), basket.basketList)
+  );
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setDisabled(submitHaveBasket(Number(router.query.id), basket.basketList));
+  }, [submitHaveBasket(Number(router.query.id), basket.basketList)]);
+
+  useEffect(() => {
+    setLoading(store.loading);
+    setError(store.error);
+  }, [store.error, store.loading]);
+
+  useEffect(() => {
+    if (isNaN(Number(router.query.id))) {
+      return;
+    }
+    store.fetchProduct(Number(router.query.id));
+    return () => {
+      store.restor();
+    };
+  }, [router.query.id]);
+
+  const addToCart = () => {
+    basket.addInBasket(store?.product);
+  };
+  const remooveElemet = () => {
+    basket.remooveElement(Number(router.query.id));
+  };
+
+  if (error) {
+    return (
+      <Container>
+        <div className="text-slate-900 font-semibold ">
+          Ошибка загрузки элемента
+        </div>
+      </Container>
+    );
+  }
+
+  return (
+    <Container>
+      <div
+        className="
+            w-full
+            h-full
+            py-8
+            flex
+            flex-col
+            "
+      >
+        <div
+          className="
+        flex
+        flex-col
+        md:flex-row
+        pb-6
+        "
+        >
+          {/** IMAGE */}
+          <div className="flex-1 ">
+            <div className="w-full h-full px-6 py-4">
+              {!loading ? (
+                <SliderPhotos list={store?.product.imges} />
+              ) : (
+                <div className="bg-slate-100 rounded-md w-full h-full">
+                  Пока стоп
+                </div>
+              )}
+            </div>
+          </div>
+          {/** TITLE PRODUCT */}
+          <div
+            className="
+          flex-1
+          flex
+          flex-col-reverse
+          lg:flex-row
+          "
+          >
+            <div
+              className="
+            p-4
+            flex-1
+            flex
+            flex-col
+            "
+            >
+              {store?.product.name ? (
+                <Heading
+                  className="mb-6"
+                  title={store?.product.name}
+                  subtitle={store?.product?.type?.typeName}
+                />
+              ) : (
+                <Heading
+                  className="mb-6"
+                  title={"################################"}
+                  subtitle={"#############"}
+                />
+              )}
+              <div className="flex justify-between items-center mb-6">
+                <div className="text-slate-800 font-semibold">Цена:</div>
+                <div className="text-slate-800">
+                  {store.product.price ? store.product.price : "#####"} руб.
+                </div>
+              </div>
+              <div className="flex gap-2 mb-6">
+                {!disabled ? (
+                  <Button
+                    onClick={addToCart}
+                    Icon={HiOutlineShoppingCart}
+                    label="В корзину"
+                    disabled={disabled}
+                  />
+                ) : (
+                  <Button onClick={remooveElemet} label="Убрать" outline />
+                )}
+
+                <Button
+                  onClick={() => router.push("/shop")}
+                  outline
+                  Icon={TbHandClick}
+                  label="К выбору"
+                />
+              </div>
+              <div className="flex flex-col">
+                <div className="text-sm font-light text-zinc-500">
+                  Характеристики товара
+                </div>
+
+                {store?.product?.descriptions
+                  ? store?.product?.descriptions
+                      ?.filter(
+                        (l: any) =>
+                          l.title === "Тип компрессора:" ||
+                          l.title === "Площадь помещения: м²." ||
+                          l.title === "Уровень шума: дб." ||
+                          l.title === "Наличие WiFi:" ||
+                          l.title === "Класс энегроэффективности:"
+                      )
+                      ?.map((r: any) => (
+                        <div
+                          key={r.id}
+                          className="flex flex-row justify-between py-2 border-b"
+                        >
+                          <div className="text-slate-700 font-light">
+                            {r.title}
+                          </div>
+                          <div className="text-slate-900 font-semibold">
+                            {r.description}
+                          </div>
+                        </div>
+                      ))
+                  : new Array(5).fill("######").map((i, index) => (
+                      <div
+                        key={index}
+                        className="flex flex-row justify-between py-2 border-b"
+                      >
+                        <div className="text-slate-700 font-light">{i}</div>
+                        <div className="text-slate-900 font-semibold">{i}</div>
+                      </div>
+                    ))}
+              </div>
+            </div>
+            <div
+              className="
+                p-4
+                flex-none
+                "
+            >
+              <Teg label="В наличии" green />
+            </div>
+          </div>
+        </div>
+        {/** DESCRIPTION BLOCK */}
+      </div>
+    </Container>
+  );
+};
+
+export default ProductPage;

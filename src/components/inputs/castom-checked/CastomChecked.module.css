@@ -1,0 +1,84 @@
+.checkedWrapper {
+  padding-top: 9px;
+}
+.checkedWrapperElement {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 7px 0;
+}
+.checkElement {
+  position: relative;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #ececec;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all linear 0.2s;
+}
+.checkElement:hover {
+  border: 1px solid #2b2fcf;
+}
+.checkElementText {
+  cursor: pointer;
+}
+.checkElement svg {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkElement.active {
+  background: #2b2fcf;
+  border: 1px solid #2b2fcf;
+}
+.checkElement.active svg {
+  display: block;
+}
+
+/* // =============================== RADIO ================================================ */
+
+.checkedWrapperElement input[type="radio"] {
+  display: none;
+}
+.radioElement {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 35px;
+  margin-right: 0;
+  line-height: 18px;
+  user-select: none;
+}
+.radioElement::before {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1px solid #94a3b8;
+  transition: all linear 0.2s;
+}
+/* Checked */
+.checkedWrapperElement input[type="radio"]:checked + .radioElement:before,
+.checkedWrapperElement .radioElement.active:before {
+  background: #f97316;
+}
+/* Hover */
+.checkedWrapperElement .radioElement:hover:before {
+  filter: brightness(120%);
+  border: 1px solid #f97316;
+}
+
+/* Disabled */
+.checkedWrapperElement input[type="radio"]:disabled + .radioElement:before {
+  border: 1px solid #94a3b8;
+}

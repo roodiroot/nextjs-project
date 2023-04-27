@@ -1,0 +1,60 @@
+.itcSelect {
+  position: relative;
+}
+.itcSelectToggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  padding: 0 17px;
+  font-size: 13px;
+  color: rgba(155, 159, 166, 0.77);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  background: #fefefe;
+  border: 1px solid #ececec;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.03);
+  border-radius: 9px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.itcSelectDropdown {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  max-height: 10rem;
+  overflow-y: auto;
+  background: #fefefe;
+  border: 1px solid #ececec;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.03);
+  border-radius: 9px;
+}
+.itcSelectShow.itcSelectDropdown {
+  display: block;
+}
+.itcSelectOptions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.itcSelectOption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 17px;
+  font-size: 13px;
+  color: rgba(155, 159, 166, 0.77);
+}
+
+.itcSelectOption:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: 0.2s background-color ease-in-out;
+}

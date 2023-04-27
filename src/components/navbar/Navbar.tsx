@@ -9,8 +9,11 @@ import Search from "./Search";
 import Button from "./Button";
 import ElementButton from "./ElementButton";
 import useSubmitOrder from "@/hooks/useSubmitOrder";
+import { useRouter } from "next/router";
+import NotificationProduct from "./NotificationProduct";
 
 const Navbar = () => {
+  const router = useRouter();
   const [show, setShow] = useState(false);
   const { onOpen } = useSubmitOrder();
 
@@ -25,16 +28,14 @@ const Navbar = () => {
               <Search />
             </div>
             <div className="flex gap-4 items-center justify-between">
-              <ElementButton
-                element={<HiOutlineShoppingCart size={18} color="#3B3E51" />}
-              />
-              <div className="hidden sm:block">
-                <Button
-                  onClick={onOpen}
-                  small
-                  outline
-                  label="Обратный звонок"
+              <div onClick={(e) => router.push("/basket")} className="relative">
+                <ElementButton
+                  element={<HiOutlineShoppingCart size={20} color="#3B3E51" />}
                 />
+                <NotificationProduct />
+              </div>
+              <div className="hidden sm:block">
+                <Button onClick={onOpen} label="Обратный звонок" />
               </div>
               <div
                 onClick={() => setShow(!show)}
@@ -45,7 +46,7 @@ const Navbar = () => {
                     show ? (
                       <BiX size={18} color="#3B3E51" />
                     ) : (
-                      <BiMenuAltRight size={18} color="#3B3E51" />
+                      <BiMenuAltRight size={20} color="#3B3E51" />
                     )
                   }
                 />

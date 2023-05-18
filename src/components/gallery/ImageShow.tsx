@@ -16,7 +16,7 @@ const ImageShow: React.FC<ImageShowProps> = ({ onClose, src, isOpen }) => {
       onClick={onClose}
       className="
         fixed 
-        z-50 
+        z-[52]
         inset-0 
         bg-black/90
         flex

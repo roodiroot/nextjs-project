@@ -1,8 +1,13 @@
 interface VKIconProps {
   size?: number;
   className?: string;
+  color: string;
 }
-const VKIcon: React.FC<VKIconProps> = ({ size = 20, className = "" }) => {
+const VKIcon: React.FC<VKIconProps> = ({
+  size = 20,
+  className = "",
+  color,
+}) => {
   return (
     <svg
       className={className}
@@ -14,7 +19,7 @@ const VKIcon: React.FC<VKIconProps> = ({ size = 20, className = "" }) => {
     >
       <g
         transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-        fill="#000000"
+        fill={color}
         stroke="none"
       >
         <path

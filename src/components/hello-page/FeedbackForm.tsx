@@ -54,6 +54,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
         sm:px-8 
         py-2 
         px-4
+        mb-10
       `}
     >
       <h3

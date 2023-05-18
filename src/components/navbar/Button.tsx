@@ -21,21 +21,21 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
       className={`
-  relative
-  disabled:opacity-70
-  disabled:cursor-not-allowed
-  rounded-lg
-  hover:opacity-80
-  transition
-  w-full
-  whitespace-nowrap
-  ${outline ? "bg-white" : "bg-orange-500"}
-  ${outline ? "border-black" : "border-orange-500"}
-  ${outline ? "text-black" : "text-white"}
-  ${small ? "py-1 px-4" : "py-2 px-4"}
-  ${small ? "text-sm" : "text-md"}
-  ${small ? "font-light" : "font-semibold"}
-  ${small ? "border-[1px]" : "border-2"}
+        relative
+        disabled:opacity-70
+        disabled:cursor-not-allowed
+        rounded-lg
+        hover:opacity-80
+        transition
+        w-full
+        whitespace-nowrap
+        ${outline ? "bg-white" : "bg-orange-500"}
+        ${outline ? "border-orange-500" : "border-orange-500"}
+        ${outline ? "text-orange-500" : "text-white"}
+        ${small ? "py-1 px-4" : "py-2 px-4"}
+        ${small ? "text-sm" : "text-md"}
+        ${small ? "font-light" : "font-semibold"}
+        ${small ? "border-[1px]" : "border-2"}
   `}
     >
       {Icon && <Icon size={24} className="absolute left-4 top-2" />}

@@ -7,6 +7,7 @@ import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import useBasketStore from "@/hooks/useBasketStore";
 import { toast } from "react-hot-toast";
 import OrderList from "@/components/basket/OrderList";
+import Path from "@/components/utils-component/Path";
 
 const Basket = () => {
   const basket = useBasketStore();
@@ -17,9 +18,11 @@ const Basket = () => {
       },
     });
   };
+
   return (
     <div>
       <Container>
+        <Path />
         <div className="w-full py-12">
           <Heading title="Моя корзина" />
         </div>
@@ -33,7 +36,7 @@ const Basket = () => {
                     key={`${i.id}_${index}`}
                     id={i.id}
                     name={i.name}
-                    type={i.type.typeName}
+                    type={i?.type?.typeName || i.typeId}
                     price={i.price}
                     imgSrc={i.logo}
                   />

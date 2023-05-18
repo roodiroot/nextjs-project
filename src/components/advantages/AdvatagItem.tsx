@@ -23,6 +23,7 @@ const AdvatagItem: React.FC<AdvatagItemProps> = ({
         sm:flex-row
         gap-3
         items-center
+        shadow-sm
         "
     >
       <div className="relative min-w-[80px] max-w-[80px] h-[80px] bg-white rounded-md items-center">

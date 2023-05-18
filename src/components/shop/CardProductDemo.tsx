@@ -2,17 +2,18 @@ const CardProductDemo = () => {
   return (
     <div
       className="
+      relative
         w-full
-        max-w-[340px]
         rounded-md
-        border
         flex
         flex-col
         overflow-hidden
-        bg-zinc-900/50
         min-h-[440px]
+        animate-pulse
         "
-    ></div>
+    >
+      <div className="absolute inset-0 bg-slate-300"></div>
+    </div>
   );
 };
 

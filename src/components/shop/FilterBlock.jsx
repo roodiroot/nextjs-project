@@ -14,26 +14,28 @@ import CastomChecked from "../inputs/castom-checked/CastomChecked";
 import RadioItem from "../inputs/castom-checked/RadioItem";
 import Button from "../navbar/Button";
 import useWindowWidth from "@/hooks/useWindowWidth";
+import RangeFilter from "../utils-component/RangeFilter";
+import useTypeAndBrand from "@/hooks/useTypeAndBrand";
 
 const brandsArray = [
   { id: 4, name: "Не выбрано", value: null },
-  { id: 1, name: "Energolux", value: "energolux" },
-  { id: 2, name: "Royal Clima", value: "royal clima" },
-  { id: 3, name: "Kentatsu", value: "kentatsu" },
+  { id: 1, name: "Energolux", value: "6" },
+  { id: 2, name: "Royal Clima", value: "2" },
+  { id: 3, name: "Kentatsu", value: "99" },
 ];
 const typeArray = [
   { id: 4, name: "Не выбрано", value: null },
-  { id: 1, name: "Сплит-система", value: "сплит-система" },
-  { id: 3, name: "Внутренний блок", value: "внутренний блок" },
-  { id: 2, name: "Мульти сплит-система", value: "мульти сплит-система" },
+  { id: 1, name: "Сплит-система", value: "1" },
+  { id: 3, name: "Внутренний блок", value: "3" },
+  { id: 2, name: "Мульти сплит-система", value: "2" },
 ];
 const sArray = [
   { id: 3, name: "Не выбрано", value: null },
-  { id: 1, name: "от 20м до 25м", value: "20,25" },
-  { id: 2, name: "от 26м до 30м", value: "26,30" },
-  { id: 4, name: "от 31м до 40м", value: "31,40" },
-  { id: 5, name: "от 41м до 60м", value: "41,60" },
-  { id: 6, name: "от 61м до 100м", value: "61,100" },
+  { id: 1, name: "от 20м до 25м", value: "20,21,22,23,24,25" },
+  { id: 2, name: "от 26м до 30м", value: "26,27,28,29,30" },
+  { id: 4, name: "от 31м до 40м", value: "31,32,33,34,35,36,37,38,39,40" },
+  { id: 5, name: "от 41м до 60м", value: "41,53,55,58,60" },
+  { id: 6, name: "от 61м до 100м", value: "61,70, 100" },
 ];
 const compressorArray = [
   { id: 3, name: "Все", value: null },
@@ -51,12 +53,14 @@ const colorArray = [
   { id: 2, name: "Черный", value: "черный" },
 ];
 
-function FilterBlock({ className }) {
+function FilterBlock({ className, price, setPrice }) {
+  const { fetchTypes, fetchBrands, types, brands } = useTypeAndBrand();
   const { width } = useWindowWidth();
   const [showFilters, setShowFilter] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
 
   const brandQuery = searchParams.get("brand");
   const typeQuery = searchParams.get("type");
@@ -73,14 +77,21 @@ function FilterBlock({ className }) {
   const [color, setColor] = useState(colorQuery);
 
   useEffect(() => {
-    setSelectBrand(brandsArray.filter((el) => el.value === brandQuery)[0].name);
-    setSelectType(typeArray.filter((el) => el.value === typeQuery)[0].name);
-    setSelectS(sArray.filter((el) => el.value === squareQuery)[0].name);
+    (async () => {
+      await fetchTypes();
+      await fetchBrands();
+    })();
+  }, []);
+
+  useEffect(() => {
+    setSelectBrand(brands?.filter((el) => `${el.id}` === brandQuery)[0]?.name);
+    setSelectType(types.filter((el) => `${el.id}` === typeQuery)[0]?.typeName);
+    setSelectS(sArray.filter((el) => el.value === squareQuery)[0]?.name);
     setCompressor(
-      compressorArray.filter((el) => el.value === compressorQuery)[0].name
+      compressorArray.filter((el) => el.value === compressorQuery)[0]?.name
     );
-    setWiFi(WiFiArray.filter((el) => el.value === wifiQuery)[0].name);
-    setColor(colorArray.filter((el) => el.value === colorQuery)[0].name);
+    setWiFi(WiFiArray.filter((el) => el.value === wifiQuery)[0]?.name);
+    setColor(colorArray.filter((el) => el.value === colorQuery)[0]?.name);
   }, [
     brandQuery,
     typeQuery,
@@ -92,7 +103,6 @@ function FilterBlock({ className }) {
 
   const createQueryString = useCallback(
     (name, value) => {
-      const params = new URLSearchParams(searchParams);
       params.set(name, value);
       return params.toString();
     },
@@ -102,21 +112,19 @@ function FilterBlock({ className }) {
     setShowPlaceholder(name);
     if (value !== null) {
       router.push(
-        pathname + "?" + createQueryString(title, value.toLowerCase())
+        pathname + "?" + createQueryString(title, value.toLowerCase()),
+        undefined,
+        { scroll: false }
       );
       return;
     }
-    const params = new URLSearchParams(searchParams);
-    let newParams = [];
-    params
-      .toString()
-      .split("&")
-      .map((s) => {
-        if (!s.includes(title)) {
-          newParams.push(s);
-        }
-      });
-    router.push(pathname + "?" + newParams.join("&"));
+    params.delete(title);
+    if (params.toString() === "") {
+      router.push(pathname, undefined, { scroll: false });
+      return;
+    }
+    router.push(pathname + "?" + params, undefined, { scroll: false });
+    return;
   };
 
   const getFilters = useCallback(() => {
@@ -126,33 +134,43 @@ function FilterBlock({ className }) {
   const allFiltersBlock = (
     <div
       className="
-    w-full 
-    flex 
-    flex-col 
-    gap-1"
+        w-full 
+        flex 
+        flex-col 
+        gap-1"
     >
       <div
         className="
-      text-lg
-      font-bold
-      text-slate-900
-      mb-4
-      "
+          text-lg
+          font-bold
+          text-slate-900
+          mb-4
+          "
       >
         Фильтры
       </div>
+      {/** RANGE FILTER */}
+      <FilterElement className="mb-3" title={"Ценовой диапазон"}>
+        <RangeFilter price={price} setPrice={setPrice} />
+      </FilterElement>
       {/** BRAND FILTER */}
 
       <FilterElement className="mb-3" title={"Бренды"}>
         <CastomSelect>
           <DropDown>{selectBrand ? selectBrand : "Выберете бренд"}</DropDown>
           <OptionList>
-            {brandsArray.map((l) => (
+            <Option
+              onClick={() => choiceFunc(null, null, "brand", setSelectBrand)}
+            >
+              Показать все
+            </Option>
+            {brands?.map((l) => (
               <Option
                 key={l.id}
                 onClick={(e) =>
-                  choiceFunc(l.name, l.value, "brand", setSelectBrand)
+                  choiceFunc(l.name, `${l.id}`, "brand", setSelectBrand)
                 }
+                active={`${l.id}` === brandQuery}
               >
                 {l.name}
               </Option>
@@ -167,14 +185,20 @@ function FilterBlock({ className }) {
         <CastomSelect>
           <DropDown>{selectType ? selectType : "Выберете тип"}</DropDown>
           <OptionList>
-            {typeArray.map((l) => (
+            <Option
+              onClick={() => choiceFunc(null, null, "type", setSelectType)}
+            >
+              Показать все
+            </Option>
+            {types.map((l) => (
               <Option
                 key={l.id}
                 onClick={(e) =>
-                  choiceFunc(l.name, l.value, "type", setSelectType)
+                  choiceFunc(l.typeName, `${l.id}`, "type", setSelectType)
                 }
+                active={`${l.id}` === brandQuery}
               >
-                {l.name}
+                {l.typeName}
               </Option>
             ))}
           </OptionList>

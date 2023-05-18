@@ -71,10 +71,9 @@ const Modal: React.FC<ModalProps> = ({
           justify-center 
           items-center 
           flex 
-          overflow-y-auto 
           overflow-x-hidden 
           fixed inset-0 
-          z-50 
+          z-[51] 
           outline-none 
           focus:outline-none 
           bg-slate-800/70"

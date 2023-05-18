@@ -11,42 +11,59 @@ import ElementButton from "./ElementButton";
 import useSubmitOrder from "@/hooks/useSubmitOrder";
 import { useRouter } from "next/router";
 import NotificationProduct from "./NotificationProduct";
+import { useWindowScroll } from "@/hooks/useWindowScroll";
+import useShowMobilMenu from "@/hooks/useShowMobilMenu";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+  const showMenu = useShowMobilMenu();
   const router = useRouter();
-  const [show, setShow] = useState(false);
+  const Y = useWindowScroll();
   const { onOpen } = useSubmitOrder();
 
   return (
-    <div className="relative w-full bg-white z-10 ">
-      <div className="py-2 ">
-        <Container>
+    <div
+      className={`
+        fixed 
+        z-50
+        top-0
+        left-0
+        transition
+        duration-500
+        w-full 
+        ${Y > 50 ? "bg-white/[82%]" : "bg-white"}
+        ${Y > 50 && "translate-y-[-10px]"}
+        ${Y > 50 && "backdrop-blur-sm"}
+    `}
+    >
+      <div className="py-3 ">
+        <Container maxWidth={1440}>
+          <div className="h-[10px]"></div>
           <div className="w-full flex flex-row gap-1 sm:gap-4 items-center justify-between">
             <Logo />
             <div className="flex-1 flex items-center justify-between border-x px-4 gap-5">
-              <Menu show={show} setShow={setShow} />
-              <Search />
+              <Menu />
+              {/* <Search /> */}
             </div>
             <div className="flex gap-4 items-center justify-between">
               <div onClick={(e) => router.push("/basket")} className="relative">
                 <ElementButton
-                  element={<HiOutlineShoppingCart size={20} color="#3B3E51" />}
+                  element={<HiOutlineShoppingCart size={24} color="#3B3E51" />}
                 />
                 <NotificationProduct />
               </div>
               <div className="hidden sm:block">
-                <Button onClick={onOpen} label="Обратный звонок" />
+                <Button outline onClick={onOpen} label="Обратный звонок" />
               </div>
               <div
-                onClick={() => setShow(!show)}
-                className="xl:hidden block relative z-50"
+                onClick={showMenu.toggle}
+                className="md:hidden block relative z-50"
               >
                 <ElementButton
                   element={
-                    show ? (
-                      <BiX size={18} color="#3B3E51" />
+                    showMenu.isOpen ? (
+                      <BiX size={28} color="#3B3E51" />
                     ) : (
-                      <BiMenuAltRight size={20} color="#3B3E51" />
+                      <BiMenuAltRight size={28} color="#3B3E51" />
                     )
                   }
                 />

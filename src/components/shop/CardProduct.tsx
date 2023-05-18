@@ -16,6 +16,7 @@ interface CardProductProps {
   compressor?: string;
   square?: string;
   disabled: boolean;
+  hit?: boolean;
   addBasket: () => void;
   remooveElement: () => void;
 }
@@ -28,8 +29,9 @@ const CardProduct: React.FC<CardProductProps> = ({
   srcImg,
   price,
   square,
-  compressor = "Не инвертор",
+  compressor,
   disabled,
+  hit,
   addBasket,
   remooveElement,
 }) => {
@@ -43,11 +45,13 @@ const CardProduct: React.FC<CardProductProps> = ({
   return (
     <div
       className="
+        min-w-[270px]
         w-full
         rounded-md
         border
         flex
         flex-col
+        shadow-sm
         overflow-hidden
         "
     >
@@ -64,7 +68,6 @@ const CardProduct: React.FC<CardProductProps> = ({
           src={srcImg}
           width={300}
           height={300}
-          priority={true}
           alt="img"
           className="
             absolute
@@ -86,8 +89,9 @@ const CardProduct: React.FC<CardProductProps> = ({
             "
         >
           <Teg classic label={brand} />
-          <Teg nw label={"new"} />
-          <Teg hit label={"hit"} />
+          {/* {id && <Teg classic label={id} />} */}
+          {compressor === "инвертор" && <Teg nw label={"invertor"} />}
+          {hit && <Teg hit label={"hit"} />}
         </div>
       </div>
       {/**TEXT BLOCk */}
@@ -140,28 +144,32 @@ const CardProduct: React.FC<CardProductProps> = ({
             <span className="text-slate-900">{price} руб.</span>
           </div>
           {/** STANDARD ROW */}
-          <div
-            className="
+          {compressor && (
+            <div
+              className="
             flex
             flex-row
             w-full
             justify-between
             "
-          >
-            <span className="text-slate-900">Тип компрессора:</span>
-            <span className="text-slate-900 font-semibold">{compressor}</span>
-          </div>
-          <div
-            className="
+            >
+              <span className="text-slate-900">Тип компрессора:</span>
+              <span className="text-slate-900 font-semibold">{compressor}</span>
+            </div>
+          )}
+          {square && (
+            <div
+              className="
             flex
             flex-row
             w-full
             justify-between
             "
-          >
-            <span className="text-slate-900">Площадь помещения: м².</span>
-            <span className="text-slate-900 font-semibold">{square}</span>
-          </div>
+            >
+              <span className="text-slate-900">Площадь помещения: м².</span>
+              <span className="text-slate-900 font-semibold">{square}</span>
+            </div>
+          )}
         </div>
         {/**BUTTON ROW */}
         <div

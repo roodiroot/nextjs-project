@@ -12,6 +12,7 @@ import useSelectProduct from "@/hooks/useSelectProduct";
 import useBasketStore from "@/hooks/useBasketStore";
 import { toast } from "react-hot-toast";
 import { submitHaveBasket } from "@/components/shop/CardList";
+import Path from "@/components/utils-component/Path";
 
 // const product = {
 //   id: 3,
@@ -172,6 +173,7 @@ const ProductPage = () => {
 
   return (
     <Container>
+      <Path name={store?.product.name} />
       <div
         className="
             w-full
@@ -192,13 +194,7 @@ const ProductPage = () => {
           {/** IMAGE */}
           <div className="flex-1 ">
             <div className="w-full h-full px-6 py-4">
-              {!loading ? (
-                <SliderPhotos list={store?.product.imges} />
-              ) : (
-                <div className="bg-slate-100 rounded-md w-full h-full">
-                  Пока стоп
-                </div>
-              )}
+              <SliderPhotos list={store?.product?.imges} />
             </div>
           </div>
           {/** TITLE PRODUCT */}
@@ -222,43 +218,65 @@ const ProductPage = () => {
                 <Heading
                   className="mb-6"
                   title={store?.product.name}
-                  subtitle={store?.product?.type?.typeName}
+                  subtitle={
+                    store?.product?.type?.typeName || store?.product?.typeId
+                  }
                 />
               ) : (
-                <Heading
-                  className="mb-6"
-                  title={"################################"}
-                  subtitle={"#############"}
-                />
+                <div className="w-full h-16 mb-6 flex flex-col justify-between">
+                  <div className="w-full h-8 rounded bg-slate-300 animate-pulse"></div>
+                  <div className="w-40 h-6 rounded bg-slate-300 animate-pulse"></div>
+                </div>
               )}
               <div className="flex justify-between items-center mb-6">
-                <div className="text-slate-800 font-semibold">Цена:</div>
+                <div className="text-slate-800 font-bold">
+                  {store.product.price ? (
+                    "Цена:"
+                  ) : (
+                    <div className="w-20 h-6 rounded bg-slate-300 animate-pulse"></div>
+                  )}
+                </div>
                 <div className="text-slate-800">
-                  {store.product.price ? store.product.price : "#####"} руб.
+                  {store.product.price ? (
+                    `${store.product.price} руб.`
+                  ) : (
+                    <div className="w-20 h-6 rounded bg-slate-300 animate-pulse"></div>
+                  )}
                 </div>
               </div>
-              <div className="flex gap-2 mb-6">
-                {!disabled ? (
-                  <Button
-                    onClick={addToCart}
-                    Icon={HiOutlineShoppingCart}
-                    label="В корзину"
-                    disabled={disabled}
-                  />
-                ) : (
-                  <Button onClick={remooveElemet} label="Убрать" outline />
-                )}
+              {store.product.price ? (
+                <div className="flex gap-2 mb-6">
+                  {!disabled ? (
+                    <Button
+                      onClick={addToCart}
+                      Icon={HiOutlineShoppingCart}
+                      label="В корзину"
+                      disabled={disabled}
+                    />
+                  ) : (
+                    <Button onClick={remooveElemet} label="Убрать" outline />
+                  )}
 
-                <Button
-                  onClick={() => router.push("/shop")}
-                  outline
-                  Icon={TbHandClick}
-                  label="К выбору"
-                />
-              </div>
+                  <Button
+                    onClick={() => router.push("/shop")}
+                    outline
+                    Icon={TbHandClick}
+                    label="К выбору"
+                  />
+                </div>
+              ) : (
+                <div className="flex gap-2 mb-6 h-[44px]">
+                  <div className="w-full h-full rounded bg-slate-300 animate-pulse"></div>
+                  <div className="w-full h-full rounded bg-slate-300 animate-pulse"></div>
+                </div>
+              )}
               <div className="flex flex-col">
                 <div className="text-sm font-light text-zinc-500">
-                  Характеристики товара
+                  {store?.product.price ? (
+                    "Характеристики товара"
+                  ) : (
+                    <div className="w-40 h-6 rounded bg-slate-300 animate-pulse"></div>
+                  )}
                 </div>
 
                 {store?.product?.descriptions
@@ -284,13 +302,17 @@ const ProductPage = () => {
                           </div>
                         </div>
                       ))
-                  : new Array(5).fill("######").map((i, index) => (
+                  : new Array(5).fill("").map((i, index) => (
                       <div
                         key={index}
                         className="flex flex-row justify-between py-2 border-b"
                       >
-                        <div className="text-slate-700 font-light">{i}</div>
-                        <div className="text-slate-900 font-semibold">{i}</div>
+                        <div className="text-slate-700 font-light">
+                          <div className="w-20 h-6 rounded bg-slate-300 animate-pulse"></div>
+                        </div>
+                        <div className="text-slate-900 font-semibold">
+                          <div className="w-20 h-6 rounded bg-slate-300 animate-pulse"></div>
+                        </div>
                       </div>
                     ))}
               </div>
@@ -301,7 +323,11 @@ const ProductPage = () => {
                 flex-none
                 "
             >
-              <Teg label="В наличии" green />
+              {store.product.price ? (
+                <Teg label="В наличии" green />
+              ) : (
+                <div className="w-20 h-8 rounded bg-slate-300 animate-pulse"></div>
+              )}
             </div>
           </div>
         </div>

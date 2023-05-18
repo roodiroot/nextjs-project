@@ -1,15 +1,16 @@
-function Option({ children, onClick }) {
+function Option({ children, onClick, active }) {
   return (
     <li
       onClick={onClick}
-      className="
+      className={`
       px-4 
       py-2 
-      font-light 
       cursor-pointer 
-      hover:bg-slate-100
+      hover:bg-slate-200
       transition
-      "
+      ${active && "bg-slate-100"}
+      ${active && "font-medium"}
+      `}
       data-select="option"
       data-value="volkswagen"
       data-index="0"

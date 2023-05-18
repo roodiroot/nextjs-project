@@ -91,7 +91,7 @@ const Owerviews = () => {
       className="
     flex
     flex-col
-    py-12
+    py-24
     "
     >
       <Heading

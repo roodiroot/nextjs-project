@@ -28,7 +28,6 @@ const GalleryItem: React.FC<GalleryItem> = ({ element, onClick }) => {
         width={300}
         height={300}
         alt="img"
-        priority
         className="
             absolute 
             top-0 
@@ -36,7 +35,6 @@ const GalleryItem: React.FC<GalleryItem> = ({ element, onClick }) => {
             w-full 
             h-full 
             object-cover"
-        loading="eager"
       />
       <div
         className="

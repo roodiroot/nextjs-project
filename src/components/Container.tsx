@@ -1,9 +1,20 @@
 interface ContainerProps {
+  maxWidth?: number;
   children?: React.ReactNode;
 }
-const Container: React.FC<ContainerProps> = ({ children }) => {
+const Container: React.FC<ContainerProps> = ({ children, maxWidth = 1400 }) => {
   return (
-    <div className="w-full max-w-[1440px] mx-auto xl:px-20 md:px-10 sm:px-4 px-2">
+    <div
+      style={{ maxWidth: maxWidth }}
+      className={`
+      w-full
+      mx-auto 
+      xl:px-20 
+      md:px-10 
+      sm:px-4 
+      px-2
+    `}
+    >
       {children}
     </div>
   );

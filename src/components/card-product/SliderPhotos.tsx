@@ -11,8 +11,9 @@ import useShowImage from "@/hooks/useShowImage";
 interface SliderProps {
   list: string[];
   loading?: boolean;
+  vendorcode?: number | string
 }
-const SliderPhotos: React.FC<SliderProps> = ({ list }) => {
+const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
   const showImagePopap = useShowImage();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -29,6 +30,7 @@ const SliderPhotos: React.FC<SliderProps> = ({ list }) => {
                 relative
                 "
     >
+      <div className="text-slate-600 absolute text-sm top-4 left-4 z-10">Код товара: {vendorcode}</div>
       <div className="absolute inset-0 bg-white flex flex-col justify-between gap-2">
         {/** SLIDER MAIN */}
         {list ? (

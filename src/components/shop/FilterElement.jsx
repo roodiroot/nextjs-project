@@ -5,7 +5,7 @@ function FilterElement({ children, title, sleep, className }) {
   const [showFilter, setShowFilter] = useState(sleep ? false : true);
 
   return (
-    <div className={className}>
+    <div className={`${className} mb-6`}>
       <div
         className="
         flex 
@@ -15,9 +15,8 @@ function FilterElement({ children, title, sleep, className }) {
       >
         <div
           className="
-          font-light
            text-sm 
-           text-zinc-400
+           text-slate-500
            mb-2
           "
         >

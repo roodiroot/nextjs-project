@@ -13,6 +13,7 @@
   display: inline-block;
   width: 17px;
   height: 17px;
+  background: #fff;
   border: 1px solid #ececec;
   border-radius: 4px;
   cursor: pointer;
@@ -42,7 +43,7 @@
 
 /* // =============================== RADIO ================================================ */
 
-.checkedWrapperElement input[type="radio"] {
+.checkedWrapperElement input[type='radio'] {
   display: none;
 }
 .radioElement {
@@ -55,10 +56,11 @@
   user-select: none;
 }
 .radioElement::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 17px;
   height: 17px;
+  background: #fff;
   position: absolute;
   left: 0;
   top: 50%;
@@ -68,7 +70,7 @@
   transition: all linear 0.2s;
 }
 /* Checked */
-.checkedWrapperElement input[type="radio"]:checked + .radioElement:before,
+.checkedWrapperElement input[type='radio']:checked + .radioElement:before,
 .checkedWrapperElement .radioElement.active:before {
   background: #f97316;
 }
@@ -79,6 +81,6 @@
 }
 
 /* Disabled */
-.checkedWrapperElement input[type="radio"]:disabled + .radioElement:before {
+.checkedWrapperElement input[type='radio']:disabled + .radioElement:before {
   border: 1px solid #94a3b8;
 }

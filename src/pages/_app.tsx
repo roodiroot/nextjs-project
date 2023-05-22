@@ -8,7 +8,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Golos_Text } from "next/font/google";
 
-const golos = Golos_Text({ subsets: ["cyrillic"] });
+const golos = Golos_Text({ subsets: ["cyrillic"], display: "swap" });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

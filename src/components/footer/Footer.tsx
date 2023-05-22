@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "../Container";
 import Logo from "../navbar/Logo";
 import SocialIcons from "../utils-component/SocialIcons";
@@ -13,31 +14,55 @@ const Footer = () => {
               Продажа и установка сплит-систем и систем кондиционирования
             </div>
             <div className="mb-4">
-              <div className="">Цены на услуги</div>
-              <div className="">Магазин</div>
-              <div className="">Контакты</div>
-              <div className="">О нас</div>
+              <Link href="/services" className="block">
+                Цены на услуги
+              </Link>
+              <Link href="/shop" className="block">
+                Магазин
+              </Link>
+              <Link href="/contacts" className="block">
+                Контакты
+              </Link>
+              <Link href="/about" className="block">
+                О нас
+              </Link>
             </div>
           </div>
           <div className="flex flex-col justify-between">
             <div className="mb-4 text-lg font-medium">Каталог</div>
             <div className="mb-4">
-              <div className="">Внутренние блоки</div>
-              <div className="">Сплит-системы</div>
-              <div className="">Мульти сплит-системы</div>
+              <Link href="/shop?type=3" className="block">
+                Внутренние блоки
+              </Link>
+              <Link href="/shop?type=1" className="block">
+                Сплит-системы
+              </Link>
+              <Link href="/shop?type=2" className="block">
+                Мульти сплит-системы
+              </Link>
             </div>
             <div className="mb-4 text-lg font-medium">Магазин</div>
             <div className="mb-4">
-              <div className="">Бренды</div>
-              <div className="">Типы усстойств</div>
+              <Link href="/brands" className="block">
+                Бренды
+              </Link>
+              <Link href="/types" className="block">
+                Типы усстойств
+              </Link>
             </div>
           </div>
           <div className="flex flex-col justify-between">
             <div className="mb-4 text-lg font-medium">Покупателю</div>
             <div className="mb-4">
-              <div className="">Оплата</div>
-              <div className="">Стоимость услуг</div>
-              <div className="">Доставка</div>
+              <Link href="/payment" className="block">
+                Оплата
+              </Link>
+              <Link href="/services" className="block">
+                Стоимость услуг
+              </Link>
+              <Link href="/delivery" className="block">
+                Доставка
+              </Link>
             </div>
             <div className="flex-1 items-start mb-2">
               <div className="mb-2 font-semibold">Мессенджеры:</div>

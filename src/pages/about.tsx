@@ -6,7 +6,6 @@ import Path from "@/components/utils-component/Path";
 import Image from "next/image";
 
 const About = () => {
-  console.log();
   return (
     <div>
       <Container>
@@ -23,24 +22,21 @@ const About = () => {
         </div>
         <div className="w-full flex flex-col sm:flex-row gap-6 mb-8">
           <p className="flex-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            modi dolor illo quis illum, quae nulla omnis blanditiis ipsam sed
-            perspiciatis suscipit aperiam voluptates tempore maxime accusamus
-            minima voluptatibus ducimus saepe animi laboriosam accusantium?
-            Harum alias, cupiditate molestiae reiciendis hic maxime excepturi
-            quos et, commodi vero dicta aspernatur quasi consequatur ipsa, est
-            sint laborum. Sint atque culpa recusandae enim iusto delectus. Culpa
-            laboriosam ab repellendus nesciunt sunt dolore quibusdam, molestiae
+            Наша компания является лидером на рынке установки и продажи
+            кондиционеров в Москве и Московской области. Мы предлагаем широкий
+            ассортимент кондиционеров от ведущих мировых производителей, таких
+            как Daikin, Mitsubishi Electric, General Climate и другие. Мы
+            работаем с клиентами всех типов - от частных лиц до крупных
+            корпоративных клиентов, которые нуждаются в установке и обслуживании
+            кондиционеров любой сложности.
           </p>
           <p className="flex-1">
-            Crupti possimus animi suscipit ut eligendi, assumenda facere
-            similique! Velit rem consequuntur dolores, eos aspernatur, ratione
-            inventore quos sunt ipsa maxime maiores, commodi odio ipsum.
-            Inventore culpa accusamus ipsa non laborum reiciendis? Sequi
-            quisquam delectus laudantium fugiat amet, dolorum sit nam officiis
-            nulla omnis placeat et qui aliquid a dolore, adipisci consequatur
-            aut ut corrupti in temporibus. Commodi sed fugit rem dolores sequi
-            numquam reprehenderit delectus, non impedit necessitatibus expedita
+            Наша команда состоит из высококвалифицированных специалистов,
+            которые готовы помочь вам выбрать наилучшее решение для ваших
+            потребностей по охлаждению и обогреву. Мы также предоставляем полный
+            спектр услуг, включая консультации по выбору кондиционера, доставку
+            и установку оборудования, а также последующее техническое
+            обслуживание.
           </p>
         </div>
         <div className="w-full flex flex-col sm:flex-row gap-6 mb-8">
@@ -53,11 +49,12 @@ const About = () => {
               технику которая проявляет себя наилучшим образом, с безупречной
               стороны
             </div>
-            minima voluptatibus ducimus saepe animi laboriosam accusantium?
-            Harum alias, cupiditate molestiae reiciendis hic maxime excepturi
-            quos et, commodi vero dicta aspernatur quasi consequatur ipsa, est
-            sint laborum. Sint atque culpa recusandae enim iusto delectus. Culpa
-            laboriosam ab repellendus nesciunt sunt dolore quibusdam, molestiae
+            Мы гарантируем высокое качество всех наших услуг и оборудования, а
+            также приемлемые цены на все продукты и услуги. Наша компания всегда
+            готова предложить наиболее эффективные и экономичные решения для вас
+            и вашего бизнеса. Обратитесь к нам сегодня, чтобы узнать больше о
+            том, как мы можем помочь вам достичь комфортной атмосферы в любом
+            помещении!
           </div>
           <div className="flex-1 relative overflow-hidden rounded-md">
             <Image

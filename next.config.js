@@ -2,8 +2,10 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ["api-shop.kondish.su"],
+    domains: ["localhost:5000", "api-shop.kondish.su"],
   },
 };
 
 module.exports = nextConfig;
+
+// api-shop.kondish.su

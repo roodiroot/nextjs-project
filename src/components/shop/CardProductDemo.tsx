@@ -8,7 +8,8 @@ const CardProductDemo = () => {
         flex
         flex-col
         overflow-hidden
-        min-h-[440px]
+        min-h-[470.44px]
+        h-[470.44px]
         animate-pulse
         "
     >

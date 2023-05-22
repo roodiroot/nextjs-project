@@ -4,6 +4,7 @@ import { devtools } from "zustand/middleware";
 
 interface ProductStore {
   products: any;
+  count: number;
   loading: boolean;
   error: string | null;
   fetchProducts: (filters: {}) => any;
@@ -11,6 +12,7 @@ interface ProductStore {
 
 const useProductStore = create<ProductStore>((set, get) => ({
   products: [],
+  count: 0,
   loading: false,
   error: null,
   fetchProducts: async (filters) => {
@@ -20,8 +22,8 @@ const useProductStore = create<ProductStore>((set, get) => ({
         `${process.env.NEXT_PUBLIC_SERVER_URI}/products/pagin`,
         filters
       );
-      set({ products: data.rows });
-      return get().products;
+      set({ products: data.rows, count: data.count });
+      return { products: get().products, count: get().count };
     } catch (e: any) {
       let error = e;
       // custom error

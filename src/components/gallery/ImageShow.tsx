@@ -11,6 +11,9 @@ const ImageShow: React.FC<ImageShowProps> = ({ onClose, src, isOpen }) => {
   if (!isOpen) {
     return null;
   }
+  const myLoader = () => {
+    return src;
+  };
   return (
     <div
       onClick={onClose}
@@ -29,7 +32,13 @@ const ImageShow: React.FC<ImageShowProps> = ({ onClose, src, isOpen }) => {
             w-auto 
             h-auto"
       >
-        <Image src={src} width={600} height={600} alt="photo" />
+        <Image
+          loader={myLoader}
+          src={src}
+          width={600}
+          height={600}
+          alt="photo"
+        />
         <TfiClose
           size={30}
           className="

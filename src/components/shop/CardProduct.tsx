@@ -1,22 +1,24 @@
 import Image from "next/image";
 import { RxArrowTopRight } from "react-icons/rx";
-
-import Button from "../navbar/Button";
-import Teg from "./Teg";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+
+import loader from "../../../public/image/loader.jpg";
+import Button from "../navbar/Button";
+import Teg from "./Teg";
 
 interface CardProductProps {
   id: number;
   name: string;
-  type: string;
-  brand: string;
+  type?: string;
+  brand?: string;
   srcImg: string;
   price: string;
   compressor?: string;
   square?: string;
   disabled: boolean;
   hit?: boolean;
+  vendorcode?: number | string;
   addBasket: () => void;
   remooveElement: () => void;
 }
@@ -32,11 +34,16 @@ const CardProduct: React.FC<CardProductProps> = ({
   compressor,
   disabled,
   hit,
+  vendorcode,
   addBasket,
   remooveElement,
 }) => {
   const [disabledS, setDisabledS] = useState(disabled);
   const router = useRouter();
+
+  const myLoader = () => {
+    return srcImg;
+  };
 
   useEffect(() => {
     setDisabledS(disabled);
@@ -47,6 +54,8 @@ const CardProduct: React.FC<CardProductProps> = ({
       className="
         min-w-[270px]
         w-full
+        min-h-[470.44px]
+        h-[470.44px]
         rounded-md
         border
         flex
@@ -65,9 +74,10 @@ const CardProduct: React.FC<CardProductProps> = ({
           "
       >
         <Image
+          loader={myLoader}
           src={srcImg}
-          width={300}
-          height={300}
+          width={290}
+          height={230}
           alt="img"
           className="
             absolute
@@ -88,10 +98,13 @@ const CardProduct: React.FC<CardProductProps> = ({
             h-auto
             "
         >
-          <Teg classic label={brand} />
+          {brand && <Teg classic label={brand} />}
           {/* {id && <Teg classic label={id} />} */}
           {compressor === "инвертор" && <Teg nw label={"invertor"} />}
           {hit && <Teg hit label={"hit"} />}
+        </div>
+        <div className="absolute bottom-3 left-3 text-sm text-zinc-400">
+          Код товара: {vendorcode}
         </div>
       </div>
       {/**TEXT BLOCk */}

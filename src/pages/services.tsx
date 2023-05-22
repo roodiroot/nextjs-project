@@ -38,12 +38,12 @@ const Services = () => {
                 <tr className="bg-white even:bg-gray-100">
                   <td className="p-2 ">Закладка магистрали до 5м</td>
                   <td className="p-2 font-semibold">07-09 BTU или до 26м²</td>
-                  <td className="p-2 ">13000 руб.</td>
+                  <td className="p-2 ">14000 руб.</td>
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="p-2 ">Закладка магистрали до 5м</td>
                   <td className="p-2 font-semibold">12 BTU или до 35м²</td>
-                  <td className="p-2 ">13000 руб.</td>
+                  <td className="p-2 ">15000 руб.</td>
                 </tr>
                 <tr className="bg-white even:bg-gray-100">
                   <td className="p-2 ">Закладка магистрали до 5м</td>

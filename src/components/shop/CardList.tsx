@@ -66,6 +66,7 @@ const CardList: React.FC<CardList> = ({ loading, error, products }) => {
         products.map((i: any) => (
           <CardProduct
             id={i?.id}
+            vendorcode={i?.vendorcode}
             srcImg={`${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${i?.logo}.png`}
             name={i?.name}
             type={i?.type?.typeName}

@@ -11,7 +11,7 @@ import useShowImage from "@/hooks/useShowImage";
 interface SliderProps {
   list: string[];
   loading?: boolean;
-  vendorcode?: number | string
+  vendorcode?: number | string;
 }
 const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
   const showImagePopap = useShowImage();
@@ -20,6 +20,10 @@ const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
   const getImage = useCallback((src: string) => {
     showImagePopap.onOpen(src);
   }, []);
+
+  const myLoader = (i: string) => {
+    return `${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${i}.png`;
+  };
 
   return (
     <div
@@ -30,7 +34,9 @@ const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
                 relative
                 "
     >
-      <div className="text-slate-600 absolute text-sm top-4 left-4 z-10">Код товара: {vendorcode}</div>
+      <div className="text-slate-600 absolute text-sm top-4 left-4 z-10">
+        Код товара: {vendorcode}
+      </div>
       <div className="absolute inset-0 bg-white flex flex-col justify-between gap-2">
         {/** SLIDER MAIN */}
         {list ? (
@@ -56,6 +62,7 @@ const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
               >
                 <Image
                   className="w-full h-full object-contain"
+                  loader={() => myLoader(i)}
                   src={`${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${i}.png`}
                   width={500}
                   height={500}
@@ -93,6 +100,7 @@ const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
               >
                 <Image
                   className="w-full h-full object-contain"
+                  loader={() => myLoader(i)}
                   src={`${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${i}.min.png`}
                   width={500}
                   height={500}

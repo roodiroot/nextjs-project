@@ -9,6 +9,9 @@ import Container from "@/components/Container";
 import useProductStore from "@/hooks/useProductsStore";
 import CardList from "@/components/shop/CardList";
 import Path from "@/components/utils-component/Path";
+import Bunner from "@/components/bunner/Bunner";
+import Paginator from "@/components/utils-component/Paginator";
+import SearchForShop from "@/components/shop/SearchForShop";
 
 // ПРИМЕР ОБЪЕКТА DTO ДЛЯ СОРТИРОВКИ, КОТОРЫЙ УХОДИТ НА СЕРВЕР
 // {
@@ -37,18 +40,17 @@ const HAVE_COLOR = "Цвет";
 const HAVE_SQUARE = "Площадь помещения: м².";
 
 function Shop() {
-  const { fetchProducts, loading, error, products } = useProductStore();
+  const { fetchProducts, loading, error } = useProductStore();
   const searchParams = useSearchParams();
 
-  const [oldProductList, setOldProductList] = useState([]);
-  const [productsScroll, setProductsScroll] = useState([]);
   const [productsList, setProductsList] = useState<any>([]);
+  const [count, setCount] = useState(0);
 
   const [sortStart, setSortStart] = useState(true);
   const [sort, setSort] = useState(true);
   const [showLimit, setShowLimit] = useState(6);
   const [price, setPrice] = useState<any>([0, 150000]);
-  const [fetching, setFetching] = useState(false);
+  const [page, setPage] = useState(1);
 
   const brandQuery = searchParams.get("brand");
   const typeQuery = searchParams.get("type");
@@ -66,7 +68,6 @@ function Shop() {
     color: colorQuery,
   };
 
-  let page = 1;
   let showOffset = page * showLimit - showLimit;
 
   let filter: any = {
@@ -108,10 +109,9 @@ function Shop() {
     }
 
     (async () => {
-      console.log(filter);
-      console.log(page);
       await fetchProducts(filter).then((d: any) => {
-        setProductsList(d);
+        setProductsList(d?.products);
+        setCount(d?.count);
       });
     })();
   }, [
@@ -128,6 +128,18 @@ function Shop() {
     page,
   ]);
 
+  useEffect(() => {
+    setPage(1);
+  }, [
+    filters.brand,
+    filters.type,
+    filters.compressor,
+    filters.color,
+    filters.wifi,
+    filters.square,
+    price,
+  ]);
+
   return (
     <>
       <Head>
@@ -141,6 +153,7 @@ function Shop() {
         <div
           className="
             w-full 
+            h-full
             pb-12 
             flex
             flex-col
@@ -162,41 +175,90 @@ function Shop() {
             price={price}
             setPrice={setPrice}
           />
-          <div className="flex-1">
+          <div className="flex-1 flex flex-col min-h-full">
             <Heading
               title="Каталог"
               subtitle="Весь список товаров по выбранным параметрам"
             />
+            <SearchForShop />
             <div
               className="
                 mb-1
-                flex gap-2
+                flex 
+                gap-2
                 "
             >
-              <div className="py-4 px-2 rounded-sm text-sm flex gap-4 items-center">
-                <span className="font-semibold">Сортироваь по:</span>
-                <span
-                  onClick={() => setSort(false)}
-                  className="cursor-pointer py-1 px-2 rounded-sm bg-slate-100"
-                >
-                  названию
+              <div className="py-4 px-2 rounded-sm text-sm flex flex-col gap-1 md:gap-4 md:flex-row items-center">
+                <span className="font-semibold text-start w-full">
+                  Сортироваь по:
                 </span>
-                <span
-                  onClick={() => setSort(true)}
-                  className="cursor-pointer py-1 px-2 rounded-sm bg-slate-100"
-                >
-                  цене
-                </span>
-                <span
-                  onClick={() => setSortStart(!sortStart)}
-                  className="cursor-pointer py-1 px-2 rounded-sm bg-slate-100"
-                >
-                  <HiOutlineArrowsUpDown size={18} />
-                </span>
+                <div className="flex gap-4 items-center">
+                  <span
+                    onClick={() => setSort(false)}
+                    className={`text-lg h-8 rounded-md  p-2 cursor-pointer border-2  flex justify-center items-center
+                  ${!sort ? "border-orange-500" : "border-slate-700"}
+                  ${!sort ? "bg-orange-500" : "bg-white"}
+                  ${!sort ? "text-white" : "text-slate-800"}
+                  hover:border-orange-500 
+                  hover:bg-orange-500 
+                  hover:text-white
+                  transition
+                  `}
+                  >
+                    названию
+                  </span>
+                  <span
+                    onClick={() => setSort(true)}
+                    className={`text-lg h-8 rounded-md  p-2 cursor-pointer border-2  flex justify-center items-center
+                  ${sort ? "border-orange-500" : "border-slate-700"}
+                  ${sort ? "bg-orange-500" : "bg-white"}
+                  ${sort ? "text-white" : "text-slate-800"}
+                  hover:border-orange-500 
+                  hover:bg-orange-500 
+                  hover:text-white
+                  transition
+                  `}
+                  >
+                    цене
+                  </span>
+                  <span
+                    onClick={() => setSortStart(!sortStart)}
+                    className="
+                  text-lg 
+                  h-8 
+                  rounded-md  
+                  p-2 
+                  cursor-pointer 
+                  border-2  
+                  flex 
+                  justify-center 
+                  items-center 
+                  border-slate-700 
+                  bg-white 
+                  text-slate-800 
+                  hover:border-orange-500 
+                  hover:bg-orange-500 
+                  hover:text-white
+                  transition
+                  "
+                  >
+                    <HiOutlineArrowsUpDown size={18} />
+                  </span>
+                </div>
               </div>
+            </div>
+            <Bunner />
+            <div className="w-full py-6 flex justify-start">
+              <Paginator
+                count={count}
+                page={page}
+                setPage={setPage}
+                limit={showLimit}
+              />
             </div>
             <div
               className="
+              flex-1 
                 grid
                 justify-items-center
                 grid-cols-auto
@@ -208,13 +270,16 @@ function Shop() {
                 error={error}
                 products={productsList}
               />
-              {/* <div
-                onClick={addProducts}
-                className="px-2 py-1 h-8 bg-slate-500 rounded-sm cursor-pointer hover:bg-orange-500"
-              >
-                Показать еще
-              </div> */}
             </div>
+            <div className="w-full py-6 flex justify-start">
+              <Paginator
+                count={count}
+                page={page}
+                setPage={setPage}
+                limit={showLimit}
+              />
+            </div>
+            <Bunner />
           </div>
         </div>
       </Container>

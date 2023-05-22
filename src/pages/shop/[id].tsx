@@ -194,7 +194,10 @@ const ProductPage = () => {
           {/** IMAGE */}
           <div className="flex-1 ">
             <div className="w-full h-full px-6 py-4">
-              <SliderPhotos list={store?.product?.imges} vendorcode={store?.product?.vendorcode} />
+              <SliderPhotos
+                list={store?.product?.imges}
+                vendorcode={store?.product?.vendorcode}
+              />
             </div>
           </div>
           {/** TITLE PRODUCT */}
@@ -334,24 +337,25 @@ const ProductPage = () => {
         {/** DESCRIPTION BLOCK */}
         <div className="w-full flex gap-6 flex-col-reverse md:flex-row justify-start">
           <div className="w-full flex-1 max-w-[600px] px-6 py-4">
-          <h4 className="text-xl font-bold mb-8">Характеристики {store?.product.name}</h4>
-          {store?.product?.descriptions?.map((i: any) => (
-                <div
-                  key={i.id}
-                  className="flex flex-row justify-between py-2 border-b"
-                    >
-                      <div className="text-slate-700 font-light">
-                        {i.title}
-                      </div>
-                      <div className="text-slate-900 font-semibold">
-                        {i.description}
-                      </div>
+            <h4 className="text-xl font-bold mb-8">
+              Характеристики {store?.product.name}
+            </h4>
+            {store?.product?.descriptions?.map((i: any) => (
+              <div
+                key={i.id}
+                className="flex flex-row justify-between py-2 border-b"
+              >
+                <div className="text-slate-700 font-light">{i.title}</div>
+                <div className="text-slate-900 font-semibold">
+                  {i.description}
+                </div>
               </div>
-        ))}
+            ))}
           </div>
           <div className="flex-1 px-6 py-4">
             <div className="rounded-md border-2 border-rose-500 p-6 max-w-[400px]">
-              Подходит ли вам данный товар? Можете узнать по номеру <a href="tel:89153294209">8 (915) 329-42-09</a>
+              Подходит ли вам данный товар? Можете узнать по номеру{" "}
+              <a href="tel:89153294209">8 (915) 329-42-09</a>
             </div>
           </div>
         </div>

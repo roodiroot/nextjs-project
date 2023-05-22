@@ -24,9 +24,10 @@ const AdvatagItem: React.FC<AdvatagItemProps> = ({
         gap-3
         items-center
         shadow-sm
+        overflow-hidden
         "
     >
-      <div className="relative min-w-[80px] max-w-[80px] h-[80px] bg-white rounded-md items-center">
+      <div className="relative min-w-[120px] max-w-[120px] h-[120px] bg-white rounded-full items-center sm:-translate-x-[35px] sm:-translate-y-[35px] border-2  shadow-md">
         <Icon
           size={40}
           className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-orange-500"

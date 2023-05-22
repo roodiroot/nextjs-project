@@ -1,5 +1,5 @@
 interface TegProps {
-  label: string | number;
+  label: string;
   className?: string;
   nw?: boolean;
   hit?: boolean;

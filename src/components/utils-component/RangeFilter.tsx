@@ -12,10 +12,10 @@ const RangeFilter: React.FC<RangeFilterProps> = ({ setPrice, price }) => {
 
   return (
     <div className="py-1 relative">
-      <div className="absolute left-0 top-0 px-2 py-1 text-sm bg-slate-200 rounded-sm text-slate-700">
+      <div className="absolute left-0 top-0 h-8 rounded-md  p-2 cursor-pointer border-2 flex justify-center items-center bg-white border-slate-700">
         от {momentPrice[0]} руб.
       </div>
-      <div className="absolute right-0 top-0 px-2 py-1 text-sm bg-slate-200 rounded-sm text-slate-700">
+      <div className="absolute right-0 top-0 h-8 rounded-md  p-2 cursor-pointer border-2 flex justify-center items-center bg-white border-slate-700">
         до {momentPrice[1]} руб.
       </div>
       <ReactSlider

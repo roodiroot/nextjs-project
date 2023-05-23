@@ -9,8 +9,8 @@ interface SelectTypeAndBrandStore {
   loadingB: boolean;
   errorT: any;
   errorB: any;
-  fetchBrands: (id: number) => void;
-  fetchTypes: (id: number) => void;
+  fetchBrands: () => void;
+  fetchTypes: () => void;
   restor: () => void;
 }
 
@@ -21,7 +21,7 @@ const useTypeAndBrand = create<SelectTypeAndBrandStore>((set) => ({
   loadingB: false,
   errorT: null,
   errorB: null,
-  fetchBrands: async (id) => {
+  fetchBrands: async () => {
     set({ loadingB: true });
     await axios
       .get(`${process.env.NEXT_PUBLIC_SERVER_URI}/brand`)

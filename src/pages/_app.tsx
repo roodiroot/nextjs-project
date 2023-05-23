@@ -7,8 +7,15 @@ import ToasterProvider from "@/providers/ToasterProvider";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Golos_Text } from "next/font/google";
+import { Router } from "next/router";
+import NProgress from 'nprogress'; //nprogress module
+import 'nprogress/nprogress.css'; //styles of nprogress
 
 const golos = Golos_Text({ subsets: ["cyrillic"], display: "swap" });
+
+Router.events.on('routeChangeStart', () => NProgress.start()); 
+Router.events.on('routeChangeComplete', () => NProgress.done()); 
+Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

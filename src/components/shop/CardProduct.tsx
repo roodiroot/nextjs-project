@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import loader from "../../../public/image/loader.jpg";
+import blur from "../../../public/image/blur.png"
 import Button from "../navbar/Button";
 import Teg from "./Teg";
 
@@ -21,6 +22,7 @@ interface CardProductProps {
   vendorcode?: number | string;
   addBasket: () => void;
   remooveElement: () => void;
+  search?: boolean
 }
 
 const CardProduct: React.FC<CardProductProps> = ({
@@ -37,6 +39,7 @@ const CardProduct: React.FC<CardProductProps> = ({
   vendorcode,
   addBasket,
   remooveElement,
+  search
 }) => {
   const [disabledS, setDisabledS] = useState(disabled);
   const router = useRouter();
@@ -51,18 +54,18 @@ const CardProduct: React.FC<CardProductProps> = ({
 
   return (
     <div
-      className="
+      className={`
         min-w-[270px]
         w-full
-        min-h-[470.44px]
-        h-[470.44px]
+        ${search ? "min-h-[404px]" : "min-h-[470.44px]"}
+        ${search ? "h-[404px]" : "h-[470.44px]"}
         rounded-md
         border
         flex
         flex-col
         shadow-sm
         overflow-hidden
-        "
+      `}
     >
       {/**IMAGE BLOCK */}
       <div
@@ -75,6 +78,7 @@ const CardProduct: React.FC<CardProductProps> = ({
       >
         <Image
           loader={myLoader}
+          unoptimized={true}
           src={srcImg}
           width={290}
           height={230}

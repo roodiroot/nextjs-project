@@ -14,7 +14,7 @@ const Search = () => {
   const [error, setError] = useState("");
 
   const brandQuery = searchParams.get("search");
-  console.log(brandQuery);
+
   useEffect(() => {
     (async () => {
       setLoading(true);
@@ -55,7 +55,7 @@ const Search = () => {
                 gap-6
                 "
         >
-          <CardList loading={loading} error={error} products={productsList} />
+          <CardList loading={loading} error={error} products={productsList} search />
         </div>
       </div>
     </Container>

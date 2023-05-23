@@ -21,8 +21,9 @@ interface CardList {
   loading: boolean;
   error: string | null;
   products: [];
+  search?: boolean
 }
-const CardList: React.FC<CardList> = ({ loading, error, products }) => {
+const CardList: React.FC<CardList> = ({ loading, error, products, search }) => {
   const basketStore = useBasketStore();
   const [load, setLoad] = useState<boolean>(true);
   const [err, setErr] = useState<any>(null);
@@ -36,7 +37,7 @@ const CardList: React.FC<CardList> = ({ loading, error, products }) => {
     return (
       <>
         {new Array(6).fill(0).map((_, index) => (
-          <CardProductDemo key={index} />
+          <CardProductDemo key={index} search={search} />
         ))}
       </>
     );
@@ -87,6 +88,7 @@ const CardList: React.FC<CardList> = ({ loading, error, products }) => {
             addBasket={() => addBasket(i)}
             remooveElement={() => remooveElement(i?.id)}
             hit={i?.hit}
+            search={search}
           />
         ))
       ) : (

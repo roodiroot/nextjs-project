@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
+  devIndicators: {
+    buildActivity: false,
+  },
   images: {
-    domains: ["localhost:5000", "api-shop.kondish.su"],
+    domains: ['localhost:5000', 'api-shop.kondish.su'],
   },
 };
 

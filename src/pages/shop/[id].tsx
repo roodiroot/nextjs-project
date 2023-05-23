@@ -335,9 +335,13 @@ const ProductPage = () => {
           </div>
         </div>
         {/** DESCRIPTION BLOCK */}
-        <div className="w-full flex gap-6 flex-col-reverse md:flex-row justify-start">
+        <div className="w-full flex gap-6 flex-col md:flex-row justify-start">
           <div className="w-full flex-1 max-w-[600px] px-6 py-4">
-            <h4 className="text-xl font-bold mb-8">
+            <div className="rounded-md bg-rose-300 text-white font-bold p-6 w-full mb-10">
+              Подходит ли вам данный товар? Можете узнать по номеру{" "}
+              <a href="tel:89153294209">8 (915) 329-42-09</a>
+            </div>
+            <h4 className="text-xl font-bold mb-4">
               Характеристики {store?.product.name}
             </h4>
             {store?.product?.descriptions?.map((i: any) => (
@@ -352,10 +356,40 @@ const ProductPage = () => {
               </div>
             ))}
           </div>
-          <div className="flex-1 px-6 py-4">
-            <div className="rounded-md border-2 border-rose-500 p-6 max-w-[400px]">
-              Подходит ли вам данный товар? Можете узнать по номеру{" "}
-              <a href="tel:89153294209">8 (915) 329-42-09</a>
+          <div className="flex-1 py-4 flex flex-col">
+            <div className="w-full flex flex-col mb-4 gap-6">
+              <div className="w-full rounded-md bg-slate-100 p-7">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                  Безналичный способ
+                </h2>
+                <div className="text-md md:text-lg">
+                  После создания заказа мы незамедлительно составим счет на
+                  оплату, а как только получим деньги или исполненное платежное
+                  поручение, мы согласуем с Вами день доставки и монтажа. Вы
+                  получите высококачественный товар и отличный сервис!
+                </div>
+              </div>
+              <div className="w-full rounded-md bg-slate-100 p-7">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                  Оплата картой{" "}
+                </h2>
+                <div className="text-md md:text-lg">
+                  Возможны оплаты Visa/MasterCard/Мир - удобный, быстрый и
+                  безопасный способ оплатить покупки. Просто вставьте карту в
+                  терминал, который привезет наш курьер и наслаждайтесь
+                  покупками без лишних хлопот.
+                </div>
+              </div>
+              <div className="w-full rounded-md bg-slate-100 p-7">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                  Оплата наличными
+                </h2>
+                <div className="text-md md:text-lg">
+                  Удобный способ расчета. Вы можете быстро и легко оплатить
+                  товары или услуги, не завися от работы банковских систем и не
+                  беспокоится о комиссиях за транзакции.
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -172,7 +172,7 @@ const Owerviews = () => {
                   font-medium 
                   line-clamp-4"
                   >
-                    "{i.text}"
+                    {i.text}
                   </p>
                 </blockquote>
                 <figcaption>

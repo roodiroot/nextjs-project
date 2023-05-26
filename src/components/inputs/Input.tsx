@@ -1,4 +1,5 @@
 import { UseFormRegister, FieldValues, FieldErrors } from "react-hook-form";
+import InputMask from "react-input-mask";
 
 interface InputProps {
   id: string;
@@ -21,6 +22,17 @@ const Input: React.FC<InputProps> = ({
   register,
   errors,
 }) => {
+  const className = `
+  w-full 
+  px-4 
+  py-2 
+  rounded-lg 
+  text-md 
+  outline-none
+  border-2
+  ${errors[id] ? "border-rose-500" : "border-slate-300"}
+  ${errors[id] ? "focus:border-rose-500" : "focus:border-slate-800"}
+  `;
   return (
     <div className="">
       {label && (
@@ -34,24 +46,26 @@ const Input: React.FC<InputProps> = ({
         </label>
       )}
       <div className="w-full">
-        <input
-          id={id}
-          disabled={disabled}
-          {...register(id, { required })}
-          placeholder=" "
-          type={type}
-          className={`
-          w-full 
-          px-4 
-          py-2 
-          rounded-lg 
-          text-md 
-          outline-none
-          border-2
-          ${errors[id] ? "border-rose-500" : "border-slate-300"}
-          ${errors[id] ? "focus:border-rose-500" : "focus:border-slate-800"}
-          `}
-        />
+        {type === "number" ? (
+          <InputMask
+            id={id}
+            disabled={disabled}
+            mask="8 (999) 999-99-99"
+            maskChar={null}
+            {...register(id, { required })}
+            placeholder=" "
+            className={className}
+          />
+        ) : (
+          <input
+            id={id}
+            disabled={disabled}
+            {...register(id, { required })}
+            placeholder=" "
+            type={type}
+            className={className}
+          />
+        )}
       </div>
     </div>
   );

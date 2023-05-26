@@ -1,20 +1,7 @@
+import { PATH_ARRAY } from "@/constans";
 import { useParams, useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
-
-const ABOUT_PATH = "about";
-const SHOP_PATH = "shop";
-const SERVICE_PATH = "services";
-const CONTACTS_PATH = "contacts";
-const BASKET_PATH = "basket";
-
-const PATH_ARRAY = [
-  { path: ABOUT_PATH, name: "О нас" },
-  { path: SHOP_PATH, name: "Каталог" },
-  { path: SERVICE_PATH, name: "Цены" },
-  { path: CONTACTS_PATH, name: "Контакты" },
-  { path: BASKET_PATH, name: "Оформление заказа" },
-];
 
 interface PathProps {
   name?: string;
@@ -22,30 +9,54 @@ interface PathProps {
 
 const Path: React.FC<PathProps> = ({ name }) => {
   const route = useRouter();
-  const [path, setPath] = useState("");
 
-  const link = useCallback(
-    (link: string) => {
-      if (name) {
-        route.push(`/${link}`);
-      }
-      return;
-    },
-    [name]
-  );
+  let P = "";
+  let N = "";
+
+  for (let path in PATH_ARRAY) {
+    if (route.asPath.includes(PATH_ARRAY[path].path)) {
+      P = PATH_ARRAY[path].name;
+      N = PATH_ARRAY[path].path;
+    }
+  }
+
+  const routeInPage = useCallback(() => {
+    if (name) {
+      route.push(N);
+    }
+  }, [name]);
+
+  const routeInMain = useCallback(() => {
+    route.push("/");
+  }, []);
 
   return (
     <div className="py-6 flex text-sm font-medium">
       <div
-        onClick={() => route.push("/")}
+        onClick={routeInMain}
         className="inline-block text-orange-500 cursor-pointer hover:underline"
       >
         Главная
       </div>
-
+      {P !== "" ? (
+        <div onClick={routeInPage} className="flex">
+          <span className="px-1 text-slate-500">/</span>
+          <span
+            className={`
+            ${name ? "text-orange-500" : "text-slate-900"}
+            ${name && "cursor-pointer"}
+            ${name && "hover:underline"}
+            `}
+          >
+            {P}
+          </span>
+        </div>
+      ) : (
+        ""
+      )}
       {name && (
         <div className="flex">
-          <span className="px-2 text-slate-500">/</span>
+          <span className="px-1 text-slate-500">/</span>
           <span className=" text-slate-900">{name}</span>
         </div>
       )}
@@ -54,29 +65,3 @@ const Path: React.FC<PathProps> = ({ name }) => {
 };
 
 export default Path;
-
-// {PATH_ARRAY.map(
-//   (i) =>
-//     route.asPath.split("/").includes(i.path) && (
-//       <div key={i.path} className="flex">
-//         <div
-//           className="
-//             inline-block
-//             px-2
-//             text-slate-500"
-//         >
-//           /
-//         </div>
-//         <div
-//           onClick={() => link(i.path)}
-//           className={`
-//             inline-block
-//             ${name ? "text-orange-500" : "text-slate-900"}
-//             ${name && "cursor-pointer hover:underline"}
-//               `}
-//         >
-//           {i.name}
-//         </div>
-//       </div>
-//     )
-// )}

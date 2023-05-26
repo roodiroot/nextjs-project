@@ -3,6 +3,7 @@ import Heading from "@/components/Heading";
 import CardList from "@/components/shop/CardList";
 import Path from "@/components/utils-component/Path";
 import axios from "axios";
+import Head from "next/head";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -32,33 +33,49 @@ const Search = () => {
     })();
   }, [brandQuery]);
   return (
-    <Container>
-      <Path />
-      <div
-        className="
+    <>
+      <Head>
+        <title>Результаты поиска</title>
+        <meta
+          name="description"
+          content="Если вы ищите тех кто установит вам кондиционер, можете связаться с нами через электронную почту info@kondish.su, sale@kondish.su или позвонить нам по телефону 8 (915) 329-42-09. Мы работаем ежедневно, включая выходные и праздничные дни."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Container>
+        <Path />
+        <div
+          className="
             w-full
             h-full
             py-8
             flex
             flex-col
             "
-      >
-        <Heading
-          title={`Результаты поиска по запросу: "${brandQuery}"`}
-          subtitle={`Всего найдено товаров - (${count})`}
-        />
-        <div
-          className="
+        >
+          <Heading
+            title={`Результаты поиска по запросу: "${brandQuery}"`}
+            subtitle={`Всего найдено товаров - (${count})`}
+          />
+          <div
+            className="
                 grid
                 justify-items-center
                 grid-cols-auto
                 gap-6
                 "
-        >
-          <CardList loading={loading} error={error} products={productsList} search />
+          >
+            <CardList
+              loading={loading}
+              error={error}
+              products={productsList}
+              search
+            />
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 };
 

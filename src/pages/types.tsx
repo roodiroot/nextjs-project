@@ -1,27 +1,37 @@
 import Container from "@/components/Container";
 import Path from "@/components/utils-component/Path";
 import useTypeAndBrand from "@/hooks/useTypeAndBrand";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 const Types = () => {
-  const router = useRouter()
-  const {fetchTypes, types} = useTypeAndBrand()
+  const router = useRouter();
+  const { fetchTypes, types } = useTypeAndBrand();
   useEffect(() => {
-    if(!types.length){
-      fetchTypes()
+    if (!types.length) {
+      fetchTypes();
     }
-  }, [])
+  }, []);
   return (
-    <Container>
-      <Path />
-      <div className="w-full grid grid-cols-auto gap-10 mb-20">
-        {
-          types?.map((i: any) => (
-            <div 
-            onClick={() => router.push(`/shop?type=${i.id}`)}
-            key={i.id} 
-            className="
+    <>
+      <Head>
+        <title>Типы устройств</title>
+        <meta
+          name="description"
+          content="Мы предлагаем все возможные типы устройств для установки дома или в офисе, мульти сплит-системы для больших помещений, сплит-системы для одной или нескольких комнат."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Container>
+        <Path />
+        <div className="w-full grid grid-cols-auto gap-10 mb-20">
+          {types?.map((i: any) => (
+            <div
+              onClick={() => router.push(`/shop?type=${i.id}`)}
+              key={i.id}
+              className="
             shadow-sm
             hover:shadow-md
             w-full 
@@ -38,20 +48,22 @@ const Types = () => {
             "
             >
               <div className="flex flex-col p-6">
-              <span className="
+                <span
+                  className="
                           cursor-pointer 
                           text-[24px]  
                           uppercase 
                           font-bold
-              ">
-                {i.typeName}
-              </span>
+              "
+                >
+                  {i.typeName}
+                </span>
               </div>
             </div>
-          ))
-        }
-      </div>
-    </Container>
+          ))}
+        </div>
+      </Container>
+    </>
   );
 };
 

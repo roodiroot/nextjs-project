@@ -10,7 +10,7 @@ const Services = () => {
         <title>Прайс на услуги</title>
         <meta
           name="description"
-          content="Стоимость услуг устаноки кондиционеров"
+          content="Стоимость услуг устаноки кондиционеров компании Kondish, перечень услуг установки с ценами."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

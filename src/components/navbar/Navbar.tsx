@@ -42,7 +42,6 @@ const Navbar: React.FC = () => {
             <Logo />
             <div className="flex-1 flex items-center justify-between border-x px-4 gap-5">
               <Menu />
-              {/* <Search /> */}
             </div>
             <div className="flex gap-4 items-center justify-between">
               <div onClick={(e) => router.push("/basket")} className="relative">

@@ -44,10 +44,10 @@ const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
             loop={true}
             spaceBetween={30}
             className="w-full h-[calc(100% - 150px)]"
-            thumbs={{
-              swiper:
-                thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
-            }}
+            // thumbs={{
+            //   swiper:
+            //     thumbsSwiper && !thumbsSwiper?.destroyed ? thumbsSwiper : null,
+            // }}
             modules={[FreeMode, Thumbs]}
           >
             {list?.map((i: any) => (
@@ -78,7 +78,7 @@ const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
         {/** SLIDER FOR */}
         {list ? (
           <Swiper
-            onSwiper={setThumbsSwiper}
+            // onSwiper={setThumbsSwiper}
             scrollbar={{
               hide: true,
               horizontalClass: st.castomscroll,

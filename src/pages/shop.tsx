@@ -143,8 +143,11 @@ function Shop() {
   return (
     <>
       <Head>
-        <title>Каталог товаров</title>
-        <meta name="description" content="Каталог товаров на наших складах." />
+        <title>Каталог товаров на складе интернет магазина Kondish</title>
+        <meta
+          name="description"
+          content="Если вы ищете лучший способ охладить свой дом, то установка кондиционера или сплит-системы - это то, что вам нужно! Наши продукты обеспечат комфортную температуру в вашем доме в любое время года, а также помогут снизить расходы на электроэнергию."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

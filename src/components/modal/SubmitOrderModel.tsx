@@ -29,16 +29,17 @@ const SubmitOrderModel = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
+    const message = `${data.name} тел: ${data.phone}`;
     axios
       .post("https://api.kondish.su/api/send-message", {
-        message: JSON.stringify(data),
+        message,
       })
       .then(() => {
         toast.success("Ожидайте звонка");
         submitOrder.onClose();
         reset();
       })
-      .catch((error) => toast.success("Successfully toasted!"))
+      .catch((error) => toast.success("ошибка отправки формы"))
       .finally(() => {
         setIsLoading(false);
       });

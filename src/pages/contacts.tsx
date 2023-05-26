@@ -10,8 +10,14 @@ const Contacts = () => {
   return (
     <>
       <Head>
-        <title>Контакты</title>
-        <meta name="description" content="Старница контактов" />
+        <title>
+          Компания Kondish, установка и продажа кондиционеров и сплит-систем в
+          Москве и Московской области
+        </title>
+        <meta
+          name="description"
+          content="Мы готовы помочь вам выбрать оптимальное решение для создания комфортных условий в вашем доме или офисе в любое время года. Вы также можете связаться с нами через электронную почту info@kondish.su, sale@kondish.su или позвонить нам по телефону 8 (915) 329-42-09. Мы работаем ежедневно, включая выходные и праздничные дни."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

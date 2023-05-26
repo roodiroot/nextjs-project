@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="mb-4 text-lg font-medium">
               Продажа и установка сплит-систем и систем кондиционирования
             </div>
-            <div className="mb-4">
+            <nav className="mb-4">
               <Link href="/services" className="block hover:underline">
                 Цены на услуги
               </Link>
@@ -26,11 +26,11 @@ const Footer = () => {
               <Link href="/about" className="block hover:underline">
                 О нас
               </Link>
-            </div>
+            </nav>
           </div>
           <div className="flex flex-col justify-between">
             <div className="mb-4 text-lg font-medium">Каталог</div>
-            <div className="mb-4">
+            <nav className="mb-4">
               <Link href="/shop?type=3" className="block hover:underline">
                 Внутренние блоки
               </Link>
@@ -40,20 +40,20 @@ const Footer = () => {
               <Link href="/shop?type=2" className="block hover:underline">
                 Мульти сплит-системы
               </Link>
-            </div>
+            </nav>
             <div className="mb-4 text-lg font-medium">Магазин</div>
-            <div className="mb-4">
+            <nav className="mb-4">
               <Link href="/brands" className="block hover:underline">
                 Бренды
               </Link>
               <Link href="/types" className="block hover:underline">
                 Типы усстойств
               </Link>
-            </div>
+            </nav>
           </div>
           <div className="flex flex-col justify-between">
             <div className="mb-4 text-lg font-medium">Покупателю</div>
-            <div className="mb-4">
+            <nav className="mb-4">
               <Link href="/payment" className="block hover:underline">
                 Оплата
               </Link>
@@ -63,7 +63,7 @@ const Footer = () => {
               <Link href="/delivery" className="block hover:underline">
                 Доставка
               </Link>
-            </div>
+            </nav>
             <div className="flex-1 items-start mb-2">
               <div className="mb-2 font-semibold">Мессенджеры:</div>
               <SocialIcons />

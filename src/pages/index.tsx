@@ -12,10 +12,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Главная</title>
+        <title>
+          Kondish: установка и подбор кондиционеров и сплит систем в Москве и
+          Московской области
+        </title>
         <meta
           name="description"
-          content="Установка кондиционеров в Москве и Московской области"
+          content="Мы предлагаем широкий выбор кондиционеров и сплит-систем от ведущих производителей, которые отличаются не только высоким качеством, но и энергоэффективностью. Работаем в Москве и Московской области"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

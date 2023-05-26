@@ -5,7 +5,7 @@ import MenuItem from "./MenuItem";
 const Menu: React.FC = () => {
   return (
     <>
-      <div
+      <nav
         className="
           hidden 
           md:flex 
@@ -23,7 +23,7 @@ const Menu: React.FC = () => {
         <MenuItem to="/shop" label="Магазин" />
         <MenuItem to="/contacts" label="Контакты" />
         <MenuItem to="/about" label="О нас" />
-      </div>
+      </nav>
     </>
   );
 };

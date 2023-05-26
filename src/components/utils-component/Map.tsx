@@ -11,7 +11,7 @@ const MapComponent = () => {
             zoom: 17,
           }}
         >
-          <ZoomControl options={{ float: "right" }} />
+          <ZoomControl options={{ position: { top: 10, left: 5 } }} />
           <Placemark geometry={[55.72080356903587, 37.66179649999999]} />
         </Map>
       </div>

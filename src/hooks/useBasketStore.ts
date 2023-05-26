@@ -7,6 +7,7 @@ interface BasketStore {
   summ: number;
   addInBasket: (obj: any) => void;
   remooveElement: (id: number) => void;
+  reset: () => void;
   _updateStore: (list: any, text: string) => void;
 }
 
@@ -32,6 +33,9 @@ const useBasketStore = create<BasketStore>((set, get) => ({
   remooveElement: (id) => {
     const basketList = get().basketList.filter((i) => i.id !== id);
     get()._updateStore(basketList, "Товар удален из корзины");
+  },
+  reset: () => {
+    set({ basketList: [], summ: 0 });
   },
 }));
 

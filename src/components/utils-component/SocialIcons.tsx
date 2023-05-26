@@ -1,14 +1,23 @@
 import VKIcon from "@/components/utils-component/VKIcon";
 import { TbBrandTelegram, TbBrandWhatsapp } from "react-icons/tb";
 import { FaViber } from "react-icons/fa";
+import { useRouter } from "next/router";
+import { useCallback } from "react";
 
 interface SocIconsProps {
   dark?: boolean;
 }
 const SocialIcons: React.FC<SocIconsProps> = ({ dark }) => {
+  const router = useRouter();
+  const route = useCallback((path: string | undefined) => {
+    if (path) {
+      router.push(path);
+    }
+  }, []);
   return (
     <div className="flex flex-row gap-2">
       <div
+        onClick={() => route(process.env.NEXT_PUBLIC_TG_LINK)}
         className={`
         ${dark ? "text-slate-900" : "text-slate-300 "}
         ${dark ? "border-slate-900 " : "border-slate-300 "}
@@ -29,6 +38,7 @@ const SocialIcons: React.FC<SocIconsProps> = ({ dark }) => {
         />
       </div>
       <div
+        onClick={() => route(process.env.NEXT_PUBLIC_WHATSAPP_LINK)}
         className={`
         ${dark ? "text-slate-900" : "text-slate-300 "}
         ${dark ? "border-slate-900 " : "border-slate-300 "}
@@ -49,6 +59,7 @@ const SocialIcons: React.FC<SocIconsProps> = ({ dark }) => {
         />
       </div>
       <div
+        onClick={() => route(process.env.NEXT_PUBLIC_VIBER_LINK)}
         className={`
         ${dark ? "text-slate-900" : "text-slate-300 "}
         ${dark ? "border-slate-900 " : "border-slate-300 "}
@@ -69,6 +80,7 @@ const SocialIcons: React.FC<SocIconsProps> = ({ dark }) => {
         />
       </div>
       <div
+        onClick={() => route(process.env.NEXT_PUBLIC_VK_LINK)}
         className={`
         ${dark ? "text-slate-900" : "text-slate-300 "}
         ${dark ? "border-slate-900 " : "border-slate-300 "}

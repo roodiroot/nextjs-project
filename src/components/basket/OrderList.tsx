@@ -7,6 +7,7 @@ interface OrderProps {
   getOrder: () => void;
   installation: boolean;
   distance?: number;
+  setTotal: (r: any) => void;
 }
 
 const OrderList: React.FC<OrderProps> = ({
@@ -15,15 +16,23 @@ const OrderList: React.FC<OrderProps> = ({
   summ,
   installation,
   distance,
+  setTotal,
 }) => {
-  console.log(installation);
   let total = summ;
+
   if (installation) {
     total += 14000;
   }
   if (distance) {
     total += 30 * distance;
   }
+  useEffect(() => {
+    setTotal({
+      totalPrice: total,
+      installation,
+      distance,
+    });
+  }, [total]);
 
   return (
     <div className="flex-none w-full bg-slate-100 rounded-md md:max-w-[315px] h-auto p-8">

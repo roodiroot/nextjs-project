@@ -4,7 +4,6 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import Button from "../navbar/Button";
 import Input from "../inputs/Input";
-import InputClient from "../inputs/InputClient";
 
 interface FeedbackFormProps {
   className?: string;
@@ -27,9 +26,10 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
+    const message = `${data.name} тел: ${data.phone}`;
     axios
       .post("https://api.kondish.su/api/send-message", {
-        message: JSON.stringify(data),
+        message,
       })
       .then(() => {
         toast.success("Ожидайте звонка");
@@ -102,6 +102,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
             register={register}
             errors={errors}
             required
+            type="number"
           />
         </div>
         <div className="flex-none">

@@ -95,7 +95,7 @@ const Contacts = () => {
             <div className="flex-1 flex-col justify-between">
               <div className="text-2xl mb-5 font-medium">Наши реквизиты</div>
               <div className="mb-3">
-                Полное наименование предприятия: Индивидуальный предприниматель
+                Полное наименование предприятия: «Индивидуальный предприниматель
                 Семочкина Наталья Николаевна»
               </div>
               <div className="mb-3">

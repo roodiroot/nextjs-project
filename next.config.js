@@ -4,11 +4,9 @@ const nextConfig = {
   devIndicators: {
     buildActivity: false,
   },
-
   images: {
-    domains: ["localhost:5000", "api-shop.kondish.su"],
+    domains: ["api-shop.kondish.su"],
   },
-  unoptimized: true,
 };
 
 module.exports = nextConfig;

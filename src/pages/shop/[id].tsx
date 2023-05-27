@@ -5,7 +5,7 @@ import { TbHandClick } from "react-icons/tb";
 
 import Container from "@/components/Container";
 import Heading from "@/components/Heading";
-import SliderPhotos from "@/components/card-product/SliderPhotos";
+import SliderPhotos from "@/components/card-product/SliderPhotos.jsx";
 import Button from "@/components/navbar/Button";
 import Teg from "@/components/shop/Teg";
 import useSelectProduct from "@/hooks/useSelectProduct";

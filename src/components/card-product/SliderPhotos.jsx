@@ -1,27 +1,27 @@
 import Image from "next/image";
 import { useCallback, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs, Scrollbar } from "swiper";
+import { FreeMode, Thumbs, Scrollbar } from "swiper";
 
 import st from "../../styles/slider.module.css";
 
 import "swiper/css";
 import useShowImage from "@/hooks/useShowImage";
 
-interface SliderProps {
-  list: string[];
-  loading?: boolean;
-  vendorcode?: number | string;
-}
-const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
+// interface SliderProps {
+//   list: string[];
+//   loading?: boolean;
+//   vendorcode?: number | string;
+// }
+const SliderPhotos = ({ list, vendorcode }) => {
   const showImagePopap = useShowImage();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  const getImage = useCallback((src: string) => {
+  const getImage = useCallback((src) => {
     showImagePopap.onOpen(src);
   }, []);
 
-  const myLoader = (i: string) => {
+  const myLoader = (i) => {
     return `${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${i}.png`;
   };
 
@@ -44,13 +44,13 @@ const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
             loop={true}
             spaceBetween={30}
             className="w-full h-[calc(100% - 150px)]"
-            // thumbs={{
-            //   swiper:
-            //     thumbsSwiper && !thumbsSwiper?.destroyed ? thumbsSwiper : null,
-            // }}
+            thumbs={{
+              swiper:
+                thumbsSwiper && !thumbsSwiper?.destroyed ? thumbsSwiper : null,
+            }}
             modules={[FreeMode, Thumbs]}
           >
-            {list?.map((i: any) => (
+            {list?.map((i) => (
               <SwiperSlide
                 onClick={() =>
                   getImage(
@@ -78,7 +78,7 @@ const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
         {/** SLIDER FOR */}
         {list ? (
           <Swiper
-            // onSwiper={setThumbsSwiper}
+            onSwiper={setThumbsSwiper}
             scrollbar={{
               hide: true,
               horizontalClass: st.castomscroll,
@@ -93,7 +93,7 @@ const SliderPhotos: React.FC<SliderProps> = ({ list, vendorcode }) => {
             className="w-full max-h-[150px] pb-1"
             style={{ paddingBottom: "10px" }}
           >
-            {list?.map((i: any) => (
+            {list?.map((i) => (
               <SwiperSlide
                 key={i}
                 className="overflow-hidden relative border-1 rounded-md bg-white w-[33%] cursor-pointer"

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import { BiSearch } from "react-icons/bi";
 
 const SearchForShop = () => {
   const router = useRouter();
@@ -22,15 +23,17 @@ const SearchForShop = () => {
       <input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="w-full h-full flex-1 py-3 px-4 outline-none"
+        className="w-full h-full flex-1 py-3 px-4 outline-none placeholder:text-sm"
         type="text"
         onKeyDown={submit}
+        placeholder="Введите минимум 4 символа"
       />
       <button
         onClick={searchPush}
-        className="w-[150px] h-full bg-zinc-400 hover:bg-orange-500 transition py-2 rounded-r-md mr-[2px] text-white"
+        className="relative sm:w-[120px] w-[70px] h-full bg-zinc-400 hover:bg-orange-500 transition py-2 rounded-r-md mr-[2px] text-white"
       >
-        Найти
+        <span className="hidden sm:block">Найти</span>
+        <BiSearch size={24} className="sm:hidden mx-auto" />
       </button>
     </div>
   );

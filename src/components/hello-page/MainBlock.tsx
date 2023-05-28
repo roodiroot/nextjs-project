@@ -15,7 +15,7 @@ const MainBlock = () => {
         md:flex-row 
         flex-col 
         mb-4 
-        min-h-[50vh]
+        min-h-[70vh]
         sm:min-h-[500px]"
     >
       <div

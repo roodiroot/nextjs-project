@@ -1,8 +1,10 @@
 import Container from "@/components/Container";
 import Bunner from "@/components/bunner/Bunner";
 import Advantages from "@/components/hello-page/Advantages";
+import DescBlock from "@/components/hello-page/DescBlock";
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import Gallery from "@/components/hello-page/Gallery";
+import Guarantee from "@/components/hello-page/Guarantee";
 import MainBlock from "@/components/hello-page/MainBlock";
 import Owerviews from "@/components/hello-page/Owerviews";
 import PopularProducts from "@/components/hello-page/PopularProducts";
@@ -26,9 +28,11 @@ export default function Home() {
       <div className={`pb-24 pt-8`}>
         <Container>
           <MainBlock />
+          <DescBlock />
           <Advantages />
           <Gallery />
           <Owerviews />
+          <Guarantee />
           <PopularProducts />
           <FeedbackForm />
           <Bunner />

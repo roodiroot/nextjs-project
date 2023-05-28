@@ -23,7 +23,7 @@ const Teg: React.FC<TegProps> = ({
         whitespace-nowrap
         py-1 
         px-2 
-        rounded-sm 
+        rounded-md 
         border-2 
         font-bold 
         text-sm 

@@ -14,10 +14,10 @@ const Heading: React.FC<HeadingProps> = ({
     <div
       className={`${className} ${center ? "text-center" : "text-left"} pb-6`}
     >
-      <div className="sm:text-3xl text-2xl font-bold text-slate-900">
+      <div className="sm:text-3xl text-2xl font-bold text-slate-800">
         {title}
       </div>
-      <div className="text-slate-900 mt-2">{subtitle}</div>
+      <div className="text-slate-800 mt-2">{subtitle}</div>
     </div>
   );
 };

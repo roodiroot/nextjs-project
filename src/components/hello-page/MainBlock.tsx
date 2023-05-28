@@ -14,7 +14,7 @@ const MainBlock = () => {
         rounded-md 
         md:flex-row 
         flex-col 
-        mb-4 
+        mb-20 
         min-h-[70vh]
         sm:min-h-[500px]"
     >

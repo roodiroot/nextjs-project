@@ -75,7 +75,7 @@ const PopularProducts = () => {
       </div>
       <div
         onClick={(e) => router.push("/shop")}
-        className="text-orange-500 underline cursor-pointer"
+        className="text-orange-500 underline cursor-pointer text-xl"
       >
         Смотреть еще...
       </div>

@@ -10,5 +10,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-
-// api-shop.kondish.su

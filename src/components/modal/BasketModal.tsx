@@ -46,6 +46,8 @@ const BasketModal = () => {
         })
         .then(() => {
           toast.success("Ожидайте звонка");
+          // @ts-ignore
+          window.ym(93762617, "reachGoal", "target");
           onClose();
           basket.reset();
           reset();

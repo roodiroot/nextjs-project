@@ -2,7 +2,12 @@ import { YMaps, Map, ZoomControl, Placemark } from "@pbe/react-yandex-maps";
 
 const MapComponent = () => {
   return (
-    <YMaps>
+    <YMaps
+      query={{
+        apikey: "d259a9d4-d627-4f32-981c-ee0d1bd85650",
+        lang: "ru_RU",
+      }}
+    >
       <div className="absolute inset-0">
         <Map
           className="w-full h-full"

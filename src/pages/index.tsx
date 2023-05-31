@@ -23,6 +23,23 @@ export default function Home() {
           content="Мы предлагаем широкий выбор кондиционеров и сплит-систем от ведущих производителей, которые отличаются не только высоким качеством, но и энергоэффективностью. Работаем в Москве и Московской области"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="yandex-verification" content="d35be75676e8516e" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      
+                ym(93762617, "init", {
+                      clickmap:true,
+                      trackLinks:true,
+                      accurateTrackBounce:true,
+                      webvisor:true
+                });
+              `,
+          }}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={`pb-24 pt-8`}>

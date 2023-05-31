@@ -33,6 +33,8 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
       })
       .then(() => {
         toast.success("Ожидайте звонка");
+        // @ts-ignore
+        window.ym(93762617, "reachGoal", "target");
         reset();
       })
       .catch((error) => toast.error("Ошибка отправки формы!"))

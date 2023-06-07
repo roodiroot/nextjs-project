@@ -24,7 +24,7 @@ const galleryList: GaleryList[] = [
   },
   {
     id: 3,
-    imgSrc: "/image/gallery/3.jpg",
+    imgSrc: "/image/gallery/13.jpg",
     product: "Energolux SAS12G2-AI/SAU12G2-AI",
     adress: "Коттеджный поселок Стольный",
   },

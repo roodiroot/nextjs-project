@@ -25,26 +25,27 @@ const About = () => {
         <Container>
           <Path />
           <Heading title="О компании" className="mb-8" />
-          <div className="relative w-full overflow-hidden rounded-md pt-[30%] mb-8">
+          <div className="relative w-full min-h-[40vh] overflow-hidden rounded-md mb-8">
             <Image
               width={1500}
               height={300}
               src="/image/about/about.jpeg"
               alt="img"
-              className="absolute top-0"
+              className="absolute w-full h-full object-cover"
             />
           </div>
-          <div className="w-full flex flex-col sm:flex-row gap-6 mb-8">
+          <div className="w-full flex flex-col sm:flex-row gap-6 mb-8 sm:text-lg">
             <p className="flex-1">
-              Наша компания является лидером на&nbsp;рынке установки
-              и&nbsp;продажи кондиционеров в&nbsp;Москве и&nbsp;Московской
-              области. Мы&nbsp;предлагаем широкий ассортимент кондиционеров
-              от&nbsp;ведущих мировых производителей, таких как Royal Clima,
-              Energolux, Hisense, Funai, Daikin, Mitsubishi Electric, General
-              Climate и&nbsp;другие. Мы&nbsp;работаем с&nbsp;клиентами всех
-              типов&nbsp;&mdash; от&nbsp;частных лиц до&nbsp;крупных
-              корпоративных клиентов, которые нуждаются в&nbsp;установке
-              и&nbsp;обслуживании кондиционеров любой сложности.
+              <span className="font-bold">Kondish</span> является лидером
+              на&nbsp;рынке установки и&nbsp;продажи кондиционеров в&nbsp;Москве
+              и&nbsp;Московской области. Мы&nbsp;предлагаем широкий ассортимент
+              кондиционеров от&nbsp;ведущих мировых производителей, таких как
+              Royal Clima, Energolux, Hisense, Funai, Daikin, Mitsubishi
+              Electric, General Climate и&nbsp;другие. Мы&nbsp;работаем
+              с&nbsp;клиентами всех типов&nbsp;&mdash; от&nbsp;частных лиц
+              до&nbsp;крупных корпоративных клиентов, которые нуждаются
+              в&nbsp;установке и&nbsp;обслуживании кондиционеров любой
+              сложности.
             </p>
             <p className="flex-1">
               Наша команда состоит из&nbsp;высококвалифицированных специалистов,
@@ -55,12 +56,12 @@ const About = () => {
               оборудования, а&nbsp;также последующее техническое обслуживание.
             </p>
           </div>
-          <div className="w-full flex flex-col sm:flex-row gap-6 mb-8">
+          <div className="w-full flex flex-col-reverse sm:flex-row gap-6 mb-8 sm:text-lg">
             <div className="flex-1">
               <div className="font-bold text-2xl mb-4">
                 Мы являемся надежным поставщиком систем кондиционирования
               </div>
-              <div className="text-lg mb-4">
+              <div className="sm:text-xl text-lg mb-4">
                 При всем при этом мы&nbsp;всегда рекомендуем нашим клиентам
                 только ту технику которая проявляет себя наилучшим образом,
                 с&nbsp;безупречной стороны
@@ -73,11 +74,11 @@ const About = () => {
               о&nbsp;том, как мы&nbsp;можем помочь вам достичь комфортной
               атмосферы в&nbsp;любом помещении!
             </div>
-            <div className="flex-1 relative overflow-hidden rounded-md">
+            <div className="flex-1 relative overflow-hidden rounded-md min-h-[40vh]">
               <Image
                 width={500}
                 height={300}
-                src="/image/about/about.jpeg"
+                src="/image/about/about2.jpg"
                 alt="img"
                 className="absolute w-full h-full object-cover"
               />

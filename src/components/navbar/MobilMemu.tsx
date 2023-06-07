@@ -40,6 +40,10 @@ const MobilMemu: React.FC = () => {
             <Button onClick={closeAndModalShow} label="Заявка на установку" />
           </div>
           <div className="py-2 mb-2 flex flex-col items-center">
+            <a className="text-lg font-semibold" href="tel:84956752699">
+              8 (495) 675-26-99
+              <span className="text-sm"> c 9:00 до 21:00</span>
+            </a>
             <a className="text-lg font-semibold" href="tel:89153294209">
               8 915 329-42-09
             </a>

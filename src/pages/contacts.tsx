@@ -34,6 +34,12 @@ const Contacts = () => {
                 <div className="text-slate-900 font-medium text-lg  inline-block cursor-pointer">
                   <a href="tel:89153294209">8 (915) 329-42-09</a>
                 </div>
+                <div className="text-slate-900 font-medium text-lg  inline-block cursor-pointer">
+                  <a href="tel:84956752699">
+                    8 (495) 675-26-99
+                    <span className="text-sm"> c 9:00 до 21:00</span>
+                  </a>
+                </div>
               </div>
               <div className="flex-1 items-start">
                 <div className="text-slate-500 mb-4">Электронная почта:</div>

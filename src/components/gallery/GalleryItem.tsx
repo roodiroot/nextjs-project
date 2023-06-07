@@ -16,7 +16,7 @@ const GalleryItem: React.FC<GalleryItem> = ({ element, onClick }) => {
         w-full 
         h-60 
         border 
-        rounded-md
+        rounded-xl
         relative
         overflow-hidden
         flex

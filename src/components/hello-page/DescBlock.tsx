@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const DescBlock = () => {
   return (
-    <div className="w-full flex flex-col-reverse md:flex-row text-slate-900">
+    <div className="w-full flex flex-col-reverse md:flex-row text-slate-900 mb-20">
       <div className="w-full min-w-[50%] flex-1">
         <Image
           alt="img"

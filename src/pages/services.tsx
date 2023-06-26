@@ -57,6 +57,17 @@ const Services = () => {
                 </tr>
               </tbody>
             </table>
+            <div className="w-full text-base text-slate-900">
+              Для консультации или заказа установки звоните по телефонам{" "}
+              <a className="text-orange-500" href="tel:89153294209">
+                8 (915) 329-42-09
+              </a>
+              ,{" "}
+              <a className="text-orange-500" href="tel:84956752699">
+                8 (495) 675-26-99
+                <span className="text-sm text-slate-900"> c 9:00 до 21:00</span>
+              </a>
+            </div>
             <div className="w-full text-sm text-slate-500">
               *Обращаем внимание на то что цены указаны с учетом преобретения
               техники у нас в магазине. Если прибор куплен в другом месте цена
@@ -123,6 +134,17 @@ const Services = () => {
                 </tr>
               </tbody>
             </table>
+            <div className="w-full text-base text-slate-900">
+              Для консультации или заказа установки звоните по телефонам{" "}
+              <a className="text-orange-500" href="tel:89153294209">
+                8 (915) 329-42-09
+              </a>
+              ,{" "}
+              <a className="text-orange-500" href="tel:84956752699">
+                8 (495) 675-26-99
+                <span className="text-sm text-slate-900"> c 9:00 до 21:00</span>
+              </a>
+            </div>
             <div className="w-full text-sm text-slate-500">
               <span className="font-semibold">Внимание!</span> Услуга монтажа
               платная и выполняется не только с оборудованием, приобретённым у

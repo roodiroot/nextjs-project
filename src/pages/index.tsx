@@ -20,7 +20,7 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="Мы предлагаем широкий выбор кондиционеров и сплит-систем от ведущих производителей, которые отличаются не только высоким качеством, но и энергоэффективностью. Работаем в Москве и Московской области"
+          content="Широкий выбор кондиционеров и сплит-систем от ведущих производителей. Установка кондиционеров и сплит-систем в Москве и Московской области"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="yandex-verification" content="d35be75676e8516e" />
@@ -40,16 +40,18 @@ export default function Home() {
               `,
           }}
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon2.ico" />
       </Head>
       <div className={`pb-24 pt-8`}>
         <Container>
           <MainBlock />
-          <DescBlock />
+          <Guarantee />
+
           <Advantages />
+          <DescBlock />
           <Gallery />
           <Owerviews />
-          <Guarantee />
+
           <PopularProducts />
           <FeedbackForm />
           <Bunner />

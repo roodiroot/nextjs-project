@@ -95,7 +95,7 @@ const Advantages = () => {
     <div
       className="
       w-full 
-      py-24
+      py-40
       flex
       flex-col
       gap-4

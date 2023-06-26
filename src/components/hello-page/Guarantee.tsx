@@ -1,15 +1,14 @@
+import Link from "next/link";
+
 const Guarantee = () => {
   return (
-    <div className="w-full flex md:flex-row flex-col-reverse mb-20 text-slate-800">
+    <div className="w-full flex md:flex-row flex-col-reverse text-slate-900">
       <div
         className="
             text-lg 
             md:text-xl
             flex-1 
-            flex 
-            flex-col
-            justify-center 
-            items-center 
+
             md:py-8  
             md:px-10 
             lg:px-16 
@@ -19,9 +18,15 @@ const Guarantee = () => {
             px-4
             "
       >
-        Будьте уверены в&nbsp;нашей гарантии: если ваш кондиционер выйдет
-        из&nbsp;строя во время гарантийного срока, мы&nbsp;заменим его
-        на&nbsp;новый в&nbsp;тот&nbsp;же день.
+        Мы&nbsp;&mdash; профессионалы в&nbsp;климатической технике
+        с&nbsp;11-летним опытом. Работаем без выходных с&nbsp;8:00
+        до&nbsp;22:00. Гарантируем качественный результат.{" "}
+        <Link
+          href={"/services"}
+          className="inline-block text-orange-500 hover:underline cursor-pointer"
+        >
+          Цены на&nbsp;установку тут ...
+        </Link>
       </div>
       <div
         className="

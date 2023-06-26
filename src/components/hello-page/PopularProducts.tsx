@@ -36,7 +36,7 @@ const PopularProducts = () => {
   };
 
   return (
-    <div className="w-full pb-24">
+    <div className="w-full pb-40">
       <Heading className="pb-12" title="Часто смотрят" />
       <div
         className="

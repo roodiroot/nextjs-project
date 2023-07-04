@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
         transition
         duration-500
         w-full 
-        ${Y > 50 ? "bg-white/[82%]" : "bg-white"}
+        ${Y > 50 ? "bg-white/[82%]" : "bg-white/0"}
         ${Y > 50 && "translate-y-[-10px]"}
         ${Y > 50 && "backdrop-blur-sm"}
     `}
@@ -40,18 +40,24 @@ const Navbar: React.FC = () => {
           <div className="h-[10px]"></div>
           <div className="w-full flex flex-row gap-1 sm:gap-4 items-center justify-between">
             <Logo />
-            <div className="flex-1 flex items-center justify-between border-x px-4 gap-5">
+            <div className="flex-1 flex items-center justify-between border-l px-4 gap-5">
               <Menu />
             </div>
-            <div className="flex gap-4 items-center justify-between">
+            <div className="flex gap-6 items-center justify-between">
+              <div className="hidden sm:block">
+                {/* <Button outline onClick={onOpen} label="Обратный звонок" /> */}
+                <a
+                  href="tel:89153294209"
+                  className="whitespace-nowrap text-md font-semibold text-slate-900 hover:underline"
+                >
+                  8 (915) 329-42-09
+                </a>
+              </div>
               <div onClick={(e) => router.push("/basket")} className="relative">
                 <ElementButton
-                  element={<HiOutlineShoppingCart size={24} color="#3B3E51" />}
+                  element={<HiOutlineShoppingCart size={24} color="#0F172A" />}
                 />
                 <NotificationProduct />
-              </div>
-              <div className="hidden sm:block">
-                <Button outline onClick={onOpen} label="Обратный звонок" />
               </div>
               <div
                 onClick={showMenu.toggle}

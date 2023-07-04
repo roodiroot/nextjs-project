@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import React, { LegacyRef, RefObject, useCallback, useRef } from "react";
 import Heading from "../Heading";
 import GalleryItem from "../gallery/GalleryItem";
 import useShowImage from "@/hooks/useShowImage";
@@ -84,7 +84,11 @@ const galleryList: GaleryList[] = [
   },
 ];
 
-const Gallery = () => {
+interface GalleryProps {
+  element: RefObject<HTMLInputElement>;
+}
+
+const Gallery: React.FC<GalleryProps> = ({ element }) => {
   const showImage = useShowImage();
 
   const getImage = useCallback((src: string) => {
@@ -93,7 +97,7 @@ const Gallery = () => {
 
   return (
     <>
-      <div className="w-full">
+      <div ref={element} className="w-full mt-40">
         <Heading
           title="Одни из наших работ"
           subtitle="Здесь мы можете ознакомиться с несколькими из наших работ"

@@ -110,7 +110,7 @@ const Advantages = () => {
             <div className="text-2xl md:text-3xl font-bold w-full">
               Квалифицированных специалистов
             </div>
-            <div className="text-lg md:text-xl w-full">
+            <div className="text-lg md:text-xl md:leading-8 w-full">
               Kondish имеет в&nbsp;штате только сертифицированных специалистов,
               чьи знания и&nbsp;профессиональная компетенция подтверждены
               официальными документами.
@@ -129,7 +129,7 @@ const Advantages = () => {
             <div className="text-2xl md:text-3xl font-bold w-full">
               Техническую поддержку
             </div>
-            <div className="text-lg md:text-xl w-full">
+            <div className="text-lg md:text-xl md:leading-8 w-full">
               Если в&nbsp;течение гарантийного срока ваш кондиционер выйдет
               из&nbsp;строя, мы&nbsp;установим вам новый в&nbsp;тот&nbsp;же
               день. Вы&nbsp;можете быть уверены, что мы&nbsp;всегда отвечаем
@@ -153,7 +153,7 @@ const Advantages = () => {
             <div className="text-2xl md:text-3xl font-bold w-full">
               Установку и настройку
             </div>
-            <div className="text-lg md:text-xl w-full">
+            <div className=" text-lg md:text-xl md:leading-8 w-full">
               Наши опытные профессионалы с&nbsp;многолетним опытом могут быстро
               и&nbsp;качественно установить и&nbsp;настроить оборудование
               благодаря своим знаниям и&nbsp;умениям в&nbsp;данной области.
@@ -172,7 +172,7 @@ const Advantages = () => {
             <div className="text-2xl md:text-3xl font-bold w-full">
               Гарантию качества
             </div>
-            <div className="text-lg md:text-xl w-full">
+            <div className="text-lg md:text-xl md:leading-8 w-full">
               Наша компания предлагает кондиционеры только от&nbsp;известных
               производителей с&nbsp;гарантией качества. Это дает Вам уверенность
               в&nbsp;том, что&nbsp;Вы получите надежный продукт.

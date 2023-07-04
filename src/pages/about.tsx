@@ -34,7 +34,7 @@ const About = () => {
               className="absolute w-full h-full object-cover"
             />
           </div>
-          <div className="w-full flex flex-col sm:flex-row gap-6 mb-8 sm:text-lg">
+          <div className="w-full flex flex-col sm:flex-row gap-6 mb-8 sm:text-lg sm:leading-8">
             <p className="flex-1">
               <span className="font-bold">Kondish</span> является лидером
               на&nbsp;рынке установки и&nbsp;продажи кондиционеров в&nbsp;Москве
@@ -61,7 +61,7 @@ const About = () => {
               <div className="font-bold text-2xl mb-4">
                 Мы являемся надежным поставщиком систем кондиционирования
               </div>
-              <div className="sm:text-xl text-lg mb-4">
+              <div className="sm:text-xl sm:leading-8 text-lg mb-4">
                 При всем при этом мы&nbsp;всегда рекомендуем нашим клиентам
                 только ту технику которая проявляет себя наилучшим образом,
                 с&nbsp;безупречной стороны

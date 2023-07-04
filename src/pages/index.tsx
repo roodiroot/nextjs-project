@@ -6,11 +6,17 @@ import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import Gallery from "@/components/hello-page/Gallery";
 import Guarantee from "@/components/hello-page/Guarantee";
 import MainBlock from "@/components/hello-page/MainBlock";
+import MainBlockV2 from "@/components/hello-page/MainBlockV2";
 import Owerviews from "@/components/hello-page/Owerviews";
 import PopularProducts from "@/components/hello-page/PopularProducts";
 import Head from "next/head";
+import { useRef } from "react";
 
 export default function Home() {
+  const element = useRef<HTMLInputElement>(null);
+  const scrollToGallery = () => {
+    element?.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  };
   return (
     <>
       <Head>
@@ -42,14 +48,13 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon2.ico" />
       </Head>
-      <div className={`pb-24 pt-8`}>
+      <div className={`pb-24`}>
+        <MainBlockV2 scrollToGallery={scrollToGallery} />
         <Container>
-          <MainBlock />
-          <Guarantee />
-
           <Advantages />
           <DescBlock />
-          <Gallery />
+          <Guarantee />
+          <Gallery element={element} />
           <Owerviews />
 
           <PopularProducts />

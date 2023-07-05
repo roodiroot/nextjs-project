@@ -58,9 +58,10 @@ const About = () => {
           </div>
           <div className="w-full flex flex-col-reverse sm:flex-row gap-6 mb-8 sm:text-lg">
             <div className="flex-1">
-              <div className="font-bold text-2xl mb-4">
-                Мы являемся надежным поставщиком систем кондиционирования
-              </div>
+              <h2 className="font-bold text-2xl mb-4">
+                Мы являемся надежным поставщиком кондиционеров в Москве и
+                области.
+              </h2>
               <div className="sm:text-xl sm:leading-8 text-lg mb-4">
                 При всем при этом мы&nbsp;всегда рекомендуем нашим клиентам
                 только ту технику которая проявляет себя наилучшим образом,

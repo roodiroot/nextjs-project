@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Guarantee = () => {
   return (
-    <div className="w-full flex md:flex-row flex-col-reverse text-slate-900">
+    <div className="w-full flex md:flex-row flex-col text-slate-900">
       <div
         className="
             text-2xl

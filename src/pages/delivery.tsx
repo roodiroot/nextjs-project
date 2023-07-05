@@ -17,9 +17,9 @@ const Delivery = () => {
       <Container>
         <Path />
         <div className="w-full h-full">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
-            Условия доставки
-          </h2>
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">
+            Условия доставки кондиционеров
+          </h1>
           <div className="w-full flex flex-col lg:flex-row mb-10 gap-6">
             <div className="w-full rounded-md bg-slate-100 p-7">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">1.</h2>

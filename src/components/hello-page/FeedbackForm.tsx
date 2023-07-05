@@ -28,13 +28,13 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
     setIsLoading(true);
     const message = `${data.name} тел: ${data.phone}`;
     axios
-      .post("https://api.kondish.su/api/send-message", {
+      .post("https://api-shop.kondish.su/message", {
         message,
       })
       .then(() => {
         toast.success("Ожидайте звонка");
         // @ts-ignore
-        window.ym(93762617, "reachGoal", "target");
+        window.ym(93762617, "reachGoal", "target3");
         reset();
       })
       .catch((error) => toast.error("Ошибка отправки формы!"))

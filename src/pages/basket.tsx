@@ -67,9 +67,9 @@ const Basket = () => {
       <div>
         <Container>
           <Path />
-          <div className="w-full py12 text-3xl md:text-4xl font-bold text-start mb-2">
+          <h1 className="w-full py12 text-3xl md:text-4xl font-bold text-start mb-2">
             Моя корзина
-          </div>
+          </h1>
           <div className="text-md md:text-lg max-w-xl mb-6">
             После оформления заказа, оставайтесь на связи. Наш менеджер вскоре
             свяжется с вами, для уточнения деталей

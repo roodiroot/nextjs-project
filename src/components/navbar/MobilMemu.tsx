@@ -2,8 +2,10 @@ import useShowMobilMenu from "@/hooks/useShowMobilMenu";
 import Button from "./Button";
 import MenuItem from "./MenuItem";
 import useSubmitOrder from "@/hooks/useSubmitOrder";
+import useBanner from "@/hooks/useBanner";
 
 const MobilMemu: React.FC = () => {
+  const { isOpen } = useBanner();
   const showMenu = useShowMobilMenu();
   const modal = useSubmitOrder();
 
@@ -20,7 +22,7 @@ const MobilMemu: React.FC = () => {
             bg-white
             z-50 
             md:hidden
-            pt-12
+            ${isOpen ? "pt-32" : "pt-16"}
             ${showMenu.isOpen ? "translate-x-0" : "translate-x-[-100%]"}
     `}
     >

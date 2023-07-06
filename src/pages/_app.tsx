@@ -1,9 +1,11 @@
 import ImageShowComponent from "@/components/ImageShowComponent";
+import TopBaner from "@/components/bunner/TopBaner";
 import Footer from "@/components/footer/Footer";
 import BasketModal from "@/components/modal/BasketModal";
 import SubmitOrderModel from "@/components/modal/SubmitOrderModel";
 import MobilMemu from "@/components/navbar/MobilMemu";
 import Navbar from "@/components/navbar/Navbar";
+import useBanner from "@/hooks/useBanner";
 import ToasterProvider from "@/providers/ToasterProvider";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
@@ -19,6 +21,7 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { isOpen } = useBanner();
   return (
     <div
       className={`min-h-[100vh] flex flex-col justify-between ${golos.className}`}
@@ -28,8 +31,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <BasketModal />
       <SubmitOrderModel />
       <MobilMemu />
+
       <Navbar />
-      <div className="flex-1 pt-16">
+      <div className={`${isOpen ? "pt-32" : "pt-16"} flex-1`}>
         <Component {...pageProps} />
       </div>
       <Footer />

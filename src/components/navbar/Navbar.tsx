@@ -1,24 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
 import Container from "../Container";
 import Logo from "./Logo";
 import Menu from "./Menu";
-import Search from "./Search";
-import Button from "./Button";
 import ElementButton from "./ElementButton";
 import useSubmitOrder from "@/hooks/useSubmitOrder";
 import { useRouter } from "next/router";
 import NotificationProduct from "./NotificationProduct";
 import { useWindowScroll } from "@/hooks/useWindowScroll";
 import useShowMobilMenu from "@/hooks/useShowMobilMenu";
+import TopBaner from "../bunner/TopBaner";
+import useBanner from "@/hooks/useBanner";
 
 const Navbar: React.FC = () => {
+  const { isOpen, closeBanner, openBanner } = useBanner();
   const showMenu = useShowMobilMenu();
   const router = useRouter();
   const Y = useWindowScroll();
   const { onOpen } = useSubmitOrder();
+
+  useEffect(() => {
+    if (!Cookies.get("banner")) {
+      return openBanner();
+    }
+    Cookies.set("banner", "ok", { expires: 1 });
+  }, []);
+
+  const setCookiesCloseBanner = () => {
+    closeBanner();
+    Cookies.set("banner", "ok", { expires: 1 });
+  };
 
   return (
     <div
@@ -35,6 +49,17 @@ const Navbar: React.FC = () => {
         ${Y > 50 && "backdrop-blur-sm"}
     `}
     >
+      {isOpen && (
+        <TopBaner
+          closeBunner={setCookiesCloseBanner}
+          title="С&nbsp;7&nbsp;по&nbsp;15&nbsp;июля"
+          text="кондиционер с&nbsp;установкой
+          всего за&nbsp;32&nbsp;000&nbsp;руб."
+          button="Узнать подробности"
+          onClick={onOpen}
+        />
+      )}
+
       <div className="py-3 ">
         <Container maxWidth={1440}>
           <div className="h-[10px]"></div>

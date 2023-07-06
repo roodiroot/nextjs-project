@@ -1,3 +1,4 @@
+import useBanner from "@/hooks/useBanner";
 import useSubmitOrder from "@/hooks/useSubmitOrder";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,12 +9,18 @@ interface MainBlockV2Props {
 }
 
 const MainBlockV2: React.FC<MainBlockV2Props> = ({ scrollToGallery }) => {
+  const { isOpen } = useBanner();
   const submitOrder = useSubmitOrder();
   const scroll = useCallback(() => {
     scrollToGallery();
   }, []);
   return (
-    <div className="relative -mt-16">
+    <div
+      className={`
+    relative
+    ${isOpen ? "-mt-24" : "-mt-16"}
+    `}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="relative z-10 pt-14 w-full lg:max-w-2xl">
           <svg

@@ -1,3 +1,4 @@
+import Script from "next/script";
 import Container from "@/components/Container";
 import Bunner from "@/components/bunner/Bunner";
 import TopBaner from "@/components/bunner/TopBaner";
@@ -31,7 +32,7 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="yandex-verification" content="d35be75676e8516e" />
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
                 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

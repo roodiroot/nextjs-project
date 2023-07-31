@@ -28,7 +28,7 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="Широкий выбор кондиционеров и сплит-систем от ведущих производителей. Установка кондиционеров и сплит-систем в Москве и Московской области"
+          content="Установка кондиционеров и сплит-систем по всей Москве и Московской области"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="yandex-verification" content="d35be75676e8516e" />

@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <TopBaner
           closeBunner={setCookiesCloseBanner}
-          title="С&nbsp;15&nbsp;по&nbsp;30&nbsp;июля"
+          title="С&nbsp;1&nbsp;по&nbsp;15&nbsp;Августа"
           text="кондиционер с&nbsp;установкой
           всего за&nbsp;32&nbsp;000&nbsp;руб."
           button="Узнать подробности"

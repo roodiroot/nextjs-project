@@ -3,6 +3,7 @@ import Heading from "@/components/Heading";
 import Advantages from "@/components/hello-page/Advantages";
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import Path from "@/components/utils-component/Path";
+import YaFeed from "@/components/ya/YaFeed";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -85,6 +86,7 @@ const About = () => {
               />
             </div>
           </div>
+          <YaFeed />
           <Advantages />
           <FeedbackForm className="mb-8" />
         </Container>

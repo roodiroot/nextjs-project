@@ -22,12 +22,12 @@ const Navbar: React.FC = () => {
   const Y = useWindowScroll();
   const { onOpen } = useSubmitOrder();
 
-  useEffect(() => {
-    if (!Cookies.get("banner")) {
-      return openBanner();
-    }
-    Cookies.set("banner", "ok", { expires: 1 });
-  }, []);
+  // useEffect(() => {
+  //   if (!Cookies.get("banner")) {
+  //     return openBanner();
+  //   }
+  //   Cookies.set("banner", "ok", { expires: 1 });
+  // }, []);
 
   const setCookiesCloseBanner = () => {
     closeBanner();
@@ -52,48 +52,48 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <TopBaner
           closeBunner={setCookiesCloseBanner}
-          title="С&nbsp;1&nbsp;по&nbsp;15&nbsp;Августа"
-          text="кондиционер с&nbsp;установкой
-          всего за&nbsp;32&nbsp;000&nbsp;руб."
-          button="Узнать подробности"
+          title='С&nbsp;1&nbsp;по&nbsp;15&nbsp;Августа'
+          text='кондиционер с&nbsp;установкой
+          всего за&nbsp;32&nbsp;000&nbsp;руб.'
+          button='Узнать подробности'
           onClick={onOpen}
         />
       )}
 
-      <div className="py-3 ">
+      <div className='py-3 '>
         <Container maxWidth={1440}>
-          <div className="h-[10px]"></div>
-          <div className="w-full flex flex-row gap-1 sm:gap-4 items-center justify-between">
+          <div className='h-[10px]'></div>
+          <div className='w-full flex flex-row gap-1 sm:gap-4 items-center justify-between'>
             <Logo />
-            <div className="flex-1 flex items-center justify-between border-l px-4 gap-5">
+            <div className='flex-1 flex items-center justify-between border-l px-4 gap-5'>
               <Menu />
             </div>
-            <div className="flex gap-6 items-center justify-between">
-              <div className="hidden sm:block">
+            <div className='flex gap-6 items-center justify-between'>
+              <div className='hidden sm:block'>
                 {/* <Button outline onClick={onOpen} label="Обратный звонок" /> */}
                 <a
-                  href="tel:89153294209"
-                  className="whitespace-nowrap text-md font-semibold text-slate-900 hover:underline"
+                  href='tel:89153294209'
+                  className='whitespace-nowrap text-md font-semibold text-slate-900 hover:underline'
                 >
                   8 (915) 329-42-09
                 </a>
               </div>
-              <div onClick={(e) => router.push("/basket")} className="relative">
+              <div onClick={(e) => router.push("/basket")} className='relative'>
                 <ElementButton
-                  element={<HiOutlineShoppingCart size={24} color="#0F172A" />}
+                  element={<HiOutlineShoppingCart size={24} color='#0F172A' />}
                 />
                 <NotificationProduct />
               </div>
               <div
                 onClick={showMenu.toggle}
-                className="md:hidden block relative z-50"
+                className='md:hidden block relative z-50'
               >
                 <ElementButton
                   element={
                     showMenu.isOpen ? (
-                      <BiX size={28} color="#3B3E51" />
+                      <BiX size={28} color='#3B3E51' />
                     ) : (
-                      <BiMenuAltRight size={28} color="#3B3E51" />
+                      <BiMenuAltRight size={28} color='#3B3E51' />
                     )
                   }
                 />

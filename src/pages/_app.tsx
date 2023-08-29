@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const { isOpen } = useBanner();
   return (
     <div
-      className={`min-h-[100vh] flex flex-col justify-between ${golos.className}`}
+      className={`min-h-[100vh] flex flex-col justify-between overflow-hidden ${golos.className}`}
     >
       <ToasterProvider />
       <ImageShowComponent />

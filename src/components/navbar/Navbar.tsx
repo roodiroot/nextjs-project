@@ -14,6 +14,8 @@ import { useWindowScroll } from "@/hooks/useWindowScroll";
 import useShowMobilMenu from "@/hooks/useShowMobilMenu";
 import TopBaner from "../bunner/TopBaner";
 import useBanner from "@/hooks/useBanner";
+import { NavMenu } from "./NavigationMenu";
+import { MILITARY_DISCOUNT } from "@/constans";
 
 const Navbar: React.FC = () => {
   const { isOpen, closeBanner, openBanner } = useBanner();
@@ -52,11 +54,10 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <TopBaner
           closeBunner={setCookiesCloseBanner}
-          title='С&nbsp;1&nbsp;по&nbsp;15&nbsp;Августа'
-          text='кондиционер с&nbsp;установкой
-          всего за&nbsp;32&nbsp;000&nbsp;руб.'
+          title='Спасибо за&nbsp;службу!!!'
+          text='Cкидка&nbsp;20% на&nbsp;установку, для учасников СВО.'
           button='Узнать подробности'
-          onClick={onOpen}
+          onClick={() => router.push(MILITARY_DISCOUNT)}
         />
       )}
 
@@ -66,7 +67,7 @@ const Navbar: React.FC = () => {
           <div className='w-full flex flex-row gap-1 sm:gap-4 items-center justify-between'>
             <Logo />
             <div className='flex-1 flex items-center justify-between border-l px-4 gap-5'>
-              <Menu />
+              <NavMenu className='hidden md:flex' />
             </div>
             <div className='flex gap-6 items-center justify-between'>
               <div className='hidden sm:block'>

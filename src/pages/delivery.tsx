@@ -6,24 +6,21 @@ const Delivery = () => {
   return (
     <>
       <Head>
-        <title>Условия доставки товара</title>
-        <meta
-          name="description"
-          content="Мы готовы привезти ваш заказ в удобное для вас время, которое вы можете указать при оформлении. Наша доставка осуществляется ежедневно с 10:00 до 20:00 для того, чтобы соответствовать вашим потребностям и обеспечить максимальный комфорт."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Доставка</title>
+        <meta name='description' content='Условия доставки товара' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <Container>
         <Path />
-        <div className="w-full h-full">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">
+        <div className='w-full h-full'>
+          <h1 className='text-3xl md:text-4xl font-bold text-center mb-10'>
             Условия доставки кондиционеров
           </h1>
-          <div className="w-full flex flex-col lg:flex-row mb-10 gap-6">
-            <div className="w-full rounded-md bg-slate-100 p-7">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">1.</h2>
-              <div className="text-md md:text-lg">
+          <div className='w-full flex flex-col lg:flex-row mb-10 gap-6'>
+            <div className='w-full rounded-md bg-slate-100 p-7'>
+              <h2 className='text-2xl md:text-3xl font-bold mb-4'>1.</h2>
+              <div className='text-md md:text-lg'>
                 При оформлении заказа мы фиксируем время наиболее удобное для
                 вас, и осуществляем привоз ежедневно с 10:00 до 20:00. При этом,
                 мы гарантируем высокое качество наших услуг и быструю доставку,
@@ -32,9 +29,9 @@ const Delivery = () => {
                 оформлении заказа.
               </div>
             </div>
-            <div className="w-full rounded-md bg-slate-100 p-7">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">2.</h2>
-              <div className="text-md md:text-lg">
+            <div className='w-full rounded-md bg-slate-100 p-7'>
+              <h2 className='text-2xl md:text-3xl font-bold mb-4'>2.</h2>
+              <div className='text-md md:text-lg'>
                 Мы рады сообщить, что доставка до подъезда Вашего дома в
                 пределах МКАД - совершенно бесплатна! А если Вам нужна доставка
                 за пределы МКАД, не переживайте - мы готовы предоставить эту
@@ -43,9 +40,9 @@ const Delivery = () => {
                 порог Вашего дома, не тратя при этом лишних денег.
               </div>
             </div>
-            <div className="w-full rounded-md bg-slate-100 p-7">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">3.</h2>
-              <div className="text-md md:text-lg">
+            <div className='w-full rounded-md bg-slate-100 p-7'>
+              <h2 className='text-2xl md:text-3xl font-bold mb-4'>3.</h2>
+              <div className='text-md md:text-lg'>
                 Если товар Вас устраивает и не имеет дефектов, Вы можете
                 подтвердить его прием, подписав товарную накладную. Однако, если
                 Вам будет обнаружен любой недостаток до подписания «Акта

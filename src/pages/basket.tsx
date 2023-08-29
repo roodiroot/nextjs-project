@@ -56,28 +56,25 @@ const Basket = () => {
   return (
     <>
       <Head>
-        <title>Оформление заказа</title>
-        <meta
-          name="description"
-          content="Kondish специализируется на продаже и установке кондиционеров и сплит-систем в Москве и Московской области. Мы предлагаем широкий выбор моделей от ведущих производителей, с учетом потребностей и бюджета каждого клиента."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Корзина</title>
+        <meta name='description' content='Оформление заказа.' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <div>
         <Container>
           <Path />
-          <h1 className="w-full py12 text-3xl md:text-4xl font-bold text-start mb-2">
+          <h1 className='w-full py12 text-3xl md:text-4xl font-bold text-start mb-2'>
             Моя корзина
           </h1>
-          <div className="text-md md:text-lg max-w-xl mb-6">
+          <div className='text-md md:text-lg max-w-xl mb-6'>
             После оформления заказа, оставайтесь на связи. Наш менеджер вскоре
             свяжется с вами, для уточнения деталей
           </div>
-          <div className="flex flex-col gap-10 mb-16">
-            <div className="relative pb-24 flex flex-col-reverse md:flex-row gap-10 items-center sm:items-start">
+          <div className='flex flex-col gap-10 mb-16'>
+            <div className='relative pb-24 flex flex-col-reverse md:flex-row gap-10 items-center sm:items-start'>
               {/** PRODUCTS LIST */}
-              <ul className="w-full flex-1 flex flex-col first:border-t ">
+              <ul className='w-full flex-1 flex flex-col first:border-t '>
                 {basket?.basketList.length ? (
                   basket.basketList.map((i, index) => (
                     <BasketRow
@@ -90,33 +87,33 @@ const Basket = () => {
                     />
                   ))
                 ) : (
-                  <div className="font-semibold text-slate-900 flex flex-row items-center gap-2 py-6">
+                  <div className='font-semibold text-slate-900 flex flex-row items-center gap-2 py-6'>
                     Пока в вашей корзине ни чего нет
                     <HiOutlineFaceFrown size={20} />
                   </div>
                 )}
                 {basket?.basketList.length ? (
-                  <div className="absolute flex flex-col gap-6 left-0 bottom-0">
-                    <div className="w-full flex flex-row gap-6">
+                  <div className='absolute flex flex-col gap-6 left-0 bottom-0'>
+                    <div className='w-full flex flex-row gap-6'>
                       <CheckSlider
-                        label="Доставка за МКАД"
+                        label='Доставка за МКАД'
                         value={delivery}
                         setvalue={setDelivery}
                       />
                       {delivery && (
-                        <div className="flex gap-1 items-center">
+                        <div className='flex gap-1 items-center'>
                           <input
                             value={distance}
                             onChange={getDistance}
-                            type="text"
-                            className="outline-none border px-2 max-w-[40px]"
+                            type='text'
+                            className='outline-none border px-2 max-w-[40px]'
                           />
                           км.
                         </div>
                       )}
                     </div>
                     <CheckSlider
-                      label="Установка"
+                      label='Установка'
                       value={installation}
                       setvalue={setInstallation}
                     />
@@ -135,13 +132,13 @@ const Basket = () => {
                 distance={distance}
               />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-start mb-2">
+            <h2 className='text-3xl md:text-4xl font-bold text-start mb-2'>
               Порядок доставки
             </h2>
-            <div className="w-full flex flex-col lg:flex-row mb-10 gap-6">
-              <div className="w-full rounded-md bg-slate-100 p-7">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">1.</h2>
-                <div className="text-md md:text-lg">
+            <div className='w-full flex flex-col lg:flex-row mb-10 gap-6'>
+              <div className='w-full rounded-md bg-slate-100 p-7'>
+                <h2 className='text-2xl md:text-3xl font-bold mb-4'>1.</h2>
+                <div className='text-md md:text-lg'>
                   При оформлении заказа мы фиксируем время наиболее удобное для
                   вас, и осуществляем привоз ежедневно с 10:00 до 20:00. При
                   этом, мы гарантируем высокое качество наших услуг и быструю
@@ -150,9 +147,9 @@ const Basket = () => {
                   менеджером при оформлении заказа.
                 </div>
               </div>
-              <div className="w-full rounded-md bg-slate-100 p-7">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">2.</h2>
-                <div className="text-md md:text-lg">
+              <div className='w-full rounded-md bg-slate-100 p-7'>
+                <h2 className='text-2xl md:text-3xl font-bold mb-4'>2.</h2>
+                <div className='text-md md:text-lg'>
                   Мы рады сообщить, что доставка до подъезда Вашего дома в
                   пределах МКАД - совершенно бесплатна! А если Вам нужна
                   доставка за пределы МКАД, не переживайте - мы готовы
@@ -162,9 +159,9 @@ const Basket = () => {
                   денег.
                 </div>
               </div>
-              <div className="w-full rounded-md bg-slate-100 p-7">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">3.</h2>
-                <div className="text-md md:text-lg">
+              <div className='w-full rounded-md bg-slate-100 p-7'>
+                <h2 className='text-2xl md:text-3xl font-bold mb-4'>3.</h2>
+                <div className='text-md md:text-lg'>
                   Если товар Вас устраивает и не имеет дефектов, Вы можете
                   подтвердить его прием, подписав товарную накладную. Однако,
                   если Вам будет обнаружен любой недостаток до подписания «Акта

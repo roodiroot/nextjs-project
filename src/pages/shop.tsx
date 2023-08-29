@@ -143,18 +143,18 @@ function Shop() {
   return (
     <>
       <Head>
-        <title>Каталог товаров на складе интернет магазина Kondish</title>
+        <title>Каталог товаров</title>
         <meta
-          name="description"
-          content="Если вы ищете лучший способ охладить свой дом, то установка кондиционера или сплит-системы - это то, что вам нужно! Наши продукты обеспечат комфортную температуру в вашем доме в любое время года, а также помогут снизить расходы на электроэнергию."
+          name='description'
+          content='Каталог товаров на складе интернет магазина Kondish.'
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <Container>
         <Path />
         <div
-          className="
+          className='
             w-full 
             h-full
             pb-12 
@@ -163,10 +163,10 @@ function Shop() {
             gap-4
             sm:items-start
             sm:flex-row
-            "
+            '
         >
           <FilterBlock
-            className="
+            className='
               bg-slate-100
               rounded-md
               flex-none 
@@ -174,28 +174,29 @@ function Shop() {
               sm:max-w-[300px]
               p-7
               shadow-sm
-              "
+              '
             price={price}
             setPrice={setPrice}
           />
-          <div className="flex-1 flex flex-col min-h-full">
+          <div className='flex-1 flex flex-col min-h-full'>
             <Heading
-              title="Каталог"
-              subtitle="Весь список товаров по выбранным параметрам"
+              h1
+              title='Каталог'
+              subtitle='Весь список товаров по выбранным параметрам'
             />
             <SearchForShop />
             <div
-              className="
+              className='
                 mb-1
                 flex 
                 gap-2
-                "
+                '
             >
-              <div className="py-4 px-2 rounded-sm text-sm flex flex-col gap-1 md:gap-4 md:flex-row items-center">
-                <span className="font-semibold text-start w-full">
+              <div className='py-4 px-2 rounded-sm text-sm flex flex-col gap-1 md:gap-4 md:flex-row items-center'>
+                <span className='font-semibold text-start w-full'>
                   Сортироваь по:
                 </span>
-                <div className="flex gap-4 items-center">
+                <div className='flex gap-4 items-center'>
                   <span
                     onClick={() => setSort(false)}
                     className={`text-lg h-8 rounded-md  p-2 cursor-pointer border-2  flex justify-center items-center
@@ -226,7 +227,7 @@ function Shop() {
                   </span>
                   <span
                     onClick={() => setSortStart(!sortStart)}
-                    className="
+                    className='
                   text-lg 
                   h-8 
                   rounded-md  
@@ -243,7 +244,7 @@ function Shop() {
                   hover:bg-orange-500 
                   hover:text-white
                   transition
-                  "
+                  '
                   >
                     <HiOutlineArrowsUpDown size={18} />
                   </span>
@@ -251,7 +252,7 @@ function Shop() {
               </div>
             </div>
             <Bunner />
-            <div className="w-full py-6 flex justify-start">
+            <div className='w-full py-6 flex justify-start'>
               <Paginator
                 count={count}
                 page={page}
@@ -260,13 +261,13 @@ function Shop() {
               />
             </div>
             <div
-              className="
+              className='
               flex-1 
                 grid
                 justify-items-center
                 grid-cols-auto
                 gap-6
-                "
+                '
             >
               <CardList
                 loading={loading}
@@ -274,7 +275,7 @@ function Shop() {
                 products={productsList}
               />
             </div>
-            <div className="w-full py-6 flex justify-start">
+            <div className='w-full py-6 flex justify-start'>
               <Paginator
                 count={count}
                 page={page}

@@ -59,65 +59,65 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
         mb-10
       `}
     >
-      <h3
-        className="
+      <h2
+        className='
       text-2xl 
       text-slate-900 
       font-medium 
       mb-6 
       text-center 
-      md:text-left"
+      md:text-left'
       >
         Отправьте заявку сейчас и мы{" "}
         <span
-          className="
+          className='
         text-orange-500
-        "
+        '
         >
           сделаем бесплатную доставку!
         </span>
-      </h3>
+      </h2>
       <div
-        className="
+        className='
       flex 
       gap-6 
       md:flex-row 
       flex-col 
       md:items-end 
-      mb-6"
+      mb-6'
       >
-        <div className="flex-1">
+        <div className='flex-1'>
           <Input
-            id="name"
-            label="Имя"
+            id='name'
+            label='Имя'
             disabled={isLoading}
             register={register}
             errors={errors}
             required
           />
         </div>
-        <div className="flex-1">
+        <div className='flex-1'>
           <Input
-            id="phone"
-            label="Номер телефона"
+            id='phone'
+            label='Номер телефона'
             disabled={isLoading}
             register={register}
             errors={errors}
             required
-            type="number"
+            type='number'
           />
         </div>
-        <div className="flex-none">
-          <Button onClick={handleSubmit(onSubmit)} label="Отпрвавить заявку" />
+        <div className='flex-none'>
+          <Button onClick={handleSubmit(onSubmit)} label='Отпрвавить заявку' />
         </div>
       </div>
       <div
-        className="
+        className='
       text-sm 
       font-light 
       text-slate-400 
       text-center 
-      md:text-left"
+      md:text-left'
       >
         *Нажимая кнопку “Отправить заявку”, Вы соглашаетесь с правилами
         обработки персональных данных

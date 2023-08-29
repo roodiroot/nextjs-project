@@ -22,20 +22,17 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>
-          Kondish: установка и подбор кондиционеров и сплит систем в Москве и
-          Московской области
-        </title>
+        <title>Kondish</title>
         <meta
-          name="description"
-          content="Установка кондиционеров и сплит-систем по всей Москве и Московской области"
+          name='description'
+          content='Установка и подбор кондиционеров и сплит-систем в Москве и Московской области'
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="yandex-verification" content="d35be75676e8516e" />
-        <link rel="icon" href="/favicon2.ico" />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta name='yandex-verification' content='d35be75676e8516e' />
+        <link rel='icon' href='/favicon2.ico' />
       </Head>
       <Script
-        id="my-script"
+        id='my-script'
         dangerouslySetInnerHTML={{
           __html: `
                 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -54,7 +51,7 @@ export default function Home() {
       <div className={`pb-24`}>
         <MainBlockV2 scrollToGallery={scrollToGallery} />
         <Container>
-          <Advantages />
+          <Advantages title='C&nbsp;&laquo;Kondish&raquo; вы&nbsp;получите?' />
           <DescBlock />
           <Guarantee />
           <Gallery element={element} />

@@ -18,20 +18,20 @@ const Types = () => {
       <Head>
         <title>Типы устройств</title>
         <meta
-          name="description"
-          content="Мы предлагаем все возможные типы устройств для установки дома или в офисе, мульти сплит-системы для больших помещений, сплит-системы для одной или нескольких комнат."
+          name='description'
+          content='Мы предлагаем все возможные типы устройств для установки дома или в офисе, мульти сплит-системы для больших помещений.'
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <Container>
         <Path />
-        <div className="w-full grid grid-cols-auto gap-10 mb-20">
+        <div className='w-full grid grid-cols-auto gap-10 mb-20'>
           {types?.map((i: any) => (
             <div
               onClick={() => router.push(`/shop?type=${i.id}`)}
               key={i.id}
-              className="
+              className='
             shadow-sm
             hover:shadow-md
             w-full 
@@ -45,16 +45,16 @@ const Types = () => {
             justify-center
             items-center
             transition
-            "
+            '
             >
-              <div className="flex flex-col p-6">
+              <div className='flex flex-col p-6'>
                 <span
-                  className="
+                  className='
                           cursor-pointer 
                           text-[24px]  
                           uppercase 
                           font-bold
-              "
+              '
                 >
                   {i.typeName}
                 </span>

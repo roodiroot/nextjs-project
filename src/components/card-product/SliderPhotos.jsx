@@ -27,23 +27,22 @@ const SliderPhotos = ({ list, vendorcode }) => {
 
   return (
     <div
-      className="
+      className='
                 w-full 
-                h-full
-                min-h-[400px] 
+                h-[400px]
                 relative
-                "
+                '
     >
-      <div className="text-slate-600 absolute text-sm top-4 left-4 z-10">
+      <div className='text-slate-600 absolute text-sm top-4 left-4 z-10'>
         Код товара: {vendorcode}
       </div>
-      <div className="absolute inset-0 bg-white flex flex-col justify-between gap-2">
+      <div className='absolute inset-0 bg-white flex flex-col justify-between gap-2'>
         {/** SLIDER MAIN */}
         {list ? (
           <Swiper
             loop={true}
             spaceBetween={30}
-            className="w-full h-[calc(100% - 150px)]"
+            className='w-full h-[calc(100% - 150px)]'
             thumbs={{
               swiper:
                 thumbsSwiper && !thumbsSwiper?.destroyed ? thumbsSwiper : null,
@@ -58,21 +57,21 @@ const SliderPhotos = ({ list, vendorcode }) => {
                   )
                 }
                 key={i}
-                className="relative bg-white"
+                className='relative bg-white'
               >
                 <Image
-                  className="w-full h-full object-contain"
+                  className='w-full h-full object-contain'
                   loader={() => myLoader(i)}
                   src={`${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${i}.png`}
                   width={500}
                   height={500}
-                  alt="photo"
+                  alt='photo'
                 />
               </SwiperSlide>
             ))}
           </Swiper>
         ) : (
-          <div className="w-full h-full rounded bg-slate-300 animate-pulse"></div>
+          <div className='w-full h-full rounded bg-slate-300 animate-pulse'></div>
         )}
 
         {/** SLIDER FOR */}
@@ -90,31 +89,31 @@ const SliderPhotos = ({ list, vendorcode }) => {
             loop={true}
             spaceBetween={8}
             slidesPerView={3}
-            className="w-full max-h-[150px] pb-1"
+            className='w-full max-h-[150px] pb-1'
             style={{ paddingBottom: "10px" }}
           >
             {list?.map((i) => (
               <SwiperSlide
                 key={i}
-                className="overflow-hidden relative border-1 rounded-md bg-white w-[33%] cursor-pointer"
+                className='overflow-hidden relative border-1 rounded-md bg-white w-[33%] cursor-pointer'
               >
                 <Image
-                  className="w-full h-full object-contain"
+                  className='w-full h-full object-contain'
                   loader={() => myLoader(i)}
                   src={`${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${i}.min.png`}
                   width={500}
                   height={500}
-                  alt="photo"
+                  alt='photo'
                 />
                 )
               </SwiperSlide>
             ))}
           </Swiper>
         ) : (
-          <div className="w-full h-full flex max-h-[150px] pb-1 gap-1">
-            <div className="w-full bg-slate-300 animate-pulse rounded"></div>
-            <div className="w-full bg-slate-300 animate-pulse rounded"></div>
-            <div className="w-full bg-slate-300 animate-pulse rounded"></div>
+          <div className='w-full h-full flex max-h-[150px] pb-1 gap-1'>
+            <div className='w-full bg-slate-300 animate-pulse rounded'></div>
+            <div className='w-full bg-slate-300 animate-pulse rounded'></div>
+            <div className='w-full bg-slate-300 animate-pulse rounded'></div>
           </div>
         )}
       </div>

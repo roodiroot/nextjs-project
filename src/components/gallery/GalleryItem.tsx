@@ -9,35 +9,35 @@ const GalleryItem: React.FC<GalleryItem> = ({ element, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="
+      className='
         cursor-pointer
-        hover:shadow-md
+        hover:shadow-xl
         transition
         w-full 
         h-60 
         border 
-        rounded-xl
+        rounded-3xl
         relative
         overflow-hidden
         flex
         items-end
-        shadow"
+        shadow'
     >
       <Image
         src={element.imgSrc}
         width={300}
         height={300}
-        alt="img"
-        className="
+        alt='img'
+        className='
             absolute 
             top-0 
             left-0 
             w-full 
             h-full 
-            object-cover"
+            object-cover'
       />
       <div
-        className="
+        className='
             relative 
             z-10 
             w-full 
@@ -47,21 +47,21 @@ const GalleryItem: React.FC<GalleryItem> = ({ element, onClick }) => {
             px-6
             flex
             flex-col
-            justify-center"
+            justify-center'
       >
         <h5
-          className="
+          className='
                 font-medium 
                 text-white 
-                line-clamp-1"
+                line-clamp-1'
         >
           {element.adress}
         </h5>
         <div
-          className="
+          className='
                 text-white 
                 text-sm 
-                line-clamp-1"
+                line-clamp-1'
         >
           {element.product}
         </div>

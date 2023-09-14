@@ -88,28 +88,28 @@ const Owerviews = () => {
 
   return (
     <div
-      className="
+      className='
     flex
     flex-col
     py-40
-    "
+    '
     >
       <Heading
-        title="Отзывы наших клиентов"
-        subtitle="Почитайте отзывы тех кто уже воспользовался нашими услугами"
-        className="mb-8"
+        title='Отзывы наших клиентов'
+        subtitle='Почитайте отзывы тех кто уже воспользовался нашими услугами'
+        className='mb-8'
       />
       <Swiper
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         }}
-        scrollbar={{
-          hide: false,
-          horizontalClass: st.castomscroll,
-          dragClass: st.drag,
-        }}
-        modules={[Scrollbar, Navigation]}
+        // scrollbar={{
+        //   hide: false,
+        //   horizontalClass: st.castomscroll,
+        //   dragClass: st.drag,
+        // }}
+        modules={[Navigation]}
         spaceBetween={30}
         slidesPerView={width > 900 ? 2 : 1}
         className={`w-full h-full ${st.swiperWrapper}`}
@@ -119,65 +119,65 @@ const Owerviews = () => {
           <SwiperSlide
             key={index}
             className={`
-            border 
-            rounded-md 
-            p-6
-            min-h-[242px]
-            md:p-8 
-            relative
+              cursor-pointer
+              rounded-3xl 
+              p-6
+              min-h-[242px]
+              md:p-8 
+              relative
             `}
           >
             <div
-              className="
+              className='
             w-full 
             h-full 
             flex
             flex-col
             md:flex-row
             gap-6
-            "
+            '
             >
               <div
-                className="
+                className='
               flex-none 
               flex 
               justify-center 
               items-center 
-              md:items-start"
+              md:items-start'
               >
                 <Image
                   src={i.img}
-                  alt="photo"
+                  alt='photo'
                   width={100}
                   height={100}
-                  className="
+                  className='
                   w-24 
                   h-24 
                   rounded-full 
-                  mr-0"
+                  mr-0'
                 />
               </div>
               <div
-                className="
+                className='
               flex-auto 
               text-center 
               md:text-left 
-              space-y-4"
+              space-y-4'
               >
                 <blockquote>
                   <p
-                    className="
+                    className='
                   text-md 
                   md:text-lg 
                   font-medium 
-                  line-clamp-4"
+                  line-clamp-4'
                   >
                     {i.text}
                   </p>
                 </blockquote>
                 <figcaption>
-                  <div className="text-sky-700">{i.name}</div>
-                  <div className="text-slate-500">{i.service}</div>
+                  <div className='text-sky-700'>{i.name}</div>
+                  <div className='text-slate-500'>{i.service}</div>
                 </figcaption>
               </div>
             </div>

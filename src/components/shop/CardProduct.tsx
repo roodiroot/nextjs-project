@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import loader from "../../../public/image/loader.jpg";
-import blur from "../../../public/image/blur.png"
+import blur from "../../../public/image/blur.png";
 import Button from "../navbar/Button";
 import Teg from "./Teg";
 
@@ -22,7 +22,7 @@ interface CardProductProps {
   vendorcode?: number | string;
   addBasket: () => void;
   remooveElement: () => void;
-  search?: boolean
+  search?: boolean;
 }
 
 const CardProduct: React.FC<CardProductProps> = ({
@@ -39,7 +39,7 @@ const CardProduct: React.FC<CardProductProps> = ({
   vendorcode,
   addBasket,
   remooveElement,
-  search
+  search,
 }) => {
   const [disabledS, setDisabledS] = useState(disabled);
   const router = useRouter();
@@ -59,7 +59,7 @@ const CardProduct: React.FC<CardProductProps> = ({
         w-full
         ${search ? "min-h-[404px]" : "min-h-[470.44px]"}
         ${search ? "h-[404px]" : "h-[470.44px]"}
-        rounded-md
+        rounded-3xl
         border
         flex
         flex-col
@@ -69,12 +69,12 @@ const CardProduct: React.FC<CardProductProps> = ({
     >
       {/**IMAGE BLOCK */}
       <div
-        className="
+        className='
           flex-1
           min-h-[230px]
           relative
           overflow-hidden
-          "
+          '
       >
         <Image
           loader={myLoader}
@@ -82,134 +82,136 @@ const CardProduct: React.FC<CardProductProps> = ({
           src={srcImg}
           width={290}
           height={230}
-          alt="img"
-          className="
+          alt='img'
+          className='
             absolute
             w-full
             h-full
             object-contain
-            "
+            '
         />
         {/**LABELS CONTANIER */}
         <div
-          className="
+          className='
             absolute
-            top-3
-            left-3
+            top-6
+            left-6
             flex
             gap-1
             w-auto
             h-auto
-            "
+            '
         >
           {brand && <Teg classic label={brand} />}
           {/* {id && <Teg classic label={id} />} */}
           {compressor === "инвертор" && <Teg nw label={"invertor"} />}
           {hit && <Teg hit label={"hit"} />}
         </div>
-        <div className="absolute bottom-3 left-3 text-sm text-zinc-400">
+        <div className='absolute bottom-3 left-6 text-sm text-zinc-400'>
           Код товара: {vendorcode}
         </div>
       </div>
       {/**TEXT BLOCk */}
       <div
-        className="
+        className='
         bg-slate-100
         flex
         flex-col
         justify-between
         gap-3
         flex-1
-        p-3
-        "
+        p-6
+        '
       >
         {/**TITLE ROW */}
-        <div className="flex flex-col">
+        <div className='flex flex-col'>
           <div
+            title={name}
             onClick={(e) => router.push(`/shop/${id}`)}
-            className="
+            className='
             text-slate-900
             font-bold
-            text-lg
             cursor-pointer
             hover:underline
-            "
+            line-clamp-2
+            '
           >
             {name}
           </div>
           <div
-            className="
+            className='
             text-zinc-500
+            texts-sm
             font-light
         
-        "
+        '
           >
             {type}
           </div>
         </div>
         {/** STANDARD ROW */}
-        <div className="flex flex-col">
+        <div className='flex flex-col text-sm'>
           <div
-            className="
+            className='
             flex
             flex-row
             w-full
             justify-between
-            "
+            '
           >
-            <span className="text-slate-900">Цена:</span>
-            <span className="text-slate-900">{price} руб.</span>
+            <span className='text-slate-900'>Цена:</span>
+            <span className='text-slate-900'>{price} руб.</span>
           </div>
           {/** STANDARD ROW */}
           {compressor && (
             <div
-              className="
+              className='
             flex
             flex-row
             w-full
             justify-between
-            "
+            '
             >
-              <span className="text-slate-900">Тип компрессора:</span>
-              <span className="text-slate-900 font-semibold">{compressor}</span>
+              <span className='text-slate-900'>Тип компрессора:</span>
+              <span className='text-slate-900 font-semibold'>{compressor}</span>
             </div>
           )}
           {square && (
             <div
-              className="
+              className='
             flex
             flex-row
             w-full
             justify-between
-            "
+            '
             >
-              <span className="text-slate-900">Площадь помещения: м².</span>
-              <span className="text-slate-900 font-semibold">{square}</span>
+              <span className='text-slate-900'>Площадь помещения: м².</span>
+              <span className='text-slate-900 font-semibold'>{square}</span>
             </div>
           )}
         </div>
         {/**BUTTON ROW */}
         <div
-          className="
+          className='
             flex 
             flex-row 
             w-full
             gap-2
-            "
+            '
         >
           {!disabledS ? (
             <Button
               onClick={addBasket}
               disabled={disabledS}
-              label="В корзину"
+              label='В корзину'
             />
           ) : (
-            <Button outline onClick={remooveElement} label="Удалить" />
+            <Button outline onClick={remooveElement} label='Удалить' />
           )}
 
           <div
             onClick={(e) => router.push(`/shop/${id}`)}
-            className="
+            className='
               cursor-pointer
               relative
               rounded-lg
@@ -217,16 +219,16 @@ const CardProduct: React.FC<CardProductProps> = ({
               transition
               w-full
               whitespace-nowrap
-              text-md
+              text-sm
               font-semibold
               py-2 px-4
               flex
               flex-row
               items-center
-              "
+              '
           >
             Посмотреть
-            <RxArrowTopRight className="text-zinc-500" size={18} />
+            <RxArrowTopRight className='text-zinc-500' size={18} />
           </div>
         </div>
       </div>

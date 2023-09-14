@@ -12,7 +12,7 @@ const AdvantagesItem: React.FC<AdvantagesItemProps> = ({
   Icon,
 }) => {
   return (
-    <div className='flex-1 rounded-xl p-6 sm:p-10 md:p-12 flex flex-col gap-4 border'>
+    <div className='flex-1 rounded-3xl p-6 sm:p-10 md:p-12 flex flex-col gap-4 border'>
       <h3 className='text-xl md:text-2xl font-bold w-full'>{title}</h3>
       <p className='md:text-lg md:leading-8 w-full text-gray-600'>
         {description}

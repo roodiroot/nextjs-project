@@ -12,6 +12,7 @@ import Path from "@/components/utils-component/Path";
 import Bunner from "@/components/bunner/Bunner";
 import Paginator from "@/components/utils-component/Paginator";
 import SearchForShop from "@/components/shop/SearchForShop";
+import PromoProductComponent from "@/components/shop/promo-product/PromoProductComponent";
 
 // ПРИМЕР ОБЪЕКТА DTO ДЛЯ СОРТИРОВКИ, КОТОРЫЙ УХОДИТ НА СЕРВЕР
 // {
@@ -168,7 +169,7 @@ function Shop() {
           <FilterBlock
             className='
               bg-slate-100
-              rounded-md
+              rounded-3xl
               flex-none 
               w-full 
               sm:max-w-[300px]
@@ -252,6 +253,7 @@ function Shop() {
               </div>
             </div>
             <Bunner />
+            <PromoProductComponent className='mt-6' />
             <div className='w-full py-6 flex justify-start'>
               <Paginator
                 count={count}

@@ -133,29 +133,29 @@ function FilterBlock({ className, price, setPrice }) {
 
   const allFiltersBlock = (
     <div
-      className="
+      className='
         w-full 
         flex 
         flex-col 
-        gap-1"
+        gap-1'
     >
       <div
-        className="
+        className='
           text-lg
           font-bold
           text-slate-900
           mb-4
-          "
+          '
       >
         Фильтры
       </div>
       {/** RANGE FILTER */}
-      <FilterElement className="mb-3" title={"Ценовой диапазон"}>
+      <FilterElement className='mb-3' title={"Ценовой диапазон"}>
         <RangeFilter price={price} setPrice={setPrice} />
       </FilterElement>
       {/** BRAND FILTER */}
 
-      <FilterElement className="mb-3" title={"Бренды"}>
+      <FilterElement className='mb-3' title={"Бренды"}>
         <CastomSelect>
           <DropDown>{selectBrand ? selectBrand : "Выберете бренд"}</DropDown>
           <OptionList>
@@ -181,7 +181,7 @@ function FilterBlock({ className, price, setPrice }) {
 
       {/** TYPE FILTER */}
 
-      <FilterElement className="mb-3" title={"Типы"}>
+      <FilterElement className='mb-3' title={"Типы"}>
         <CastomSelect>
           <DropDown>{selectType ? selectType : "Выберете тип"}</DropDown>
           <OptionList>
@@ -207,7 +207,7 @@ function FilterBlock({ className, price, setPrice }) {
 
       {/** SQUARE FILTER */}
 
-      <FilterElement className="mb-3" title={"Рекомендуемая площадь"}>
+      <FilterElement className='mb-3' title={"Рекомендуемая площадь"}>
         <CastomSelect>
           <DropDown>{selectS ? selectS : "Выберете площадь"}</DropDown>
           <OptionList>
@@ -229,7 +229,7 @@ function FilterBlock({ className, price, setPrice }) {
 
       <FilterElement
         // sleep
-        className="mb-3"
+        className='mb-3'
         title={"Технология компрессора"}
       >
         <CastomChecked>
@@ -252,7 +252,7 @@ function FilterBlock({ className, price, setPrice }) {
 
       <FilterElement
         // sleep
-        className="mb-3"
+        className='mb-3'
         title={"Наличие WiFi"}
       >
         <CastomChecked>
@@ -273,7 +273,7 @@ function FilterBlock({ className, price, setPrice }) {
 
       <FilterElement
         // sleep
-        className="mb-3"
+        className='mb-3'
         title={"Цвет внутреннего блока"}
       >
         <CastomChecked>
@@ -296,16 +296,16 @@ function FilterBlock({ className, price, setPrice }) {
     <div className={`${className}`}>
       {width < 640 && (
         <div
-          className="
-        w-full
-        mb-4
-        "
+          className='
+            w-full
+            mb-4
+            '
         >
           <Button
             onClick={getFilters}
             outline
             Icon={BiSliderAlt}
-            label="Фильтры"
+            label='Фильтры'
           />
         </div>
       )}

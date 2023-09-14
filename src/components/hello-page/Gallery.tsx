@@ -97,14 +97,14 @@ const Gallery: React.FC<GalleryProps> = ({ element }) => {
 
   return (
     <>
-      <div ref={element} className="w-full mt-40">
+      <div ref={element} className='w-full mt-40'>
         <Heading
-          title="Одни из наших работ"
-          subtitle="Здесь мы можете ознакомиться с несколькими из наших работ"
-          className="mb-6"
+          title='Одни из наших работ'
+          subtitle='Здесь мы можете ознакомиться с несколькими из наших работ'
+          className='mb-6'
         />
         <div
-          className="
+          className='
             w-full 
             h-auto
             grid 
@@ -112,7 +112,7 @@ const Gallery: React.FC<GalleryProps> = ({ element }) => {
             sm:grid-cols-2
             lg:grid-cols-3
             gap-4
-            "
+            '
         >
           {galleryList.map((i) => (
             <GalleryItem
@@ -122,15 +122,15 @@ const Gallery: React.FC<GalleryProps> = ({ element }) => {
             />
           ))}
         </div>
-        <div className="mt-10 w-full text-base text-slate-900">
+        <div className='mt-10 w-full text-base text-slate-900'>
           Для консультации или заказа установки звоните по телефонам{" "}
-          <a className="text-orange-500" href="tel:89153294209">
+          <a className='text-orange-500' href='tel:89153294209'>
             8 (915) 329-42-09
           </a>
           ,{" "}
-          <a className="text-orange-500" href="tel:84956752699">
+          <a className='text-orange-500' href='tel:84956752699'>
             8 (495) 675-26-99
-            <span className="text-sm text-slate-900"> c 9:00 до 21:00</span>
+            <span className='text-sm text-slate-900'> c 9:00 до 21:00</span>
           </a>
         </div>
       </div>

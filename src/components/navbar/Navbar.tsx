@@ -1,35 +1,34 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useEffect } from "react";
 import Cookies from "js-cookie";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
-import Container from "../Container";
-import Logo from "./Logo";
-import Menu from "./Menu";
-import ElementButton from "./ElementButton";
-import useSubmitOrder from "@/hooks/useSubmitOrder";
 import { useRouter } from "next/router";
-import NotificationProduct from "./NotificationProduct";
+
 import { useWindowScroll } from "@/hooks/useWindowScroll";
 import useShowMobilMenu from "@/hooks/useShowMobilMenu";
-import TopBaner from "../bunner/TopBaner";
 import useBanner from "@/hooks/useBanner";
+import { BLACK_DISCOUNT } from "@/constans";
+import Container from "../Container";
+import Logo from "./Logo";
+import ElementButton from "./ElementButton";
+import NotificationProduct from "./NotificationProduct";
+import TopBaner from "../bunner/TopBaner";
 import { NavMenu } from "./NavigationMenu";
-import { MILITARY_DISCOUNT } from "@/constans";
 
 const Navbar: React.FC = () => {
   const { isOpen, closeBanner, openBanner } = useBanner();
   const showMenu = useShowMobilMenu();
   const router = useRouter();
   const Y = useWindowScroll();
-  const { onOpen } = useSubmitOrder();
 
-  // useEffect(() => {
-  //   if (!Cookies.get("banner")) {
-  //     return openBanner();
-  //   }
-  //   Cookies.set("banner", "ok", { expires: 1 });
-  // }, []);
+  useEffect(() => {
+    if (!Cookies.get("banner")) {
+      return openBanner();
+    }
+    Cookies.set("banner", "ok", { expires: 1 });
+  }, []);
 
   const setCookiesCloseBanner = () => {
     closeBanner();
@@ -54,10 +53,10 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <TopBaner
           closeBunner={setCookiesCloseBanner}
-          title='Спасибо за&nbsp;службу!!!'
-          text='Cкидка&nbsp;20% на&nbsp;установку, для учасников СВО.'
+          title='Чёрная пятница!!!'
+          text='Скидки на&nbsp;технику и&nbsp;установку до&nbsp;20%'
           button='Узнать подробности'
-          onClick={() => router.push(MILITARY_DISCOUNT)}
+          onClick={() => router.push(BLACK_DISCOUNT)}
         />
       )}
 
@@ -71,7 +70,6 @@ const Navbar: React.FC = () => {
             </div>
             <div className='flex gap-6 items-center justify-between'>
               <div className='hidden sm:block'>
-                {/* <Button outline onClick={onOpen} label="Обратный звонок" /> */}
                 <a
                   href='tel:89153294209'
                   className='whitespace-nowrap text-md font-semibold text-slate-900 hover:underline'

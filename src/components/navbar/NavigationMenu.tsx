@@ -17,19 +17,12 @@ import {
   CONTACTS_PATH,
   INSTALLATION_CLIMBER,
   INSTALLATION_PIK,
-  MILITARY_DISCOUNT,
   SERVICE_PATH,
   SHOP_PATH,
+  sales_list,
 } from "@/constans";
 import { ListItem } from "./ListItem";
-
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Акции Kondish",
-    href: "/",
-    description: "Пока у нас нет акций, но скоро они появяться.",
-  },
-];
+import { SalesType } from "@/types";
 
 interface NavMenuProps {
   className?: string;
@@ -84,7 +77,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ className }) => {
           <NavigationMenuTrigger>Акции</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className='grid w-[200px] gap-3 p-4 md:w-[250px] md:grid-cols-1 lg:w-[300px] '>
-              {components.map((component) => (
+              {sales_list.map((component: SalesType) => (
                 <ListItem
                   key={component.title}
                   title={component.title}

@@ -1,12 +1,10 @@
 import Link from "next/link";
+import LogoSvg from "./logo-svg";
 
 const Logo = () => {
   return (
-    <Link
-      href={"/"}
-      className="sm:block text-[23px] sm:text-[28px]  uppercase text-orange-500 font-bold cursor-pointer"
-    >
-      Kondish
+    <Link href={"/"} className='sm:block cursor-pointer'>
+      <LogoSvg className='w-28 md:w-32' />
     </Link>
   );
 };

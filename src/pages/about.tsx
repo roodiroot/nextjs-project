@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import Heading from "@/components/Heading";
 import Advantages from "@/components/hello-page/Advantages";
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
+import Gallery from "@/components/hello-page/Gallery";
 import Path from "@/components/utils-component/Path";
 import YaFeed from "@/components/ya/YaFeed";
 import Head from "next/head";
@@ -83,6 +84,7 @@ const About = () => {
               />
             </div>
           </div>
+          <Gallery />
           <YaFeed />
           <Advantages title='Закажите у нас и вы получите' />
           <FeedbackForm className='mb-8' />

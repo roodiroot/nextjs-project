@@ -85,7 +85,7 @@ const galleryList: GaleryList[] = [
 ];
 
 interface GalleryProps {
-  element: RefObject<HTMLInputElement>;
+  element?: RefObject<HTMLInputElement>;
 }
 
 const Gallery: React.FC<GalleryProps> = ({ element }) => {

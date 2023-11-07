@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
-interface SubmitOrderState {
+export interface SubmitOrderState {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;

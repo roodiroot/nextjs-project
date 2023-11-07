@@ -5,6 +5,7 @@ import BasketModal from "@/components/modal/BasketModal";
 import SubmitOrderModel from "@/components/modal/SubmitOrderModel";
 import MobilMemu from "@/components/navbar/MobilMemu";
 import Navbar from "@/components/navbar/Navbar";
+import CallWidget from "@/components/widgets/call-widget";
 import useBanner from "@/hooks/useBanner";
 import ToasterProvider from "@/providers/ToasterProvider";
 import "@/styles/globals.css";
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <ToasterProvider />
       <ImageShowComponent />
+      <CallWidget />
       <BasketModal />
       <SubmitOrderModel />
       <MobilMemu />

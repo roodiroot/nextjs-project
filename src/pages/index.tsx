@@ -13,6 +13,7 @@ import Owerviews from "@/components/hello-page/Owerviews";
 import PopularProducts from "@/components/hello-page/PopularProducts";
 import Head from "next/head";
 import { useRef } from "react";
+import StepsWorking from "@/components/hello-page/steps-working";
 
 export default function Home() {
   const element = useRef<HTMLInputElement>(null);
@@ -54,9 +55,10 @@ export default function Home() {
           <Advantages title='C&nbsp;&laquo;Kondish&raquo; вы&nbsp;получите?' />
           <DescBlock />
           <Guarantee />
-          <Gallery element={element} />
+        </Container>
+        <StepsWorking element={element} />
+        <Container>
           <Owerviews />
-
           <PopularProducts />
           <FeedbackForm />
           <Bunner />

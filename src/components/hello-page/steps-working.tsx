@@ -19,15 +19,15 @@ const StepsWorking: React.FC<{ element?: RefObject<HTMLInputElement> }> = ({
       </Container>
       <div className='space-y-4'>
         <BlockSlider
-          title='Монтаж объекта на улице Ломаносова'
+          title='Монтаж объекта на улице Ломоносова.'
           steps_list={proj_slider_1}
         />
         <BlockSlider
-          title='Истринский район частный дом'
+          title='Истринский район частный дом.'
           steps_list={proj_slider_2}
         />
         <BlockSlider
-          title='Новостройка от застройщика ПИК'
+          title='Новостройка от застройщика ПИК.'
           steps_list={proj_slider_3}
         />
         <Container>

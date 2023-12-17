@@ -21,7 +21,7 @@ interface CardList {
   loading: boolean;
   error: string | null;
   products: [];
-  search?: boolean
+  search?: boolean;
 }
 const CardList: React.FC<CardList> = ({ loading, error, products, search }) => {
   const basketStore = useBasketStore();
@@ -46,7 +46,7 @@ const CardList: React.FC<CardList> = ({ loading, error, products, search }) => {
   if (err) {
     toast.error("Ошибка загрузки данных");
     return (
-      <div className="font-semibold text-slate-900 flex flex-row items-center gap-2">
+      <div className='font-semibold text-slate-900 flex flex-row items-center gap-2'>
         Ошибка загрузки. Попробуйте позже
         <TbError404 size={20} />
       </div>
@@ -77,7 +77,7 @@ const CardList: React.FC<CardList> = ({ loading, error, products, search }) => {
             square={
               i?.descriptions?.filter(
                 (l: any) => l.title === "Площадь помещения: м²."
-              )[0].description
+              )[0]?.description
             }
             compressor={
               i?.descriptions?.filter(
@@ -92,7 +92,7 @@ const CardList: React.FC<CardList> = ({ loading, error, products, search }) => {
           />
         ))
       ) : (
-        <div className="font-semibold text-slate-900 flex flex-row items-center gap-2">
+        <div className='font-semibold text-slate-900 flex flex-row items-center gap-2'>
           Такие товары к сожалению закончились
           <HiOutlineFaceFrown size={20} />
         </div>

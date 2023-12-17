@@ -1,4 +1,4 @@
-import React, { LegacyRef, RefObject, useCallback, useRef } from "react";
+import React, { RefObject, useCallback } from "react";
 import Heading from "../Heading";
 import GalleryItem from "../gallery/GalleryItem";
 import useShowImage from "@/hooks/useShowImage";

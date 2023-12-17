@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { useWindowScroll } from "@/hooks/useWindowScroll";
 import useShowMobilMenu from "@/hooks/useShowMobilMenu";
 import useBanner from "@/hooks/useBanner";
-import { BLACK_DISCOUNT } from "@/constans";
+import { NEW_YEAR_DISCOUNT } from "@/constans";
 import Container from "../Container";
 import Logo from "./Logo";
 import ElementButton from "./ElementButton";
@@ -53,10 +53,10 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <TopBaner
           closeBunner={setCookiesCloseBanner}
-          title='Чёрная пятница!!!'
-          text='Скидки на&nbsp;технику и&nbsp;установку до&nbsp;20%'
+          title='В Новый год!!!'
+          text='Кондиционеры в&nbsp;Kondish по&nbsp;суперценам&nbsp;'
           button='Узнать подробности'
-          onClick={() => router.push(BLACK_DISCOUNT)}
+          onClick={() => router.push(NEW_YEAR_DISCOUNT)}
         />
       )}
 

@@ -15,6 +15,7 @@ export const INSTALLATION_PIK = "/installation-pik";
 export const INSTALLATION_CLIMBER = "/installation-climber";
 export const MILITARY_DISCOUNT = "/sales/military-discount";
 export const BLACK_DISCOUNT = "/sales/black-friday";
+export const NEW_YEAR_DISCOUNT = "/sales/new-year-sale";
 
 export const PATH_ARRAY = [
   { path: ABOUT_PATH, name: "О нас" },
@@ -32,10 +33,16 @@ export const PATH_ARRAY = [
   { path: INSTALLATION_CLIMBER, name: "Промышленный альпенизм" },
   { path: MILITARY_DISCOUNT, name: "Скидка для участников СВО" },
   { path: BLACK_DISCOUNT, name: "Чёрная пятница -20%" },
+  { path: NEW_YEAR_DISCOUNT, name: "Суперцены в Новый год" },
 ];
 
 // SALES
 export const sales_list: SalesType[] = [
+  {
+    title: "Суперцены в Новый год",
+    href: NEW_YEAR_DISCOUNT,
+    description: "Скидки на технику до 16 000 руб. в Новый год.",
+  },
   {
     title: "Чёрная пятница -20%",
     href: BLACK_DISCOUNT,

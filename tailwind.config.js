@@ -19,6 +19,7 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "black-friday": "url('/image/bg/bf.jpg')",
+        "ny-sale": "url('/image/bg/ny.jpg')",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },

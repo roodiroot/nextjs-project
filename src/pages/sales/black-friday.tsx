@@ -1,13 +1,9 @@
 import Container from "@/components/Container";
 import CastomScreen from "@/components/blocks/castom-screen/castom-screen";
-import MainBlockClassic, {
-  TypesStyleMainBlockClassic,
-} from "@/components/classic-block/main-block";
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import Path from "@/components/utils-component/Path";
 import useSubmitOrder from "@/hooks/useSubmitOrder";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 const BlackFriday = () => {
@@ -56,6 +52,9 @@ const BlackFriday = () => {
             >
               ROYAL Clima Классические сплит-системы серии VELA NUOVA RC-VX35HN
             </div>
+          </div>
+          <div className='mt-4'>
+            Срок проведения акции с 1.11.2023г. по 1.12.2023г.
           </div>
         </div>
 

@@ -6,10 +6,6 @@ import MainBlockClassic, {
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import Path from "@/components/utils-component/Path";
 import Head from "next/head";
-
-import climber1 from "../../public/image/climber/climber1.jpg";
-import climber2 from "../../public/image/climber/climber2.jpg";
-import climber3 from "../../public/image/climber/climber3.jpg";
 import Advantages from "@/components/hello-page/Advantages";
 
 const InstallationClimber = () => {

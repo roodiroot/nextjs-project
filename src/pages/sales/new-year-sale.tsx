@@ -1,13 +1,9 @@
 import Container from "@/components/Container";
 import CastomScreen from "@/components/blocks/castom-screen/castom-screen";
-import MainBlockClassic, {
-  TypesStyleMainBlockClassic,
-} from "@/components/classic-block/main-block";
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import Path from "@/components/utils-component/Path";
 import useSubmitOrder from "@/hooks/useSubmitOrder";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 const product_sales = [
@@ -47,10 +43,10 @@ const NewYearSale = () => {
       <Container>
         <Path />
         <CastomScreen
-          title='Успейте установить кондиционер со скидкой!'
-          description='Теперь вы&nbsp;можете воспользоваться эксклюзивной скидкой
-          в&nbsp;размере&nbsp;20% на&nbsp;покупку кондиционера.'
+          title='Предновогодние скидки на кондиционеры'
+          description='Успейте получить выгодные предложения на&nbsp;кондиционеры перед Новым годом! Обеспечьте комфорт в&nbsp;своем доме по&nbsp;выгодной цене.'
           bg='bg-ny-sale'
+          button_type='bg-white hover:bg-white/80 text-slate-950'
           submitOrder={submitOrder}
         />
         <div className='py-12 px-6 w-full max-w-5xl mx-auto'>
@@ -76,6 +72,9 @@ const NewYearSale = () => {
             ))}
           </div>
           <div className='mt-4'>Цена на сайте указана без скидки.</div>
+          <div className='mt-4'>
+            Срок проведения акции с 18.12.2023г. по 31.12.2023г.
+          </div>
         </div>
 
         <div className='-mx-6 py-12 px-6 md:mx-0'>

@@ -7,7 +7,8 @@ const CastomScreen: React.FC<{
   submitOrder: SubmitOrderState;
   title: string;
   description: string;
-}> = ({ bg, submitOrder, description, title }) => {
+  button_type?: string;
+}> = ({ bg, submitOrder, description, title, button_type }) => {
   return (
     <div className='mx-auto max-w-7xl pb-24 pt-8 sm:px-6 sm:pb-32 sm:pt-12 lg:px-8'>
       <div
@@ -29,7 +30,11 @@ const CastomScreen: React.FC<{
         <div className='mt-10 flex items-center justify-start gap-x-6'>
           <button
             onClick={submitOrder.onOpen}
-            className='rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+            className={`rounded-md  px-3.5 py-2.5 text-sm font-semibold shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${
+              button_type
+                ? button_type
+                : "bg-orange-500 hover:bg-orange-400 text-white"
+            }`}
           >
             Консультация
           </button>

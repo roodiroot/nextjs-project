@@ -1,7 +1,6 @@
 import { HiOutlineFaceFrown } from "react-icons/hi2";
 
 import Container from "@/components/Container";
-import Heading from "@/components/Heading";
 import BasketRow from "@/components/basket/BasketRow";
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import useBasketStore from "@/hooks/useBasketStore";

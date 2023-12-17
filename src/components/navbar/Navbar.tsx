@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
         <TopBaner
           closeBunner={setCookiesCloseBanner}
           title='В Новый год!!!'
-          text='Кондиционеры в&nbsp;Kondish по&nbsp;суперценам&nbsp;'
+          text='Кондиционеры в&nbsp;Kondish по&nbsp;супер ценам&nbsp;'
           button='Узнать подробности'
           onClick={() => router.push(NEW_YEAR_DISCOUNT)}
         />

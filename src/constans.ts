@@ -39,7 +39,7 @@ export const PATH_ARRAY = [
 // SALES
 export const sales_list: SalesType[] = [
   {
-    title: "Суперцены в Новый год",
+    title: "Супер цены в Новый год",
     href: NEW_YEAR_DISCOUNT,
     description: "Скидки на технику до 16 000 руб. в Новый год.",
   },

@@ -16,6 +16,7 @@ import ElementButton from "./ElementButton";
 import NotificationProduct from "./NotificationProduct";
 import TopBaner from "../bunner/TopBaner";
 import { NavMenu } from "./NavigationMenu";
+import { cn } from "@/lib/utils";
 
 const Navbar: React.FC = () => {
   const { isOpen, closeBanner, openBanner } = useBanner();
@@ -37,26 +38,20 @@ const Navbar: React.FC = () => {
 
   return (
     <div
-      className={`
-        fixed 
-        z-50
-        top-0
-        left-0
-        transition
-        duration-500
-        w-full 
-        ${Y > 50 ? "bg-white/[82%]" : "bg-white/0"}
-        ${Y > 50 && "translate-y-[-10px]"}
-        ${Y > 50 && "backdrop-blur-sm"}
-    `}
+      className={cn(
+        "fixed z-50 top-0 left-0 transition duration-500 w-full",
+        Y > 50 ? "bg-white/[82%]" : "bg-white/0",
+        Y > 50 && "translate-y-[-10px]",
+        Y > 50 && "backdrop-blur-sm"
+      )}
     >
       {isOpen && (
         <TopBaner
           closeBunner={setCookiesCloseBanner}
-          title='В Новый год!!!'
-          text='Кондиционеры в&nbsp;Kondish по&nbsp;супер ценам&nbsp;'
-          button='Узнать подробности'
-          onClick={() => router.push(NEW_YEAR_DISCOUNT)}
+          title='Подпишись на нас в ВК'
+          text='получи 500₽ бонусом на монтаж!'
+          button='Перейти в ВК'
+          onClick={() => window.location.assign("https://m.vk.com/kondish")}
         />
       )}
 
@@ -72,14 +67,25 @@ const Navbar: React.FC = () => {
               <div className='hidden sm:block'>
                 <a
                   href='tel:89153294209'
-                  className='whitespace-nowrap text-md font-semibold text-slate-900 hover:underline'
+                  className={cn(
+                    "whitespace-nowrap text-md font-medium lg:text-white hover:underline",
+                    Y > 50 && "lg:text-slate-950"
+                  )}
                 >
                   8 (915) 329-42-09
                 </a>
               </div>
               <div onClick={(e) => router.push("/basket")} className='relative'>
                 <ElementButton
-                  element={<HiOutlineShoppingCart size={24} color='#0F172A' />}
+                  element={
+                    <HiOutlineShoppingCart
+                      size={24}
+                      className={cn(
+                        "text-slate-950 lg:text-white",
+                        Y > 50 && "lg:text-slate-950"
+                      )}
+                    />
+                  }
                 />
                 <NotificationProduct />
               </div>

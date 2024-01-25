@@ -3,7 +3,7 @@ import InputMask from "react-input-mask";
 
 interface InputProps {
   id: string;
-  label: string;
+  label?: string;
   type?: string;
   disabled?: boolean;
   formatPrice?: boolean;
@@ -34,7 +34,7 @@ const Input: React.FC<InputProps> = ({
   ${errors[id] ? "focus:border-rose-500" : "focus:border-slate-800"}
   `;
   return (
-    <div className="">
+    <div className=''>
       {label && (
         <label
           className={`
@@ -45,15 +45,15 @@ const Input: React.FC<InputProps> = ({
           {label}
         </label>
       )}
-      <div className="w-full">
+      <div className='w-full'>
         {type === "number" ? (
           <InputMask
             id={id}
             disabled={disabled}
-            mask="8 (999) 999-99-99"
+            mask='8 (999) 999-99-99'
             maskChar={null}
             {...register(id, { required })}
-            placeholder=" "
+            placeholder=' '
             className={className}
           />
         ) : (
@@ -61,7 +61,7 @@ const Input: React.FC<InputProps> = ({
             id={id}
             disabled={disabled}
             {...register(id, { required })}
-            placeholder=" "
+            placeholder=' '
             type={type}
             className={className}
           />

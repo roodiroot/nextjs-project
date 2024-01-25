@@ -4,7 +4,10 @@ import Advantages from "@/components/hello-page/Advantages";
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import Gallery from "@/components/hello-page/Gallery";
 import Path from "@/components/utils-component/Path";
+import GridList from "@/components/ventilation/grid-list";
+import PromptForm from "@/components/ventilation/prompt-form";
 import YaFeed from "@/components/ya/YaFeed";
+import { sertifcates } from "@/constans";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -15,7 +18,7 @@ const About = () => {
         <title>О компании</title>
         <meta
           name='description'
-          content='Наша компания предоставляет широкий спектр услуг по установке, ремонту и обслуживанию кондиционеров и сплит-систем.'
+          content='Наша компания предоставляет широкий спектр услуг по установке, ремонту и обслуживанию кондиционеров сплит-систем и систем вентилирования воздуха. | Более 400 положительных отзывов о нашей работе. | Более 12 лет устанавливаем климатическую технику в ваших домах. | Бесплатная консультация.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -87,8 +90,10 @@ const About = () => {
           <Gallery />
           <YaFeed />
           <Advantages title='Закажите у нас и вы получите' />
-          <FeedbackForm className='mb-8' />
+          {/* <FeedbackForm className='mb-8' /> */}
         </Container>
+        <PromptForm className='mb-32' />
+        <GridList list={sertifcates} />
       </div>
     </>
   );

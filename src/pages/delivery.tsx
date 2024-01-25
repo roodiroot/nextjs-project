@@ -7,7 +7,10 @@ const Delivery = () => {
     <>
       <Head>
         <title>Доставка</title>
-        <meta name='description' content='Условия доставки товара' />
+        <meta
+          name='description'
+          content='Установка и подбор кондиционеров и сплит-систем в Москве и Московской области. | Более 400 положительных отзывов о нашей работе. | Более 12 лет устанавливаем климатическую технику в ваших домах. | Бесплатная консультация.'
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>

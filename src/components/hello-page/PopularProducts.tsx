@@ -25,7 +25,7 @@ const PopularProducts = () => {
         .post(`${process.env.NEXT_PUBLIC_SERVER_URI}/products/pagin`, filter)
         .then((d: any) => setProducts(d.data.rows));
     })();
-  }, []);
+  });
 
   const addBasket = (obj: any) => {
     basketStore.addInBasket(obj);
@@ -36,16 +36,16 @@ const PopularProducts = () => {
   };
 
   return (
-    <div className="w-full pb-40">
-      <Heading className="pb-12" title="Часто смотрят" />
+    <div className='w-full pb-40'>
+      <Heading className='pb-12' title='Часто смотрят' />
       <div
-        className="
+        className='
             grid
             justify-items-center
             grid-cols-auto
             gap-6
             mb-6
-            "
+            '
       >
         {products.map((i: any) => (
           <CardProduct
@@ -75,7 +75,7 @@ const PopularProducts = () => {
       </div>
       <div
         onClick={(e) => router.push("/shop")}
-        className="text-orange-500 underline cursor-pointer text-xl"
+        className='text-orange-500 underline cursor-pointer text-xl'
       >
         Смотреть еще...
       </div>

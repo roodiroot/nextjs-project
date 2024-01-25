@@ -23,7 +23,7 @@ const Path: React.FC<PathProps> = ({ name }) => {
     if (name) {
       route.push(N);
     }
-  }, [name]);
+  }, [name, N]);
 
   const routeInMain = useCallback(() => {
     route.push("/");

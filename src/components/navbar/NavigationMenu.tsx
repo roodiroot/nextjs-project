@@ -17,8 +17,8 @@ import {
   CONTACTS_PATH,
   INSTALLATION_CLIMBER,
   INSTALLATION_PIK,
-  SERVICE_PATH,
   SHOP_PATH,
+  VENTILATION_SISTEM,
   sales_list,
 } from "@/constans";
 import { ListItem } from "./ListItem";
@@ -58,8 +58,8 @@ export const NavMenu: React.FC<NavMenuProps> = ({ className }) => {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href={SERVICE_PATH} title='Цены'>
-                Подробные прайсы цен на установку кондиционеров.
+              <ListItem href={VENTILATION_SISTEM} title='Вентиляции'>
+                Проектирование и монтaж вентиляции.
               </ListItem>
               <ListItem href={INSTALLATION_PIK} title='Дома ПИК'>
                 Особенности установки кондиционеров и сплит-систем.

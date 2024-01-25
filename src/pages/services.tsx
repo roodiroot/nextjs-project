@@ -1,7 +1,7 @@
-import Container from "@/components/Container";
-import Heading from "@/components/Heading";
-import Path from "@/components/utils-component/Path";
 import Head from "next/head";
+
+import Container from "@/components/Container";
+import Path from "@/components/utils-component/Path";
 
 const Services = () => {
   return (
@@ -15,168 +15,11 @@ const Services = () => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div>
-        <Container>
+      <div className=''>
+        <Container className='h-full'>
           <Path />
-          <div
-            className='
-            pb-12
-            w-full
-            flex
-            flex-col
-            gap-6
-            '
-          >
-            <Heading h1 title='Стоимость установки приборов' />
-            <table>
-              <tbody>
-                <tr>
-                  <th>Услуга</th>
-                  <th>Модели</th>
-                  <th>Цена*</th>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h2>Закладка магистрали до 5м</h2>
-                  </td>
-                  <td className='p-2 font-semibold'>07-09 BTU или до 26м²</td>
-                  <td className='p-2 '>14000 руб.</td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h2>Закладка магистрали до 5м</h2>
-                  </td>
-                  <td className='p-2 font-semibold'>12 BTU или до 35м²</td>
-                  <td className='p-2 '>15000 руб.</td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h2>Закладка магистрали до 5м</h2>
-                  </td>
-                  <td className='p-2 font-semibold'>18 BTU или до 52м²</td>
-                  <td className='p-2 '>17000 руб.</td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h2>Закладка магистрали до 5м</h2>
-                  </td>
-                  <td className='p-2 font-semibold'>24 BTU или до 70м²</td>
-                  <td className='p-2 '>20000 руб.</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className='w-full text-base text-slate-900'>
-              Для консультации или заказа установки звоните по телефонам{" "}
-              <a className='text-orange-500' href='tel:89153294209'>
-                8 (915) 329-42-09
-              </a>
-              ,{" "}
-              <a className='text-orange-500' href='tel:84956752699'>
-                8 (495) 675-26-99
-                <span className='text-sm text-slate-900'> c 9:00 до 21:00</span>
-              </a>
-            </div>
-            <div className='w-full text-sm text-slate-500'>
-              *Обращаем внимание на то что цены указаны с учетом преобретения
-              техники у нас в магазине. Если прибор куплен в другом месте цена
-              за установку может незначительно меняться. Это связано с тем что
-              технически приборы могут иметь разные критерии установки, что
-              неизменно повлияет на стоимость установки прибора.
-            </div>
-          </div>
-          <div
-            className='
-        w-full
-        flex
-        flex-col
-        gap-6
-        py-12
-        '
-          >
-            <Heading title='Дополнительные услуги' />
-            <table className='md:max-w-[700px]'>
-              <tbody>
-                <tr className='bg-white even:bg-gray-100'>
-                  <th>Услуга</th>
-                  <th>Стоимость работ</th>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h3>Штробление бетона</h3>
-                  </td>
-                  <td className='p-2 font-semibold'>2500 руб. пог. метр</td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h3>Штробление кирпич-пеноблок</h3>
-                  </td>
-                  <td className='p-2 font-semibold'>1000 руб. пог. метр</td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h3>Дополнительная трасса после 5 метров</h3>
-                  </td>
-                  <td className='p-2 font-semibold'>1200 руб. пог. метр</td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h3>Услуги альпиниста</h3>
-                  </td>
-                  <td className='p-2 font-semibold'>
-                    7000 руб. за 1 кондиционер
-                  </td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h3>Работа с лестницы до 4 м.</h3>
-                  </td>
-                  <td className='p-2 font-semibold'>2000 руб.</td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h3>Работа с лестницы до 5 м.</h3>
-                  </td>
-                  <td className='p-2 font-semibold'>3000 руб.</td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h3>Работа с лестницы до 6 м.</h3>
-                  </td>
-                  <td className='p-2 font-semibold'>4000 руб.</td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h3>Работа с лестницы до 10 м.</h3>
-                  </td>
-                  <td className='p-2 font-semibold'>6000 руб.</td>
-                </tr>
-                <tr className='bg-white even:bg-gray-100'>
-                  <td className='p-2 '>
-                    <h3>Услуга автовышки и монтаж на вентилируемый фасад</h3>
-                  </td>
-                  <td className='p-2 font-semibold'>Договорная</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className='w-full text-base text-slate-900'>
-              Для консультации или заказа установки звоните по телефонам{" "}
-              <a className='text-orange-500' href='tel:89153294209'>
-                8 (915) 329-42-09
-              </a>
-              ,{" "}
-              <a className='text-orange-500' href='tel:84956752699'>
-                8 (495) 675-26-99
-                <span className='text-sm text-slate-900'> c 9:00 до 21:00</span>
-              </a>
-            </div>
-            <div className='w-full text-sm text-slate-500'>
-              <span className='font-semibold'>Внимание!</span> Услуга монтажа
-              платная и выполняется не только с оборудованием, приобретённым у
-              нас. Мы сделаем более точный расчёт стоимости монтажа после
-              консультации в нашем магазине. Пожалуйста, уточняйте стоимость и
-              наличие услуг по телефону{" "}
-              <span className='font-semibold'>8 915 329-42-09</span>.
-            </div>
+          <div className='min-h-[300px] flex items-center justify-center text-xs text-slate-500'>
+            На данный момент страница находится в разработке...
           </div>
         </Container>
       </div>

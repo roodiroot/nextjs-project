@@ -17,9 +17,12 @@ const SliderPhotos = ({ list, vendorcode }) => {
   const showImagePopap = useShowImage();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  const getImage = useCallback((src) => {
-    showImagePopap.onOpen(src);
-  }, []);
+  const getImage = useCallback(
+    (src) => {
+      showImagePopap.onOpen(src);
+    },
+    [showImagePopap]
+  );
 
   const myLoader = (i) => {
     return `${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${i}.png`;

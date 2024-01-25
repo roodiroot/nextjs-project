@@ -14,7 +14,7 @@ const MainBlockV2: React.FC<MainBlockV2Props> = ({ scrollToGallery }) => {
   const submitOrder = useSubmitOrder();
   const scroll = useCallback(() => {
     scrollToGallery();
-  }, []);
+  }, [scrollToGallery]);
   return (
     <div
       className={`
@@ -35,7 +35,7 @@ const MainBlockV2: React.FC<MainBlockV2Props> = ({ scrollToGallery }) => {
           <MainScreenText scroll={scroll} submitOrder={submitOrder} />
         </div>
       </div>
-      <MainScreenImg path='/image/3.jpg' />
+      <MainScreenImg path='/image/4.jpg' />
     </div>
   );
 };

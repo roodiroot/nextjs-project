@@ -32,7 +32,7 @@ const OrderList: React.FC<OrderProps> = ({
       installation,
       distance,
     });
-  }, [total]);
+  }, [total, distance, installation, setTotal]);
 
   return (
     <div className='flex-none w-full bg-slate-100 rounded-md md:max-w-[315px] h-auto p-8'>

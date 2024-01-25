@@ -14,3 +14,18 @@ export type OwerViewType = {
   text: string;
   name: string;
 };
+
+//FAQs Вентиляции
+export type FAQsType = {
+  question: string;
+  answer: string;
+};
+
+//ADV Вентиляции
+export type ADVVentilaton = {
+  id: number;
+  title: string;
+  description: string;
+  price: string;
+  location: string;
+};

@@ -15,7 +15,7 @@ const CallWidget = () => {
     <div className='fixed z-20 bottom-5 right-5 md:right-20 text-white'>
       <div
         onClick={() => setOpen(!open)}
-        className=' w-14 h-14 relative flex cursor-pointer'
+        className=' w-16 h-16 relative flex cursor-pointer'
       >
         <span
           className={cn(
@@ -23,10 +23,10 @@ const CallWidget = () => {
             !open && "animate-ping"
           )}
         ></span>
-        <span className='relative inline-flex rounded-full w-14 h-14 bg-sky-500'>
+        <span className='relative inline-flex rounded-full w-16 h-16 bg-sky-500'>
           <Icon
             variant='chat'
-            className='absolute fill-white top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8'
+            className='absolute fill-white top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10'
           />
         </span>
       </div>

@@ -168,7 +168,7 @@ function Shop() {
         >
           <FilterBlock
             className='
-              bg-slate-100
+              bg-gray-50
               rounded-3xl
               flex-none 
               w-full 
@@ -253,7 +253,7 @@ function Shop() {
               </div>
             </div>
             <Bunner />
-            <PromoProductComponent className='mt-6' />
+
             <div className='w-full py-6 flex justify-start'>
               <Paginator
                 count={count}
@@ -285,6 +285,7 @@ function Shop() {
                 limit={showLimit}
               />
             </div>
+            <PromoProductComponent className='my-6 ' />
             <Bunner />
           </div>
         </div>

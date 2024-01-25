@@ -47,7 +47,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
       className={`
       ${className}
         w-full 
-      bg-slate-100 
+      bg-gray-100 
         rounded-3xl 
         md:py-8  
         md:px-10 

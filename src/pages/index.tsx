@@ -1,4 +1,7 @@
+import Head from "next/head";
 import Script from "next/script";
+import { useCallback, useRef } from "react";
+
 import Container from "@/components/Container";
 import Bunner from "@/components/bunner/Bunner";
 import Advantages from "@/components/hello-page/Advantages";
@@ -8,22 +11,22 @@ import Guarantee from "@/components/hello-page/Guarantee";
 import MainBlockV2 from "@/components/hello-page/MainBlockV2";
 import Owerviews from "@/components/hello-page/Owerviews";
 import PopularProducts from "@/components/hello-page/PopularProducts";
-import Head from "next/head";
-import { useRef } from "react";
 import StepsWorking from "@/components/hello-page/steps-working";
+import TableServiceOne from "@/components/services/table-service-one";
+import TableServiceTwo from "@/components/services/table-service-two";
 
 export default function Home() {
   const element = useRef<HTMLInputElement>(null);
-  const scrollToGallery = () => {
+  const scrollToGallery = useCallback(() => {
     element?.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
-  };
+  }, []);
   return (
     <>
       <Head>
         <title>Kondish</title>
         <meta
           name='description'
-          content='Установка и подбор кондиционеров и сплит-систем в Москве и Московской области'
+          content='Установка и подбор кондиционеров и сплит-систем в Москве и Московской области. | Более 400 положительных отзывов о нашей работе. | Более 12 лет устанавливаем климатическую технику в ваших домах. | Бесплатная консультация.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='yandex-verification' content='d35be75676e8516e' />
@@ -50,8 +53,10 @@ export default function Home() {
         <MainBlockV2 scrollToGallery={scrollToGallery} />
         <Container>
           <Advantages title='C&nbsp;&laquo;Kondish&raquo; вы&nbsp;получите?' />
+          <TableServiceOne />
+          <TableServiceTwo />
           <DescBlock />
-          <Guarantee />
+          {/* <Guarantee /> */}
         </Container>
         <StepsWorking element={element} />
         <Container>

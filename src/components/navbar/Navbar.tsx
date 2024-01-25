@@ -9,7 +9,6 @@ import { useRouter } from "next/router";
 import { useWindowScroll } from "@/hooks/useWindowScroll";
 import useShowMobilMenu from "@/hooks/useShowMobilMenu";
 import useBanner from "@/hooks/useBanner";
-import { NEW_YEAR_DISCOUNT } from "@/constans";
 import Container from "../Container";
 import Logo from "./Logo";
 import ElementButton from "./ElementButton";

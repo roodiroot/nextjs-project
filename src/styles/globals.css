@@ -81,7 +81,7 @@ body,
   min-height: 100%;
 }
 
-.swiper-scrollbar {
+/* .swiper-scrollbar {
   top: 1rem;
 }
 
@@ -104,4 +104,4 @@ body::-webkit-scrollbar-thumb {
 .swiper-slide-thumb-active {
   transition: all ease 0.2s;
   border: 2px solid rgb(249 115 22);
-}
+} */

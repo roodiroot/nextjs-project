@@ -8,6 +8,7 @@ import {
   INSTALLATION_PIK,
   SERVICE_PATH,
   SHOP_PATH,
+  VENTILATION_SISTEM,
 } from "@/constans";
 
 const MobilMemu: React.FC = () => {
@@ -38,8 +39,8 @@ const MobilMemu: React.FC = () => {
         <MenuItem
           close={showMenu.onClose}
           mobil
-          to={SERVICE_PATH}
-          label='Цены'
+          to={VENTILATION_SISTEM}
+          label='Монтaж  вентиляции'
         />
         <MenuItem
           close={showMenu.onClose}

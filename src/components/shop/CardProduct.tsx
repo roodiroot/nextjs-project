@@ -59,7 +59,7 @@ const CardProduct: React.FC<CardProductProps> = ({
         w-full
         ${search ? "min-h-[404px]" : "min-h-[470.44px]"}
         ${search ? "h-[404px]" : "h-[470.44px]"}
-        rounded-3xl
+        rounded-sm
         border
         flex
         flex-col
@@ -90,6 +90,7 @@ const CardProduct: React.FC<CardProductProps> = ({
             object-contain
             '
         />
+        <div className='absolute inset-0 bg-gray-900/5'></div>
         {/**LABELS CONTANIER */}
         <div
           className='
@@ -114,7 +115,7 @@ const CardProduct: React.FC<CardProductProps> = ({
       {/**TEXT BLOCk */}
       <div
         className='
-        bg-slate-100
+        bg-white
         flex
         flex-col
         justify-between

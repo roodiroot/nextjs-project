@@ -150,12 +150,12 @@ function FilterBlock({ className, price, setPrice }) {
         Фильтры
       </div>
       {/** RANGE FILTER */}
-      <FilterElement className='mb-3' title={"Ценовой диапазон"}>
+      <FilterElement className='mb-12' title={"Ценовой диапазон"}>
         <RangeFilter price={price} setPrice={setPrice} />
       </FilterElement>
       {/** BRAND FILTER */}
 
-      <FilterElement className='mb-3' title={"Бренды"}>
+      <FilterElement className='mb-8' title={"Бренды"}>
         <CastomSelect>
           <DropDown>{selectBrand ? selectBrand : "Выберете бренд"}</DropDown>
           <OptionList>
@@ -181,7 +181,7 @@ function FilterBlock({ className, price, setPrice }) {
 
       {/** TYPE FILTER */}
 
-      <FilterElement className='mb-3' title={"Типы"}>
+      <FilterElement className='mb-8' title={"Типы"}>
         <CastomSelect>
           <DropDown>{selectType ? selectType : "Выберете тип"}</DropDown>
           <OptionList>
@@ -207,7 +207,7 @@ function FilterBlock({ className, price, setPrice }) {
 
       {/** SQUARE FILTER */}
 
-      <FilterElement className='mb-3' title={"Рекомендуемая площадь"}>
+      <FilterElement className='mb-8' title={"Рекомендуемая площадь"}>
         <CastomSelect>
           <DropDown>{selectS ? selectS : "Выберете площадь"}</DropDown>
           <OptionList>
@@ -229,7 +229,7 @@ function FilterBlock({ className, price, setPrice }) {
 
       <FilterElement
         // sleep
-        className='mb-3'
+        className='mb-8'
         title={"Технология компрессора"}
       >
         <CastomChecked>
@@ -252,7 +252,7 @@ function FilterBlock({ className, price, setPrice }) {
 
       <FilterElement
         // sleep
-        className='mb-3'
+        className='mb-8'
         title={"Наличие WiFi"}
       >
         <CastomChecked>
@@ -273,7 +273,7 @@ function FilterBlock({ className, price, setPrice }) {
 
       <FilterElement
         // sleep
-        className='mb-3'
+        className='mb-8'
         title={"Цвет внутреннего блока"}
       >
         <CastomChecked>

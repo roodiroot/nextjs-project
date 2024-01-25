@@ -91,9 +91,12 @@ interface GalleryProps {
 const Gallery: React.FC<GalleryProps> = ({ element }) => {
   const showImage = useShowImage();
 
-  const getImage = useCallback((src: string) => {
-    showImage.onOpen(src);
-  }, []);
+  const getImage = useCallback(
+    (src: string) => {
+      showImage.onOpen(src);
+    },
+    [showImage]
+  );
 
   return (
     <>

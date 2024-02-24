@@ -10,10 +10,13 @@ const InstallationPik = () => {
   return (
     <>
       <Head>
-        <title>Установка кондиционера в домах ПИК</title>
+        <title>
+          Установка кондиционера в домах ПИК | Kóndish установка кондиционеров в
+          Москве
+        </title>
         <meta
           name='description'
-          content='Kondish специализируется на установке кондиционеров в домах ПИК'
+          content='Kondish специализируется на установке кондиционеров в домах ПИК | Свой склад товаров, всегда низкие цены и качественный монтаж.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />

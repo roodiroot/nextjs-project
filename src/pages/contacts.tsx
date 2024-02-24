@@ -10,8 +10,11 @@ const Contacts = () => {
   return (
     <>
       <Head>
-        <title>Контакты</title>
-        <meta name='description' content='Контакты для связи с нами' />
+        <title>Контакты | Kóndish установка кондиционеров в Москве</title>
+        <meta
+          name='description'
+          content='Контакты для связи с нами | Более 12 лет устанавливаем климатическую технику в ваших домах.'
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>

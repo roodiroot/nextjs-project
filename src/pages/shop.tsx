@@ -144,10 +144,12 @@ function Shop() {
   return (
     <>
       <Head>
-        <title>Каталог товаров</title>
+        <title>
+          Каталог товаров | Kóndish установка кондиционеров в Москве
+        </title>
         <meta
           name='description'
-          content='Каталог товаров на складе интернет магазина Kondish.'
+          content='Каталог товаров на складе интернет магазина Kóndish. | Свой склад товаров, всегда низкие цены и качественный монтаж.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />

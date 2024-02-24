@@ -12,10 +12,13 @@ const InstallationClimber = () => {
   return (
     <>
       <Head>
-        <title>Установка кондиционера альпинистом</title>
+        <title>
+          Установка кондиционера альпинистом | Kóndish установка кондиционеров в
+          Москве
+        </title>
         <meta
           name='description'
-          content='Kondish специализируется на установке кондиционеров промышленными альпинистами'
+          content='Kondish специализируется на установке кондиционеров промышленными альпинистами  | Свой склад товаров, всегда низкие цены и качественный монтаж.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />

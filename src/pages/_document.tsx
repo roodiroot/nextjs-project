@@ -7,9 +7,8 @@ export default function Document() {
         <meta name='theme-color' content='#ffffff' />
         <meta
           name='описание'
-          content='Услуги по установке кондиционеров в Москве и области'
+          content='Kóndish - услуги по установке кондиционеров в Москве и области | Более 12 лет устанавливаем климатическую технику в ваших домах. | Свой склад товаров, всегда низкие цены и качественный монтаж.'
         />
-        {/* <script src="//code.jivo.ru/widget/7uH4NreLGt" async={true}></script> */}
       </Head>
       <body>
         <Main />

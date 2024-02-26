@@ -21,7 +21,9 @@ const FormBl = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-    const message = `тел: ${data.phone}`;
+    const phone = "+7" + data.phone.replace(/[( | ) | -]/g, "").slice(1);
+
+    const message = `${phone}`;
     axios
       .post("https://api-shop.kondish.su/message", {
         message,

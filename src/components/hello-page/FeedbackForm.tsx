@@ -26,7 +26,8 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-    const message = `${data.name} тел: ${data.phone}`;
+    const phone = "+7" + data.phone.replace(/[( | ) | -]/g, "").slice(1);
+    const message = `${data.name} тел: \n${phone}`;
     axios
       .post("https://api-shop.kondish.su/message", {
         message,

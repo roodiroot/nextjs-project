@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     if (!Cookies.get("banner")) {
-      return openBanner();
+      // return openBanner();
     }
     Cookies.set("banner", "ok", { expires: 1 });
   }, []);
@@ -47,25 +47,25 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <TopBaner
           closeBunner={setCookiesCloseBanner}
-          title='Подпишись на нас в ВК'
-          text='получи 500₽ бонусом на монтаж!'
-          button='Перейти в ВК'
+          title="Подпишись на нас в ВК"
+          text="получи 500₽ бонусом на монтаж!"
+          button="Перейти в ВК"
           onClick={() => window.location.assign("https://m.vk.com/kondish")}
         />
       )}
 
-      <div className='py-3 '>
+      <div className="py-3 ">
         <Container maxWidth={1440}>
-          <div className='h-[10px]'></div>
-          <div className='w-full flex flex-row gap-1 sm:gap-4 items-center justify-between'>
+          <div className="h-[10px]"></div>
+          <div className="w-full flex flex-row gap-1 sm:gap-4 items-center justify-between">
             <Logo />
-            <div className='flex-1 flex items-center justify-between border-l px-4 gap-5'>
-              <NavMenu className='hidden md:flex' />
+            <div className="flex-1 flex items-center justify-between border-l px-4 gap-5">
+              <NavMenu className="hidden md:flex" />
             </div>
-            <div className='flex gap-6 items-center justify-between'>
-              <div className='hidden sm:block'>
+            <div className="flex gap-6 items-center justify-between">
+              <div className="hidden sm:block">
                 <a
-                  href='tel:89153294209'
+                  href="tel:89153294209"
                   className={cn(
                     "whitespace-nowrap text-md font-medium lg:text-white hover:underline",
                     Y > 50 && "lg:text-slate-950"
@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
                   8 (915) 329-42-09
                 </a>
               </div>
-              <div onClick={(e) => router.push("/basket")} className='relative'>
+              <div onClick={(e) => router.push("/basket")} className="relative">
                 <ElementButton
                   element={
                     <HiOutlineShoppingCart
@@ -90,14 +90,14 @@ const Navbar: React.FC = () => {
               </div>
               <div
                 onClick={showMenu.toggle}
-                className='md:hidden block relative z-50'
+                className="md:hidden block relative z-50"
               >
                 <ElementButton
                   element={
                     showMenu.isOpen ? (
-                      <BiX size={28} color='#3B3E51' />
+                      <BiX size={28} color="#3B3E51" />
                     ) : (
-                      <BiMenuAltRight size={28} color='#3B3E51' />
+                      <BiMenuAltRight size={28} color="#3B3E51" />
                     )
                   }
                 />

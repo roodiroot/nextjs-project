@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -15,24 +16,18 @@ const MenuItem: React.FC<MenuItemProps> = ({ label, to, mobil, close }) => {
   return (
     <div
       onClick={close}
-      className={`
-          py-1
-          px-1
-          ${mobil && "w-full flex py-1 border-b"}
-          ${router.pathname === to && "border-b-2 border-orange-500"}
-    `}
+      className={cn(
+        "py-1 px-1",
+        mobil && "w-full flex py-1 border-b",
+        router.pathname === to && "border-b-2 border-orange-500"
+      )}
     >
       <Link
         href={to}
-        className={`
-          ${mobil && "text-lg w-full py-3  hover:bg-slate-100"}
-          text-lg
-          cursor-pointer 
-          hover:text-orange-500 
-          transition 
-          whitespace-nowrap 
-          text-slate-700
-          font-medium`}
+        className={cn(
+          "text-lg cursor-pointer hover:text-orange-500 transition whitespace-nowrap text-slate-700 font-medium",
+          mobil && "text-base w-full py-2  hover:bg-slate-100"
+        )}
       >
         {label}
       </Link>

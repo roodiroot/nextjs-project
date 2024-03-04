@@ -108,6 +108,14 @@ const Footer = () => {
               <div className="text-slate-300 font-semibold">
                 <a href="mailto:sale@kondish.su">sale@kondish.su</a>
               </div>
+              <div className="text-slate-300 mt-8 text-xs">
+                <a href="https://matryoshka-studio.ru/">
+                  Дизайн и&nbsp;разработка сайта{" "}
+                  <span className="text-orange-500">
+                    веб студия &laquo;Матрёшка&raquo;
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

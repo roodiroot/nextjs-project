@@ -50,7 +50,7 @@ const OrderList: React.FC<OrderProps> = ({
       <div className="flex flex-row justify-between mb-3 border-b pb-2">
         <div className="text-zinc-500">Установка:</div>
         <div className="text-slate-900 font-semibold">
-          {installation ? "14000" : "0"} руб*.
+          {installation ? "15000" : "0"} руб*.
         </div>
       </div>
       <div className="flex flex-row justify-between mb-3">

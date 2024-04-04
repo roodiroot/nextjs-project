@@ -1,6 +1,5 @@
 import { toast } from "react-hot-toast";
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
 
 interface BasketStore {
   basketList: any[];

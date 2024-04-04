@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Button from "../navbar/Button";
+import { INSTALLATION } from "@/constans";
 
 interface OrderProps {
   count: number;
@@ -21,7 +22,7 @@ const OrderList: React.FC<OrderProps> = ({
   let total = summ;
 
   if (installation) {
-    total += 15000;
+    total += INSTALLATION;
   }
   if (distance) {
     total += 30 * distance;
@@ -50,7 +51,7 @@ const OrderList: React.FC<OrderProps> = ({
       <div className="flex flex-row justify-between mb-3 border-b pb-2">
         <div className="text-zinc-500">Установка:</div>
         <div className="text-slate-900 font-semibold">
-          {installation ? "15000" : "0"} руб*.
+          {installation ? INSTALLATION : "0"} руб*.
         </div>
       </div>
       <div className="flex flex-row justify-between mb-3">

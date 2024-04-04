@@ -24,6 +24,8 @@ export const MILITARY_DISCOUNT = "/sales/military-discount";
 export const BLACK_DISCOUNT = "/sales/black-friday";
 export const NEW_YEAR_DISCOUNT = "/sales/new-year-sale";
 
+export const INSTALLATION = 15000;
+
 export const PATH_ARRAY = [
   { path: ABOUT_PATH, name: "О нас" },
   { path: SHOP_PATH, name: "Каталог" },

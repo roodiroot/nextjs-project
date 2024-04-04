@@ -7,6 +7,7 @@ import useBasketOrder from "@/hooks/useBasketOrder";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import useBasketStore from "@/hooks/useBasketStore";
+import { INSTALLATION } from "@/constans";
 
 const BasketModal = () => {
   const { isOpen, onClose, total, prod } = useBasketOrder();
@@ -35,7 +36,11 @@ const BasketModal = () => {
             ? `Доставка за МКАД ${total.distance} км`
             : "Без доставки"
         }
-        ${total.installation ? "Установка: 14000 руб." : "Без установки"}
+        ${
+          total.installation
+            ? `Установка: ${INSTALLATION} руб.`
+            : "Без установки"
+        }
         ИТОГО ${total.totalPrice} руб.
         ${data.name}
         ${data.phone}
@@ -76,7 +81,9 @@ const BasketModal = () => {
           : "Без доставки"}
       </div>
       <div>
-        {total.installation ? "Установка: 14000 руб." : "Без установки"}
+        {total.installation
+          ? `Установка: ${INSTALLATION} руб.`
+          : "Без установки"}
       </div>
       <div>
         Итого: <span className="font-bold">{total.totalPrice} руб.</span>

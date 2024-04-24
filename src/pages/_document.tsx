@@ -16,9 +16,6 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <Suspense>
-          <Metrika />
-        </Suspense>
       </body>
     </Html>
   );

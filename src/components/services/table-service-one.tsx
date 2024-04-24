@@ -2,15 +2,7 @@ import Heading from "../Heading";
 
 const TableServiceOne = () => {
   return (
-    <div
-      className="
-            pb-12
-            w-full
-            flex
-            flex-col
-            gap-6
-            "
-    >
+    <div className="mt-32 sm:mt-40 pb-12 w-full flex flex-col gap-6">
       <Heading h1 title="Стоимость установки приборов" />
       <table>
         <tbody>

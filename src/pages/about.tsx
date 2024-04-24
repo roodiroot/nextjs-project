@@ -17,28 +17,28 @@ const About = () => {
       <Head>
         <title>О компании | Kóndish установка кондиционеров в Москве</title>
         <meta
-          name='description'
-          content='Наша компания предоставляет широкий спектр услуг по установке, ремонту и обслуживанию кондиционеров. | Более 12 лет устанавливаем климатическую технику.'
+          name="description"
+          content="Наша компания предоставляет широкий спектр услуг по установке, ремонту и обслуживанию кондиционеров. | Более 12 лет устанавливаем климатическую технику."
         />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
         <Container>
           <Path />
-          <Heading title='О компании' className='mb-8' h1 />
-          <div className='relative w-full min-h-[40vh] overflow-hidden rounded-md mb-8'>
+          <Heading title="О компании" className="mb-8" h1 />
+          <div className="relative w-full min-h-[40vh] overflow-hidden rounded-md mb-8">
             <Image
               width={1500}
               height={300}
-              src='/image/about/about.jpeg'
-              alt='img'
-              className='absolute w-full h-full object-cover'
+              src="/image/7.jpg"
+              alt="img"
+              className="absolute w-full h-full object-cover"
             />
           </div>
-          <div className='w-full flex flex-col sm:flex-row gap-6 mb-8 sm:text-lg sm:leading-8'>
-            <p className='flex-1'>
-              <span className='font-bold'>Kóndish</span> является лидером
+          <div className="w-full flex flex-col sm:flex-row gap-6 mb-8 sm:text-lg sm:leading-8">
+            <p className="flex-1">
+              <span className="font-bold">Kóndish</span> является лидером
               на&nbsp;рынке установки и&nbsp;продажи кондиционеров в&nbsp;Москве
               и&nbsp;Московской области. Мы&nbsp;предлагаем широкий ассортимент
               кондиционеров от&nbsp;ведущих мировых производителей, таких как
@@ -49,7 +49,7 @@ const About = () => {
               в&nbsp;установке и&nbsp;обслуживании кондиционеров любой
               сложности.
             </p>
-            <p className='flex-1'>
+            <p className="flex-1">
               Наша команда состоит из&nbsp;высококвалифицированных специалистов,
               которые готовы помочь вам выбрать наилучшее решение для ваших
               потребностей по&nbsp;охлаждению и&nbsp;обогреву. Мы&nbsp;также
@@ -58,13 +58,13 @@ const About = () => {
               оборудования, а&nbsp;также последующее техническое обслуживание.
             </p>
           </div>
-          <div className='w-full flex flex-col-reverse sm:flex-row gap-6 mb-8 sm:text-lg'>
-            <div className='flex-1'>
-              <h2 className='font-bold text-2xl mb-4'>
+          <div className="w-full flex flex-col-reverse sm:flex-row gap-6 mb-8 sm:text-lg">
+            <div className="flex-1">
+              <h2 className="font-bold text-2xl mb-4">
                 Мы являемся надежным поставщиком кондиционеров в Москве и
                 области.
               </h2>
-              <div className='sm:text-xl sm:leading-8 text-lg mb-4'>
+              <div className="sm:text-xl sm:leading-8 text-lg mb-4">
                 При всем при этом мы&nbsp;всегда рекомендуем нашим клиентам
                 только ту технику которая проявляет себя наилучшим образом,
                 с&nbsp;безупречной стороны
@@ -77,22 +77,22 @@ const About = () => {
               о&nbsp;том, как мы&nbsp;можем помочь вам достичь комфортной
               атмосферы в&nbsp;любом помещении!
             </div>
-            <div className='flex-1 relative overflow-hidden rounded-md min-h-[40vh]'>
+            <div className="flex-1 relative overflow-hidden rounded-md min-h-[40vh]">
               <Image
                 width={500}
                 height={300}
-                src='/image/about/about2.jpg'
-                alt='img'
-                className='absolute w-full h-full object-cover'
+                src="/image/about/about2.jpg"
+                alt="img"
+                className="absolute w-full h-full object-cover"
               />
             </div>
           </div>
           <Gallery />
           <YaFeed />
-          <Advantages title='Закажите у нас и вы получите' />
+          <Advantages title="Работаем честно" />
           {/* <FeedbackForm className='mb-8' /> */}
         </Container>
-        <PromptForm className='mb-32' />
+        <PromptForm className="mb-32" />
         <GridList list={sertifcates} />
       </div>
     </>

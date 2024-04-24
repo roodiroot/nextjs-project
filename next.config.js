@@ -5,6 +5,7 @@ const nextConfig = {
     buildActivity: false,
   },
   images: {
+    formats: ["image/avif", "image/webp"],
     domains: ["api-shop.kondish.su"],
   },
 };

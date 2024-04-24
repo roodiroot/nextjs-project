@@ -1,10 +1,8 @@
 import Head from "next/head";
-import Script from "next/script";
 import { useCallback, useRef } from "react";
 
 import Container from "@/components/Container";
 import Bunner from "@/components/bunner/Bunner";
-import Advantages from "@/components/hello-page/Advantages";
 import DescBlock from "@/components/hello-page/DescBlock";
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import MainBlockV2 from "@/components/hello-page/MainBlockV2";
@@ -13,6 +11,8 @@ import PopularProducts from "@/components/hello-page/PopularProducts";
 import StepsWorking from "@/components/hello-page/steps-working";
 import TableServiceOne from "@/components/services/table-service-one";
 import TableServiceTwo from "@/components/services/table-service-two";
+import CommandBlock from "@/components/hello-page/command-block";
+import BenefitsBlock from "@/components/hello-page/benefits-block";
 
 export default function Home() {
   const element = useRef<HTMLInputElement>(null);
@@ -52,8 +52,10 @@ export default function Home() {
       /> */}
       <div className={`pb-24`}>
         <MainBlockV2 scrollToGallery={scrollToGallery} />
+        <CommandBlock />
+        <BenefitsBlock />
         <Container>
-          <Advantages title="C&nbsp;&laquo;Ko&#x301;ndish&raquo; вы&nbsp;получите?" />
+          {/* <Advantages title="С нами все получиться" /> */}
           <TableServiceOne />
           <TableServiceTwo />
           <DescBlock />

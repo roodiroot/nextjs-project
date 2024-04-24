@@ -32,7 +32,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <BasketModal />
       <SubmitOrderModel />
       <MobilMemu />
-
       <Navbar />
       <div className={`${isOpen ? "pt-32" : "pt-16"} flex-1`}>
         <Component {...pageProps} />

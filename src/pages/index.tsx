@@ -33,7 +33,7 @@ export default function Home() {
         <meta name="yandex-verification" content="d35be75676e8516e" />
         <link rel="icon" href="/favicon2.ico" />
       </Head>
-      <Script
+      {/* <Script
         id="my-script"
         dangerouslySetInnerHTML={{
           __html: `
@@ -49,7 +49,7 @@ export default function Home() {
                 });
               `,
         }}
-      />
+      /> */}
       <div className={`pb-24`}>
         <MainBlockV2 scrollToGallery={scrollToGallery} />
         <Container>

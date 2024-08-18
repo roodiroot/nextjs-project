@@ -16,28 +16,28 @@ const TableServiceOne = () => {
               <h2>Закладка магистрали до 5м</h2>
             </td>
             <td className="p-2 font-semibold">07-09 BTU или до 26м²</td>
-            <td className="p-2 ">15000 руб.</td>
+            <td className="p-2 ">15 000 руб.</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">
               <h2>Закладка магистрали до 5м</h2>
             </td>
             <td className="p-2 font-semibold">12 BTU или до 35м²</td>
-            <td className="p-2 ">16000 руб.</td>
+            <td className="p-2 ">16 000 руб.</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">
               <h2>Закладка магистрали до 5м</h2>
             </td>
             <td className="p-2 font-semibold">18 BTU или до 52м²</td>
-            <td className="p-2 ">17000 руб.</td>
+            <td className="p-2 ">17 000 руб.</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">
               <h2>Закладка магистрали до 5м</h2>
             </td>
             <td className="p-2 font-semibold">24 BTU или до 70м²</td>
-            <td className="p-2 ">20000 руб.</td>
+            <td className="p-2 ">20 000 руб.</td>
           </tr>
         </tbody>
       </table>

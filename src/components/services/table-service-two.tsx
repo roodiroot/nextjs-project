@@ -22,49 +22,49 @@ const TableServiceTwo = () => {
             <td className="p-2 ">
               <h3>Штробление бетона</h3>
             </td>
-            <td className="p-2 font-semibold">2500 руб. пог. метр</td>
+            <td className="p-2 font-semibold">2 500 руб. пог. метр</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">
               <h3>Штробление кирпич-пеноблок</h3>
             </td>
-            <td className="p-2 font-semibold">1000 руб. пог. метр</td>
+            <td className="p-2 font-semibold">1 500 руб. пог. метр</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">
               <h3>Дополнительная трасса после 5 метров</h3>
             </td>
-            <td className="p-2 font-semibold">1200 руб. пог. метр</td>
+            <td className="p-2 font-semibold">2 000 руб. пог. метр</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">
               <h3>Услуги альпиниста</h3>
             </td>
-            <td className="p-2 font-semibold">7000 руб. за 1 кондиционер</td>
+            <td className="p-2 font-semibold">12 000 руб. за 1 кондиционер</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">
               <h3>Работа с лестницы до 4 м.</h3>
             </td>
-            <td className="p-2 font-semibold">2000 руб.</td>
+            <td className="p-2 font-semibold">2 000 руб.</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">
               <h3>Работа с лестницы до 5 м.</h3>
             </td>
-            <td className="p-2 font-semibold">3000 руб.</td>
+            <td className="p-2 font-semibold">3 000 руб.</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">
               <h3>Работа с лестницы до 6 м.</h3>
             </td>
-            <td className="p-2 font-semibold">4000 руб.</td>
+            <td className="p-2 font-semibold">4 000 руб.</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">
               <h3>Работа с лестницы до 10 м.</h3>
             </td>
-            <td className="p-2 font-semibold">6000 руб.</td>
+            <td className="p-2 font-semibold">6 000 руб.</td>
           </tr>
           <tr className="bg-white even:bg-gray-100">
             <td className="p-2 ">

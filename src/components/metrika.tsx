@@ -31,7 +31,7 @@ export function Metrika() {
       <Script type="text/javascript" id="vk-pixel">
         {`
           var _tmr = window._tmr || (window._tmr = []);
-_tmr.push({id: "3509451", type: "pageView", start: (new Date()).getTime()});
+_tmr.push({id: "3567486", type: "pageView", start: (new Date()).getTime()});
 (function (d, w, id) {
   if (d.getElementById(id)) return;
   var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;

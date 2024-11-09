@@ -1,11 +1,10 @@
-import { Metrika } from "@/components/metrika";
+import { BotControl } from "@/components/BotControl";
 import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
-import { Suspense } from "react";
 
 export default function Document() {
   return (
     <Html lang="ru">
+      <BotControl />
       <Head>
         <meta name="theme-color" content="#ffffff" />
         <meta

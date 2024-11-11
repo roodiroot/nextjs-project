@@ -12,12 +12,12 @@ const MapComponent = () => {
         <Map
           className="w-full h-full"
           defaultState={{
-            center: [55.72080356903587, 37.66179649999999],
+            center: [55.706715, 37.66203],
             zoom: 17,
           }}
         >
           <ZoomControl options={{ position: { top: 10, left: 5 } }} />
-          <Placemark geometry={[55.72080356903587, 37.66179649999999]} />
+          <Placemark geometry={[55.706715, 37.66203]} />
         </Map>
       </div>
     </YMaps>

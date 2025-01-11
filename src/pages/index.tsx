@@ -66,7 +66,7 @@ export default function Home() {
           <Owerviews />
           <PopularProducts />
           <FeedbackForm />
-          <Bunner />
+          {/* <Bunner /> */}
         </Container>
       </div>
     </>

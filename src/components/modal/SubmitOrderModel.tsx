@@ -50,23 +50,23 @@ const SubmitOrderModel = () => {
   };
 
   const bodyContent = (
-    <div className='flex flex-col gap-4'>
+    <div className="flex flex-col gap-4">
       <Heading
-        title='Добро пожаловать в KONDISH'
-        subtitle='Заполните форму и отправьте заявку'
+        title="Добро пожаловать в KONDISH"
+        subtitle="Заполните форму и отправьте заявку"
       />
       <InputClient
-        id='name'
-        label='Имя'
+        id="name"
+        label="Имя"
         disabled={isLoading}
         register={register}
         errors={errors}
         required
       />
       <InputClient
-        id='phone'
-        label='Телефон'
-        type='number'
+        id="phone"
+        label="Телефон"
+        type="number"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -76,7 +76,7 @@ const SubmitOrderModel = () => {
   );
 
   const footerContent = (
-    <div className='text-sm text-slate-500 font-light'>
+    <div className="text-sm text-slate-500 font-light">
       Мы обещаем что ваши данные будут использоваться только нами!!! И не будут
       передоваться третьим лицам
     </div>
@@ -88,8 +88,8 @@ const SubmitOrderModel = () => {
         disabled={isLoading}
         isOpen={submitOrder.isOpen}
         onClose={submitOrder.onClose}
-        title='Форма отправки'
-        actionLabel='Отправить заявку'
+        title="Форма отправки"
+        actionLabel="Отправить заявку"
         onSubmit={handleSubmit(onSubmit)}
         body={bodyContent}
         footer={footerContent}

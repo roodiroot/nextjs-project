@@ -72,11 +72,11 @@ export const NavMenu: React.FC<NavMenuProps> = ({ className }) => {
               >
                 Производим даже самый сложный мондаж.
               </ListItem>
-              <li className="col-span-2 w-full">
+              {/* <li className="col-span-2 w-full">
                 <NavigationMenuLink asChild>
                   <RenovationLink />
                 </NavigationMenuLink>
-              </li>
+              </li> */}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

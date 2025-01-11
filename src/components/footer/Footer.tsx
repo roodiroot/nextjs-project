@@ -120,7 +120,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="py-2 flex md:flex-row flex-col justify-between text-white/30">
-          <div className="text-sm">© KONDISH, 2021-2024</div>
+          <div className="text-sm">© KONDISH, 2021-2025</div>
           <div className="text-sm">ИНН 132401061863 ОГРН 321774600804595</div>
           <Link href="/doc/privacy" className="text-sm">
             Политика конфиденциальности

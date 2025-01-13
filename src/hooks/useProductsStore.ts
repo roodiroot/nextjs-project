@@ -7,7 +7,11 @@ interface ProductStore {
   count: number;
   loading: boolean;
   error: string | null;
-  fetchProducts: (filters: {}) => any;
+  fetchProducts: (filters: {
+    filtering: {
+      between: number[];
+    };
+  }) => any;
 }
 
 const useProductStore = create<ProductStore>((set, get) => ({
@@ -18,6 +22,11 @@ const useProductStore = create<ProductStore>((set, get) => ({
   fetchProducts: async (filters) => {
     try {
       set({ loading: true });
+      // console.log(filters.filtering.between[0]);
+
+      if (filters.filtering.between[0] === 0) {
+        filters.filtering.between[0] = 1;
+      }
       const { data } = await axios.post(
         `${process.env.NEXT_PUBLIC_SERVER_URI}/products/pagin`,
         filters

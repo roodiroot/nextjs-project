@@ -50,7 +50,7 @@ function Shop() {
   const [sortStart, setSortStart] = useState(true);
   const [sort, setSort] = useState(true);
   const [showLimit, setShowLimit] = useState(6);
-  const [price, setPrice] = useState<any>([0, 150000]);
+  const [price, setPrice] = useState<any>([1, 150000]);
   const [page, setPage] = useState(1);
 
   const brandQuery = searchParams.get("brand");

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Heading from "../Heading";
 import axios from "axios";
 import CardProduct from "../shop/CardProduct";
-import Container from "../Container";
 import { useRouter } from "next/router";
 import useBasketStore from "@/hooks/useBasketStore";
 import { submitHaveBasket } from "../shop/CardList";
@@ -14,7 +13,14 @@ const PopularProducts = () => {
 
   let filter: any = {
     filtering: {
-      limit: 4,
+      descriptionFilters: [
+        {
+          title: "Хит",
+          description: ["Да"],
+        },
+      ],
+      between: [1, 150000],
+      limit: 20,
       order: [["numberOfViews", "DESC"]],
     },
   };
@@ -27,6 +33,8 @@ const PopularProducts = () => {
     })();
   }, []);
 
+  // console.log(products);
+
   const addBasket = (obj: any) => {
     basketStore.addInBasket(obj);
   };
@@ -36,16 +44,16 @@ const PopularProducts = () => {
   };
 
   return (
-    <div className='w-full pb-40'>
-      <Heading className='pb-12' title='Часто смотрят' />
+    <div className="w-full pb-40">
+      <Heading className="pb-12" title="Популярные сплит-системы" />
       <div
-        className='
+        className="
             grid
             justify-items-center
             grid-cols-auto
             gap-6
             mb-6
-            '
+            "
       >
         {products.map((i: any) => (
           <CardProduct
@@ -75,7 +83,7 @@ const PopularProducts = () => {
       </div>
       <div
         onClick={(e) => router.push("/shop")}
-        className='text-orange-500 underline cursor-pointer text-xl'
+        className="text-orange-500 underline cursor-pointer text-xl"
       >
         Смотреть еще...
       </div>

@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useCallback, useRef } from "react";
 
 import Container from "@/components/Container";
-import Bunner from "@/components/bunner/Bunner";
+// import Bunner from "@/components/bunner/Bunner";
 import DescBlock from "@/components/hello-page/DescBlock";
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
 import MainBlockV2 from "@/components/hello-page/MainBlockV2";

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
 
 interface ProductStore {
   products: any;

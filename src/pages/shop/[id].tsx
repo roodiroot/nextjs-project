@@ -251,17 +251,19 @@ const ProductPage = () => {
               <h4 className="text-xl font-bold mb-4">
                 Характеристики {product.name}
               </h4>
-              {product?.descriptions?.map((i: any) => (
-                <div
-                  key={i.id}
-                  className="flex flex-row justify-between py-2 border-b"
-                >
-                  <div className="text-slate-700 font-light">{i.title}</div>
-                  <div className="text-slate-900 font-semibold">
-                    {i.description}
+              {product?.descriptions
+                ?.filter((i: any) => i.title !== "хит")
+                .map((i: any) => (
+                  <div
+                    key={i.id}
+                    className="flex flex-row justify-between py-2 border-b"
+                  >
+                    <div className="text-slate-700 font-light">{i.title}</div>
+                    <div className="text-slate-900 font-semibold">
+                      {i.description}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
             <div className="flex-1 py-4 flex flex-col">
               <div className="w-full flex flex-col mb-4 gap-6">

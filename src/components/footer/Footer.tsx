@@ -55,7 +55,7 @@ const Footer = () => {
                 Бренды
               </Link>
               <Link href="/types" className="block hover:underline">
-                Типы усстойств
+                Типы устройств
               </Link>
             </nav>
           </div>

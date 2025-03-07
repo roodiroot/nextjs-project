@@ -40,6 +40,12 @@ const MobilMemu: React.FC = () => {
         <MenuItem
           close={showMenu.onClose}
           mobil
+          to={SHOP_PATH}
+          label="Каталог"
+        />
+        <MenuItem
+          close={showMenu.onClose}
+          mobil
           to={VENTILATION_SISTEM}
           label="Монтaж  вентиляции"
         />
@@ -60,12 +66,6 @@ const MobilMemu: React.FC = () => {
           mobil
           to={"https://home-expert.su"}
           label="Отделка и ремонт"
-        />
-        <MenuItem
-          close={showMenu.onClose}
-          mobil
-          to={SHOP_PATH}
-          label="Магазин"
         />
         <MenuItem
           close={showMenu.onClose}

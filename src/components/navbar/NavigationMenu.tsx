@@ -42,6 +42,13 @@ export const NavMenu: React.FC<NavMenuProps> = ({ className }) => {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          <Link href={SHOP_PATH} legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Каталог
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <NavigationMenuTrigger>Покупателю</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -80,7 +87,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ className }) => {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuTrigger>Акции</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-3 p-4 md:w-[250px] md:grid-cols-1 lg:w-[300px] ">
@@ -95,7 +102,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ className }) => {
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         <NavigationMenuItem>
           <Link href={CONTACTS_PATH} legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>

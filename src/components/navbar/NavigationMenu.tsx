@@ -19,12 +19,8 @@ import {
   INSTALLATION_PIK,
   SHOP_PATH,
   VENTILATION_SISTEM,
-  sales_list,
 } from "@/constans";
 import { ListItem } from "./ListItem";
-import { SalesType } from "@/types";
-import { Icons } from "../icons";
-import RenovationLink from "./renovation/renovation-link";
 
 interface NavMenuProps {
   className?: string;

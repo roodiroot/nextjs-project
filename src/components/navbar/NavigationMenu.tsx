@@ -21,6 +21,8 @@ import {
   VENTILATION_SISTEM,
 } from "@/constans";
 import { ListItem } from "./ListItem";
+import { cn } from "@/lib/utils";
+import { AlignJustify } from "lucide-react";
 
 interface NavMenuProps {
   className?: string;
@@ -30,17 +32,23 @@ export const NavMenu: React.FC<NavMenuProps> = ({ className }) => {
   return (
     <NavigationMenu className={`${className}`}>
       <NavigationMenuList>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Главная
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         <NavigationMenuItem>
           <Link href={SHOP_PATH} legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "px-2 py-1 bg-orange-200 rounded-sm text-orange-500 hover:text-orange-600  focus:text-orange-500"
+              )}
+            >
               Каталог
+              <AlignJustify className="w-4 h-4 ml-2" />
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

@@ -65,13 +65,13 @@ const Navbar: React.FC = () => {
             <div className="flex gap-6 items-center justify-between">
               <div className="hidden sm:block">
                 <a
-                  href="tel:89153294209"
+                  href="tel:+79153294209"
                   className={cn(
-                    "whitespace-nowrap text-md font-medium lg:text-white hover:underline",
-                    Y > 50 && "lg:text-slate-950"
+                    "whitespace-nowrap  rounded-sm text-md font-bold lg:text-orange-500 hover:underline",
+                    Y > 50 && "lg:text-orange-500"
                   )}
                 >
-                  8 (915) 329-42-09
+                  +7 (915) 329-42-09
                 </a>
               </div>
               <div onClick={(e) => router.push("/basket")} className="relative">
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
                     <HiOutlineShoppingCart
                       size={24}
                       className={cn(
-                        "text-slate-950 lg:text-white",
+                        "text-slate-950 lg:text-slate-950",
                         Y > 50 && "lg:text-slate-950"
                       )}
                     />

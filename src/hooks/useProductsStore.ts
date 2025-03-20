@@ -26,6 +26,7 @@ const useProductStore = create<ProductStore>((set, get) => ({
       if (filters.filtering.between[0] === 0) {
         filters.filtering.between[0] = 1;
       }
+
       const { data } = await axios.post(
         `${process.env.NEXT_PUBLIC_SERVER_URI}/products/pagin`,
         filters

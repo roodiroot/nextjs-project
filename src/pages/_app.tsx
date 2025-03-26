@@ -1,21 +1,23 @@
-import ImageShowComponent from "@/components/ImageShowComponent";
-import Footer from "@/components/footer/Footer";
-import { Metrika } from "@/components/metrika";
-import BasketModal from "@/components/modal/BasketModal";
-import SubmitOrderModel from "@/components/modal/SubmitOrderModel";
-import MobilMemu from "@/components/navbar/MobilMemu";
-import Navbar from "@/components/navbar/Navbar";
-import CallWidget from "@/components/widgets/call-widget";
-import useBanner from "@/hooks/useBanner";
-import ToasterProvider from "@/providers/ToasterProvider";
-import "@/styles/globals.css";
+import { Suspense } from "react";
+import { Router } from "next/router";
 import type { AppProps } from "next/app";
 import { Golos_Text } from "next/font/google";
-import { Router } from "next/router";
-import Script from "next/script";
+import { Metrika } from "@/components/metrika";
+
+import useBanner from "@/hooks/useBanner";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import MobilMemu from "@/components/navbar/MobilMemu";
+import BasketModal from "@/components/modal/BasketModal";
+import CallWidget from "@/components/widgets/call-widget";
+import ToasterProvider from "@/providers/ToasterProvider";
+import ImageShowComponent from "@/components/ImageShowComponent";
+import SubmitOrderModel from "@/components/modal/SubmitOrderModel";
+
+import "@/styles/globals.css";
+
 import NProgress from "nprogress"; //nprogress module
 import "nprogress/nprogress.css"; //styles of nprogress
-import { Suspense } from "react";
 
 const golos = Golos_Text({ subsets: ["cyrillic"], display: "swap" });
 

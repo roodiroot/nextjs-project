@@ -9,10 +9,11 @@ import Container from "@/components/Container";
 import useProductStore from "@/hooks/useProductsStore";
 import CardList from "@/components/shop/CardList";
 import Path from "@/components/utils-component/Path";
-import Bunner from "@/components/bunner/Bunner";
+// import Bunner from "@/components/bunner/Bunner";
 import Paginator from "@/components/utils-component/Paginator";
-import SearchForShop from "@/components/shop/SearchForShop";
+// import SearchForShop from "@/components/shop/SearchForShop";
 import PromoProductComponent from "@/components/shop/promo-product/PromoProductComponent";
+import SearchForShopExample from "@/components/shop/SearchForShopExample";
 
 // ПРИМЕР ОБЪЕКТА DTO ДЛЯ СОРТИРОВКИ, КОТОРЫЙ УХОДИТ НА СЕРВЕР
 // {
@@ -187,7 +188,7 @@ function Shop() {
               title="Каталог"
               subtitle="Весь список товаров по выбранным параметрам"
             />
-            <SearchForShop />
+            {/* <SearchForShopExample /> */}
             <div
               className="
                 mb-1
@@ -195,7 +196,7 @@ function Shop() {
                 gap-2
                 "
             >
-              <div className="py-4 px-2 rounded-sm text-sm flex flex-col gap-1 md:gap-4 md:flex-row items-center">
+              <div className="pb-4 px-2 rounded-sm text-sm flex flex-col gap-1 md:gap-4 md:flex-row items-center">
                 <span className="font-semibold text-start w-full">
                   Сортироваь по:
                 </span>
@@ -256,14 +257,14 @@ function Shop() {
             </div>
             {/* <Bunner /> */}
 
-            <div className="w-full py-6 flex justify-start">
+            {/* <div className="w-full py-6 flex justify-start">
               <Paginator
                 count={count}
                 page={page}
                 setPage={setPage}
                 limit={showLimit}
               />
-            </div>
+            </div> */}
             <div
               className="
               flex-1 

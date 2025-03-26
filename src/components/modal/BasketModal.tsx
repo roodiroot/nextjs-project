@@ -1,12 +1,14 @@
+import axios from "axios";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+
+import Modal from "./Modal";
 import Heading from "../Heading";
 import InputClient from "../inputs/InputClient";
-import Modal from "./Modal";
-import { useState } from "react";
 import useBasketOrder from "@/hooks/useBasketOrder";
-import { toast } from "react-hot-toast";
-import axios from "axios";
 import useBasketStore from "@/hooks/useBasketStore";
+
 import { INSTALLATION } from "@/constans";
 
 const BasketModal = () => {

@@ -30,12 +30,12 @@ const MobilMemu: React.FC = () => {
             inset-0 
             bg-white
             z-50 
-            md:hidden
+            lg:hidden
             ${isOpen ? "pt-32" : "pt-16"}
             ${showMenu.isOpen ? "translate-x-0" : "translate-x-[-100%]"}
     `}
     >
-      <div className="w-full h-full py-4 flex flex-col px-2 sm:px-4">
+      <div className="w-full max-w-xl mx-auto h-full py-4 flex flex-col px-2 sm:px-4">
         <MenuItem close={showMenu.onClose} mobil to="/" label="Главная" />
         <MenuItem
           close={showMenu.onClose}

@@ -16,6 +16,8 @@ import NotificationProduct from "./NotificationProduct";
 import TopBaner from "../bunner/TopBaner";
 import { NavMenu } from "./NavigationMenu";
 import { cn } from "@/lib/utils";
+import SearchForShopExample from "../shop/SearchForShopExample";
+import SearchForShopExampleForNavbar from "../shop/SearchForShopExampleForNavbar";
 
 const Navbar: React.FC = () => {
   const { isOpen, closeBanner, openBanner } = useBanner();
@@ -60,8 +62,9 @@ const Navbar: React.FC = () => {
           <div className="w-full flex flex-row gap-1 sm:gap-4 items-center justify-between">
             <Logo />
             <div className="flex-1 flex items-center justify-between border-l px-4 gap-5">
-              <NavMenu className="hidden md:flex" />
+              <NavMenu className="hidden lg:flex" />
             </div>
+            <SearchForShopExampleForNavbar />
             <div className="flex gap-6 items-center justify-between">
               <div className="hidden sm:block">
                 <a
@@ -90,7 +93,7 @@ const Navbar: React.FC = () => {
               </div>
               <div
                 onClick={showMenu.toggle}
-                className="md:hidden block relative z-50"
+                className="lg:hidden block relative z-50"
               >
                 <ElementButton
                   element={

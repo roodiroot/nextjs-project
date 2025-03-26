@@ -19,17 +19,17 @@ const SearchForShop = () => {
     }
   };
   return (
-    <div className="w-full flex border-2 border-slate-700 rounded-md overflow-hidden items-center">
+    <div className="searchbooster w-full flex border-2 border-slate-700 rounded-md overflow-hidden items-center">
       <input
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        // value={search}
+        // onChange={(e) => setSearch(e.target.value)}
         className="w-full h-full flex-1 py-3 px-4 outline-none placeholder:text-sm"
-        type="text"
-        onKeyDown={submit}
-        placeholder="Введите минимум 4 символа"
+        // type="text"
+        // onKeyDown={submit}
+        // placeholder="Введите минимум 4 символа"
       />
       <button
-        onClick={searchPush}
+        // onClick={searchPush}
         className="relative sm:w-[120px] w-[70px] h-full bg-zinc-400 hover:bg-orange-500 transition py-2 rounded-r-md mr-[2px] text-white"
       >
         <span className="hidden sm:block">Найти</span>

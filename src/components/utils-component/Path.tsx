@@ -1,6 +1,7 @@
-import { PATH_ARRAY } from "@/constans";
-import { useRouter } from "next/router";
 import { useCallback } from "react";
+import { useRouter } from "next/router";
+
+import { PATH_ARRAY } from "@/constans";
 
 interface PathProps {
   name?: string;
@@ -30,16 +31,16 @@ const Path: React.FC<PathProps> = ({ name }) => {
   }, []);
 
   return (
-    <div className='py-6 flex text-sm font-medium'>
+    <div className="py-6 flex text-sm font-medium">
       <div
         onClick={routeInMain}
-        className='inline-block text-orange-500 cursor-pointer hover:underline'
+        className="inline-block text-orange-500 cursor-pointer hover:underline"
       >
         Главная
       </div>
       {P !== "" ? (
-        <div onClick={routeInPage} className='flex'>
-          <span className='px-1 text-slate-500'>/</span>
+        <div onClick={routeInPage} className="flex">
+          <span className="px-1 text-slate-500">/</span>
           <span
             className={`
             ${name ? "text-orange-500" : "text-slate-900"}
@@ -54,9 +55,9 @@ const Path: React.FC<PathProps> = ({ name }) => {
         ""
       )}
       {name && (
-        <div className='flex'>
-          <span className='px-1 text-slate-500'>/</span>
-          <span className=' text-slate-900'>{name}</span>
+        <div className="flex">
+          <span className="px-1 text-slate-500">/</span>
+          <span className=" text-slate-900">{name}</span>
         </div>
       )}
     </div>

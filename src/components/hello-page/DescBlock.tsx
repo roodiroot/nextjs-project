@@ -1,6 +1,5 @@
 import Image from "next/image";
 import img from "../../../public/image/feed.png";
-import Link from "next/link";
 
 const DescBlock = () => {
   return (
@@ -41,15 +40,15 @@ const DescBlock = () => {
         </p>
         <div className="self-start w-full">
           <a
-            href="https://www.avito.ru/moskva/predlozheniya_uslug/ustanovka_vn.bloka._prodazha_konditsionerov_2431678456"
-            target="blank"
+            href="https://www.avito.ru/moskva/predlozheniya_uslug/montazhprodazha_konditsionerov._pik_2462855584"
+            target="_blank"
             className="text-orange-500 hover:underline cursor-pointer w-full"
           >
             Отзывы на Авито.
           </a>
           <a
             href="https://yandex.ru/maps/org/kondish/223415694122/reviews/?ll=38.874756%2C55.531232&utm_content=add_review&utm_medium=reviews&utm_source=maps-reviews-widget&z=7"
-            target="blank"
+            target="_blank"
             className="ml-6 text-orange-500 hover:underline cursor-pointer w-full"
           >
             Отзывы на Яндексе.

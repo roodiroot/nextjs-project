@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CookieConsent from "react-cookie-consent";
 
 export default function CookieConsentBanner() {
@@ -31,9 +32,9 @@ export default function CookieConsentBanner() {
       //   declineButtonClasses="bg-gray-600 hover:bg-gray-700 text-white px-5 py-2 rounded-xl font-medium transition"
     >
       🍪 Мы используем файлы cookie для улучшения работы сайта.{" "}
-      <a href="/privacy-policy" className="text-orange-400 underline">
+      <Link href="/privacy-policy" className="text-orange-400 underline">
         Подробнее
-      </a>
+      </Link>
     </CookieConsent>
   );
 }

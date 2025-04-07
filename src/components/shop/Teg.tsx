@@ -26,7 +26,8 @@ const Teg: React.FC<TegProps> = ({
         rounded-md 
         border-2 
         font-bold 
-        text-sm 
+        text-xs
+        sm:text-sm 
         inline-block
         ${green ? "border-green-500 text-white bg-green-500" : ""}
         ${nw ? "border-sky-700 text-sky-600 bg-sky-300" : ""}

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Heading from "../Heading";
 import axios from "axios";
-import CardProduct from "../shop/CardProduct";
+import CardProductForHero from "./CardProductForHero";
 import { useRouter } from "next/router";
 import useBasketStore from "@/hooks/useBasketStore";
 import { submitHaveBasket } from "../shop/CardList";
+import ProductsSaleCarousel from "./carousel/CarouselComponent";
 
 const PopularProducts = () => {
   const basketStore = useBasketStore();
@@ -44,19 +45,17 @@ const PopularProducts = () => {
   };
 
   return (
-    <div className="w-full pb-40">
+    <div className="w-full">
       <Heading className="pb-12" title="Популярные сплит-системы" />
-      <div
-        className="
-            grid
-            justify-items-center
-            grid-cols-auto
-            gap-6
-            mb-6
-            "
-      >
-        {products.map((i: any) => (
-          <CardProduct
+      <ProductsSaleCarousel
+        products={products}
+        submitHaveBasket={submitHaveBasket}
+        addBasket={addBasket}
+        basketStore={basketStore}
+        remooveElement={remooveElement}
+      />
+      {/* {products.map((i: any) => (
+          <CardProductForHero
             id={i?.id}
             srcImg={`${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${i?.logo}.png`}
             name={i?.name}
@@ -78,12 +77,12 @@ const PopularProducts = () => {
             addBasket={() => addBasket(i)}
             remooveElement={() => remooveElement(i?.id)}
             hit={i?.hit}
+            vendorcode={i?.vendorcode}
           />
-        ))}
-      </div>
+        ))} */}
       <div
         onClick={(e) => router.push("/shop")}
-        className="text-orange-500 underline cursor-pointer text-xl"
+        className="text-orange-500 underline cursor-pointer text-xl mt-4"
       >
         Смотреть еще...
       </div>
@@ -92,3 +91,6 @@ const PopularProducts = () => {
 };
 
 export default PopularProducts;
+{
+  /* <div className="grid grid-cols-2 gap-x-2 gap-y-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"></div> */
+}

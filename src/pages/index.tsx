@@ -52,8 +52,9 @@ export default function Home() {
       /> */}
       <div className={`pb-24`}>
         <MainBlockV2 scrollToGallery={scrollToGallery} />
-        <CommandBlock />
-        <BenefitsBlock />
+        <Container className="mt-20">
+          <PopularProducts />
+        </Container>
         <Container>
           {/* <Advantages title="С нами все получиться" /> */}
           <TableServiceOne />
@@ -61,10 +62,12 @@ export default function Home() {
           <DescBlock />
           {/* <Guarantee /> */}
         </Container>
+        <CommandBlock />
+        <BenefitsBlock />
         <StepsWorking element={element} />
         <Container>
           <Owerviews />
-          <PopularProducts />
+
           <FeedbackForm />
           {/* <Bunner /> */}
         </Container>

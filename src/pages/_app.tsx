@@ -18,6 +18,7 @@ import "@/styles/globals.css";
 
 import NProgress from "nprogress"; //nprogress module
 import "nprogress/nprogress.css"; //styles of nprogress
+import CookieConsentBanner from "@/components/advantages/CookieConsentBanner";
 
 const golos = Golos_Text({ subsets: ["cyrillic"], display: "swap" });
 
@@ -47,6 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </div>
         <Footer />
       </div>
+      <CookieConsentBanner />
     </>
   );
 }

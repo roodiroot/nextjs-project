@@ -8,10 +8,10 @@ const SearchForShop = () => {
   const [search, setSearch] = useState("");
 
   const searchPush = () => {
-    if (search.length < 4) {
+    if (search.length < 3) {
       return toast("⚠️ слишком короткая длина запроса");
     }
-    router.push(`shop/search?search=${search}`);
+    router.push(`/shop/search?search=${search}`);
   };
   const submit = (e: any) => {
     if (e.key === "Enter") {

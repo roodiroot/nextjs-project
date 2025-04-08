@@ -5,6 +5,7 @@ import { toast } from "react-hot-toast";
 import CardProduct from "./CardProduct";
 import CardProductDemo from "./CardProductDemo";
 import useBasketStore from "@/hooks/useBasketStore";
+import Link from "next/link";
 
 export const submitHaveBasket = (id: number, list: any[]): boolean => {
   for (let i = 0; i < list.length; i++) {
@@ -46,7 +47,7 @@ const CardList: React.FC<CardList> = ({ loading, error, products, search }) => {
   if (err) {
     toast.error("Ошибка загрузки данных");
     return (
-      <div className='font-semibold text-slate-900 flex flex-row items-center gap-2'>
+      <div className="font-semibold text-slate-900 flex flex-row items-center gap-2">
         Ошибка загрузки. Попробуйте позже
         <TbError404 size={20} />
       </div>
@@ -92,8 +93,15 @@ const CardList: React.FC<CardList> = ({ loading, error, products, search }) => {
           />
         ))
       ) : (
-        <div className='font-semibold text-slate-900 flex flex-row items-center gap-2'>
-          Такие товары к сожалению закончились
+        <div className="font-semibold text-slate-900 flex flex-row items-center gap-2">
+          <span>
+            К сожалению, ничего не найдено. Попробуйте другой запрос или
+            загляните в наш{" "}
+            <Link className="text-orange-500" href="/shop?type=1">
+              каталог
+            </Link>
+            .
+          </span>
           <HiOutlineFaceFrown size={20} />
         </div>
       )}

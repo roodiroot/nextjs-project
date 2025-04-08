@@ -12,7 +12,7 @@ export default function Document() {
           name="описание"
           content="Kóndish - услуги по установке кондиционеров в Москве и области | Более 12 лет устанавливаем климатическую технику в ваших домах. | Свой склад товаров, всегда низкие цены и качественный монтаж."
         />
-        <link
+        {/* <link
           rel="preconnect"
           href="https://api.searchbooster.net"
           crossOrigin="anonymous"
@@ -31,12 +31,12 @@ export default function Document() {
           rel="preconnect"
           href="https://cdn.searchbooster.io"
           crossOrigin="anonymous"
-        />
+        /> */}
       </Head>
       <body>
         <Main />
         <NextScript />
-        <Script
+        {/* <Script
           id="searchbooster-widget"
           strategy="afterInteractive"
           data-skip-moving="true"
@@ -52,7 +52,7 @@ export default function Document() {
               document.body.appendChild(sbScript);
             `,
           }}
-        />
+        /> */}
       </body>
     </Html>
   );

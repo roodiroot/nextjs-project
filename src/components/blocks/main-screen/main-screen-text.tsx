@@ -35,7 +35,7 @@ const MainScreenText: React.FC<{
             Консультация
           </button>
           <Link
-            href="/shop"
+            href="/shop?type=1"
             className=" text-sm font-semibold leading-6 text-gray-900"
           >
             Выбрать кондиционер <span aria-hidden="true">→</span>

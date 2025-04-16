@@ -1,4 +1,5 @@
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import useShowMobilMenu from "@/hooks/useShowMobilMenu";
 import { X } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -9,6 +10,7 @@ const SearchForShopExampleForNavbar = () => {
   const router = useRouter();
   const [search, setSearch] = useState("");
   const [isMobilSearch, setIsMobilSearch] = useState(false);
+  const { onClose } = useShowMobilMenu();
   const param = useSearchParams();
   const searchparam = param.get("search");
   const isMobil = useMediaQuery("(max-width: 480px)");
@@ -26,6 +28,7 @@ const SearchForShopExampleForNavbar = () => {
     if (search.length < 3) {
       return toast("⚠️ слишком короткая длина запроса");
     }
+    onClose();
     router.push(`/shop/search?search=${search}`);
   };
   const submit = (e: any) => {

@@ -80,6 +80,15 @@ const Footer = () => {
               <Link href="/delivery" className="block hover:underline">
                 Доставка
               </Link>
+              <Link
+                href="/doc/privacy-policy"
+                className="block hover:underline"
+              >
+                Политика конфиденциальности
+              </Link>
+              <Link href="/doc/pd-consent" className="block hover:underline">
+                Согласие на обработку персональных данных
+              </Link>
             </nav>
             <div className="flex-1 items-start mb-2">
               <div className="mb-2 font-semibold">Мессенджеры:</div>
@@ -122,7 +131,7 @@ const Footer = () => {
         <div className="py-2 flex md:flex-row flex-col justify-between text-white/30">
           <div className="text-sm">© KONDISH, 2021-2025</div>
           <div className="text-sm">ИНН 132401061863 ОГРН 321774600804595</div>
-          <Link href="/doc/privacy" className="text-sm">
+          <Link href="/doc/privacy-policy" className="text-sm">
             Политика конфиденциальности
           </Link>
         </div>

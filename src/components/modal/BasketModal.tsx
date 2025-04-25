@@ -10,10 +10,12 @@ import useBasketOrder from "@/hooks/useBasketOrder";
 import useBasketStore from "@/hooks/useBasketStore";
 
 import { INSTALLATION } from "@/constans";
+import CheckSlider from "../utils-component/CheckSlider";
 
 const BasketModal = () => {
   const { isOpen, onClose, total, prod } = useBasketOrder();
   const basket = useBasketStore();
+  const [policy, setPolicy] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,
@@ -28,6 +30,12 @@ const BasketModal = () => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    if (!policy) {
+      toast.error("Согласитесь на обработку персональных данных");
+      setIsLoading(false);
+      return;
+    }
+
     if (total.totalPrice) {
       setIsLoading(true);
       const message = `
@@ -114,6 +122,16 @@ const BasketModal = () => {
         errors={errors}
         required
       />
+      <div className="flex items-center gap-2">
+        <CheckSlider value={policy} setvalue={setPolicy} />{" "}
+        <span>
+          Согласие на обработку{" "}
+          <a className="text-orange-500" target="_blank" href="/doc/pd-consent">
+            персональных данных
+          </a>
+        </span>
+        .
+      </div>
     </div>
   );
   const footerContent = (

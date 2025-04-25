@@ -4,12 +4,14 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import Button from "../navbar/Button";
 import Input from "../inputs/Input";
+import CheckSlider from "../utils-component/CheckSlider";
 
 interface FeedbackFormProps {
   className?: string;
 }
 
 const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
+  const [policy, setPolicy] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -25,6 +27,12 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    if (!policy) {
+      toast.error("Согласитесь на обработку персональных данных");
+      setIsLoading(false);
+      return;
+    }
+
     setIsLoading(true);
     const phone = "+7" + data.phone.replace(/[( | ) | -]/g, "").slice(1);
     const message = `${data.name} тел: \n${phone}`;
@@ -36,7 +44,10 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
         toast.success("Ожидайте звонка");
         // @ts-ignore
         window.ym(93762617, "reachGoal", "target3");
-        reset();
+        reset({
+          name: "",
+          phone: "",
+        });
       })
       .catch((error) => toast.error("Ошибка отправки формы!"))
       .finally(() => {
@@ -61,67 +72,77 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
       `}
     >
       <h2
-        className='
+        className="
       text-2xl 
       text-slate-900 
       font-medium 
       mb-6 
       text-center 
-      md:text-left'
+      md:text-left"
       >
         Отправьте заявку сейчас и мы{" "}
         <span
-          className='
+          className="
         text-orange-500
-        '
+        "
         >
           сделаем бесплатную доставку!
         </span>
       </h2>
       <div
-        className='
+        className="
       flex 
       gap-6 
       md:flex-row 
       flex-col 
       md:items-end 
-      mb-6'
+      mb-6"
       >
-        <div className='flex-1'>
+        <div className="flex-1">
           <Input
-            id='name'
-            label='Имя'
+            id="name"
+            label="Имя"
             disabled={isLoading}
             register={register}
             errors={errors}
             required
           />
         </div>
-        <div className='flex-1'>
+        <div className="flex-1">
           <Input
-            id='phone'
-            label='Номер телефона'
+            id="phone"
+            label="Номер телефона"
             disabled={isLoading}
             register={register}
             errors={errors}
             required
-            type='number'
+            type="number"
           />
         </div>
-        <div className='flex-none'>
-          <Button onClick={handleSubmit(onSubmit)} label='Отпрвавить заявку' />
+        <div className="flex-none">
+          <Button onClick={handleSubmit(onSubmit)} label="Отпрвавить заявку" />
         </div>
       </div>
-      <div
-        className='
+      {/* <div
+        className="
       text-sm 
       font-light 
       text-slate-400 
       text-center 
-      md:text-left'
+      md:text-left"
       >
         *Нажимая кнопку “Отправить заявку”, Вы соглашаетесь с правилами
         обработки персональных данных
+      </div> */}
+      <div className="flex items-center gap-2">
+        <CheckSlider value={policy} setvalue={setPolicy} />{" "}
+        <span>
+          Согласие на обработку{" "}
+          <a className="text-orange-500" target="_blank" href="/doc/pd-consent">
+            персональных данных
+          </a>
+        </span>
+        .
       </div>
     </div>
   );

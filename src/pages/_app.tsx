@@ -18,7 +18,7 @@ import "@/styles/globals.css";
 
 import NProgress from "nprogress"; //nprogress module
 import "nprogress/nprogress.css"; //styles of nprogress
-import CookieConsentBanner from "@/components/advantages/CookieConsentBanner";
+// import CookieConsentBanner from "@/components/advantages/CookieConsentBanner";
 
 const golos = Golos_Text({ subsets: ["cyrillic"], display: "swap" });
 

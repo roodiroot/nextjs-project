@@ -15,8 +15,6 @@ const SearchForShopExampleForNavbar = () => {
   const searchparam = param.get("search");
   const isMobil = useMediaQuery("(max-width: 480px)");
 
-  console.log(isMobil);
-
   useEffect(() => {
     if (!searchparam) {
       setSearch("");

@@ -47,7 +47,7 @@ _tmr.push({id: "3567486", type: "pageView", start: (new Date()).getTime()});
       ></script>
       {/* <!-- Pixel --> */}
 
-      <Script type="text/javascript" id="pixel">
+      {/* <Script type="text/javascript" id="pixel">
         {`
       (function (d, w) {
         var n = d.getElementsByTagName("script")[0],
@@ -58,7 +58,7 @@ _tmr.push({id: "3567486", type: "pageView", start: (new Date()).getTime()});
             n.parentNode.insertBefore(s, n);
     })(document, window);
 `}
-      </Script>
+      </Script> */}
     </>
   );
 }

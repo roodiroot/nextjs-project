@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="mb-4 text-lg font-medium">
               Продажа и установка сплит-систем и систем кондиционирования
             </div>
-            <nav className="mb-4">
+            <nav className="mb-4 space-y-2">
               <Link href="/services" className="block hover:underline">
                 Цены на услуги
               </Link>
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col justify-between">
             <div className="mb-4 text-lg font-medium">Каталог</div>
-            <nav className="mb-4">
+            <nav className="mb-4 space-y-2">
               <Link href="/shop?type=3" className="block hover:underline">
                 Внутренние блоки
               </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
               </Link>
             </nav>
             <div className="mb-4 text-lg font-medium">Магазин</div>
-            <nav className="mb-4">
+            <nav className="mb-4 space-y-2">
               <Link href="/brands" className="block hover:underline">
                 Бренды
               </Link>
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col justify-between">
             <div className="mb-4 text-lg font-medium">Покупателю</div>
-            <nav className="mb-4">
+            <nav className="mb-4 space-y-2">
               <Link href="/payment" className="block hover:underline">
                 Оплата
               </Link>
@@ -88,6 +88,9 @@ const Footer = () => {
               </Link>
               <Link href="/doc/pd-consent" className="block hover:underline">
                 Согласие на обработку персональных данных
+              </Link>
+              <Link href="/doc/oferta" className="block hover:underline">
+                Оферта
               </Link>
             </nav>
             <div className="flex-1 items-start mb-2">

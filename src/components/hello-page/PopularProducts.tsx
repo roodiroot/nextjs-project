@@ -31,10 +31,6 @@ const PopularProducts = () => {
       await axios
         .post(`${process.env.NEXT_PUBLIC_SERVER_URI}/products/pagin`, filter)
         .then((d: any) => setProducts(d.data.rows));
-
-      const prod = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_URI}/products/pagin`
-      );
     })();
   }, []);
 

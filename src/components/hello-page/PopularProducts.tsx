@@ -22,7 +22,7 @@ const PopularProducts = () => {
       ],
       between: [1, 150000],
       limit: 20,
-      order: [["numberOfViews", "DESC"]],
+      order: [["id", "DESC"]],
     },
   };
 
@@ -35,11 +35,8 @@ const PopularProducts = () => {
       const prod = await axios.post(
         `${process.env.NEXT_PUBLIC_SERVER_URI}/products/pagin`
       );
-      console.log(prod);
     })();
   }, []);
-
-  // console.log(products);
 
   const addBasket = (obj: any) => {
     basketStore.addInBasket(obj);

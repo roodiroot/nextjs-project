@@ -89,63 +89,69 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         </categories>
         <offers>
         ${data.rows
-          .map(
-            (product) =>
-              `<offer type="vendor.model" available="${
+          .map((product) => {
+            if (product.price > 0) {
+              return `<offer type="vendor.model" available="${
                 product.price > 0 ? "true" : "false"
               }" id="${product.id}">
-            <url>${BASE_URL}/shop/${product.id}</url>
-            <price>${product.price}.00</price>
-            <currencyId>RUR</currencyId>
-            <categoryId>${product.type.id}</categoryId>
-            <picture>${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${
+                <url>${BASE_URL}/shop/${product.id}</url>
+                <price>${product.price}.00</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>${product.type.id}</categoryId>
+                <picture>${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${
                 product?.logo
               }.png</picture>
-            <name>${product.type.typeName} ${product.name}</name>
-            <description>
-            ${product.descriptions
-              .map((description) => {
-                if (description.title === "Площадь помещения: м².") {
-                  return (
-                    description.title + " " + description.description + "; "
-                  );
-                }
-                if (description.title === "Режим работы") {
-                  return (
-                    description.title + ": " + description.description + "; "
-                  );
-                }
-                if (description.title === "Уровень шума: дб.") {
-                  return (
-                    description.title + " " + description.description + "; "
-                  );
-                }
-                if (
-                  description.title === "Тип компрессора:" &&
-                  description.description.toLowerCase() != "не инвертор"
-                ) {
-                  return description.description + "; ";
-                }
-                if (description.title === "Теплопроизводительность мин., кВт") {
-                  return (
-                    description.title + " " + description.description + "; "
-                  );
-                }
-              })
-              .join("")}
-            </description>
-            <sales_notes>Можем установить</sales_notes>
-            <manufacturer_warranty>true</manufacturer_warranty>
-            <vendorCode>${product.vendorcode}</vendorCode>
-            <param name="popularity">${product.numberOfViews}</param>
-            ${product.descriptions
-              .map(
-                (description) =>
-                  `<param name="${description.title}">${description.description}</param>`
-              )
-              .join("")}
-          </offer>`
-          )
+                <name>${product.type.typeName} ${product.name}</name>
+                <description>
+                ${product.descriptions
+                  .map((description) => {
+                    if (description.title === "Площадь помещения: м².") {
+                      return (
+                        description.title + " " + description.description + "; "
+                      );
+                    }
+                    if (description.title === "Режим работы") {
+                      return (
+                        description.title +
+                        ": " +
+                        description.description +
+                        "; "
+                      );
+                    }
+                    if (description.title === "Уровень шума: дб.") {
+                      return (
+                        description.title + " " + description.description + "; "
+                      );
+                    }
+                    if (
+                      description.title === "Тип компрессора:" &&
+                      description.description.toLowerCase() != "не инвертор"
+                    ) {
+                      return description.description + "; ";
+                    }
+                    if (
+                      description.title === "Теплопроизводительность мин., кВт"
+                    ) {
+                      return (
+                        description.title + " " + description.description + "; "
+                      );
+                    }
+                  })
+                  .join("")}
+                </description>
+                <sales_notes>Можем установить</sales_notes>
+                <manufacturer_warranty>true</manufacturer_warranty>
+                <vendorCode>${product.vendorcode}</vendorCode>
+                <param name="popularity">${product.numberOfViews}</param>
+                ${product.descriptions
+                  .map(
+                    (description) =>
+                      `<param name="${description.title}">${description.description}</param>`
+                  )
+                  .join("")}
+          </offer>`;
+            }
+          })
           .join("")}
           
         </offers>

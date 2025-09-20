@@ -80,19 +80,10 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         <name>KONDISH</name>
         <company>Kondish</company>
         <url>${BASE_URL}/</url>
-        <brands>
-          ${brands
-            .map(
-              (brand) =>
-                `<brand url="${BASE_URL}/shop?brand=${brand.id}">${brand.name}</brand>`
-            )
-            .join("")}
-        </brands>
         <categories>
           ${types
             .map(
-              (type) =>
-                `<category url="${BASE_URL}/shop?type=${type.id}" id="${type.id}">${type.typeName}</category>`
+              (type) => `<category id="${type.id}">${type.typeName}</category>`
             )
             .join("")}
         </categories>
@@ -146,7 +137,6 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
             <sales_notes>Можем установить</sales_notes>
             <manufacturer_warranty>true</manufacturer_warranty>
             <vendorCode>${product.vendorcode}</vendorCode>
-            ${product.hit ? "<label>Хит</label>" : ""}
             <param name="popularity">${product.numberOfViews}</param>
             ${product.descriptions
               .map(

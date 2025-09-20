@@ -8,19 +8,6 @@ type Description = {
   description: string;
 };
 
-// {
-//   id: 173,
-//   productId: 16,
-//   title: 'Мощность охлаждения: кВт.',
-//   description: '6.1'
-// },
-// {
-//   id: 174,
-//   productId: 16,
-//   title: 'Тип компрессора:',
-//   description: 'не инвертор'
-// },
-
 type Brand = { id: number; name: string; brandСountry: string };
 // { id: 6, name: 'Energolux', 'brandСountry': 'Швейцария' }
 type Type = { id: number; typeName: string };
@@ -93,52 +80,78 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         <name>KONDISH</name>
         <company>Kondish</company>
         <url>${BASE_URL}/</url>
-        <brands>
-          ${brands
-            .map(
-              (brand) =>
-                `<brand url="${BASE_URL}/shop?brand=${brand.id}">${brand.name}</brand>`
-            )
-            .join("")}
-        </brands>
         <categories>
           ${types
             .map(
-              (type) =>
-                `<category url="${BASE_URL}/shop?type=${type.id}" id="${type.id}">${type.typeName}</category>`
+              (type) => `<category id="${type.id}">${type.typeName}</category>`
             )
             .join("")}
         </categories>
         <offers>
         ${data.rows
-          .map(
-            (product) =>
-              `<offer type="vendor.model" available="${
+          .map((product) => {
+            if (product.price > 0) {
+              return `<offer type="vendor.model" available="${
                 product.price > 0 ? "true" : "false"
               }" id="${product.id}">
-            <url>${BASE_URL}/shop/${product.id}</url>
-            <price>${product.price}.00</price>
-            <currencyId>RUR</currencyId>
-            <categoryId>${product.type.id}</categoryId>
-            <picture>${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${
+                <url>${BASE_URL}/shop/${product.id}</url>
+                <price>${product.price}.00</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>${product.type.id}</categoryId>
+                <picture>${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${
                 product?.logo
               }.png</picture>
-            <typePrefix>${product.type.typeName}</typePrefix>
-            <vendor>${product.brand.name}</vendor>
-            <model>${product.name}</model>
-            <sales_notes>Можем установить</sales_notes>
-            <manufacturer_warranty>true</manufacturer_warranty>
-            <vendorCode>${product.vendorcode}</vendorCode>
-            ${product.hit ? "<label>Хит</label>" : ""}
-            <param name="popularity">${product.numberOfViews}</param>
-            ${product.descriptions
-              .map(
-                (description) =>
-                  `<param name="${description.title}">${description.description}</param>`
-              )
-              .join("")}
-          </offer>`
-          )
+                <name>${product.type.typeName} ${product.name}</name>
+                <description>
+                ${product.descriptions
+                  .map((description) => {
+                    if (description.title === "Площадь помещения: м².") {
+                      return (
+                        description.title + " " + description.description + "; "
+                      );
+                    }
+                    if (description.title === "Режим работы") {
+                      return (
+                        description.title +
+                        ": " +
+                        description.description +
+                        "; "
+                      );
+                    }
+                    if (description.title === "Уровень шума: дб.") {
+                      return (
+                        description.title + " " + description.description + "; "
+                      );
+                    }
+                    if (
+                      description.title === "Тип компрессора:" &&
+                      description.description.toLowerCase() != "не инвертор"
+                    ) {
+                      return description.description + "; ";
+                    }
+                    if (
+                      description.title === "Теплопроизводительность мин., кВт"
+                    ) {
+                      return (
+                        description.title + " " + description.description + "; "
+                      );
+                    }
+                  })
+                  .join("")}
+                </description>
+                <sales_notes>Можем установить</sales_notes>
+                <manufacturer_warranty>true</manufacturer_warranty>
+                <vendorCode>${product.vendorcode}</vendorCode>
+                <param name="popularity">${product.numberOfViews}</param>
+                ${product.descriptions
+                  .map(
+                    (description) =>
+                      `<param name="${description.title}">${description.description}</param>`
+                  )
+                  .join("")}
+          </offer>`;
+            }
+          })
           .join("")}
           
         </offers>

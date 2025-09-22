@@ -50,6 +50,8 @@ const ProductPage = () => {
   }, [router.query.id]);
 
   const addToCart = () => {
+    // @ts-ignore
+    window.ym(93762617, "reachGoal", "addToCart");
     basket.addInBasket(product);
   };
   const remooveElemet = () => {

@@ -55,6 +55,8 @@ const CardList: React.FC<CardList> = ({ loading, error, products, search }) => {
   }
 
   const addBasket = (obj: any) => {
+    // @ts-ignore
+    window.ym(93762617, "reachGoal", "addToCart");
     basketStore.addInBasket(obj);
   };
 

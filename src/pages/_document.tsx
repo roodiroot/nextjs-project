@@ -15,6 +15,12 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <script
+          src="//cdn.callibri.ru/callibri.js"
+          type="text/javascript"
+          charSet="utf-8"
+          defer
+        ></script>
       </body>
     </Html>
   );

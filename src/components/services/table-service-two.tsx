@@ -80,10 +80,10 @@ const TableServiceTwo = () => {
           8 (915) 329-42-09
         </a>
         ,{" "}
-        <a className="text-orange-500" href="tel:84956752699">
+        {/* <a className="text-orange-500" href="tel:84956752699">
           8 (495) 675-26-99
           <span className="text-sm text-slate-900"> c 9:00 до 21:00</span>
-        </a>
+        </a> */}
       </div>
       <div className="w-full text-xs text-slate-500">
         <span className="font-semibold">Внимание!</span> Услуга монтажа платная

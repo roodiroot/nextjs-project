@@ -2,6 +2,7 @@ import Link from "next/link";
 import Container from "../Container";
 import Logo from "../navbar/Logo";
 import SocialIcons from "../utils-component/SocialIcons";
+
 import { INSTALLATION_CLIMBER, INSTALLATION_PIK } from "@/constans";
 
 const Footer = () => {
@@ -105,12 +106,12 @@ const Footer = () => {
               <div className="text-slate-300 font-medium text-lg  inline-block cursor-pointer">
                 <a href="tel:89153294209">8 (915) 329-42-09</a>
               </div>
-              {/* <div className="text-slate-300 font-medium text-lg  inline-block cursor-pointer">
+              <div className="text-slate-300 font-medium text-lg  inline-block cursor-pointer">
                 <a href="tel:84956752555">
-                  8 (495) 675-25-55
+                  +7 (495) 675-25-55
                   <span className="text-sm"> c 9:00 до 21:00</span>
                 </a>
-              </div> */}
+              </div>
             </div>
             <div className="flex-1 items-start mb-2">
               <div className="">Электронная почта:</div>

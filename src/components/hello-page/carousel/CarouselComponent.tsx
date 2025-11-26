@@ -6,11 +6,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import CardProductForHero from "../CardProductForHero";
-
-// import CardProductForHero from "./CardProductForHero";
+import { Product } from "@/lib/api/products";
 
 interface ProductsSaleCarouselProps {
-  products?: any[];
+  products?: Product[];
   submitHaveBasket: any;
   addBasket: any;
   remooveElement: any;
@@ -20,8 +19,6 @@ interface ProductsSaleCarouselProps {
 const ProductsSaleCarousel: React.FC<ProductsSaleCarouselProps> = ({
   products,
   submitHaveBasket,
-  addBasket,
-  remooveElement,
   basketStore,
 }) => {
   // console.log(products);
@@ -38,33 +35,27 @@ const ProductsSaleCarousel: React.FC<ProductsSaleCarouselProps> = ({
         {products
           ? products.map((i, index) => (
               <CarouselItem
-                key={index}
+                key={i.documentId}
                 className="basis-1/2 sm:basis-1/3 lg:basis-1/4 pl-2"
               >
                 <div className="p-1 h-full">
                   <CardProductForHero
-                    id={i?.id}
-                    srcImg={`${process.env.NEXT_PUBLIC_SERVER_URI}/prod/${i?.logo}.png`}
-                    name={i?.name}
-                    type={i?.type?.typeName}
+                    slug={i?.slug}
+                    srcImg={
+                      i.images?.length
+                        ? i?.images[0]?.formats?.small?.url
+                        : undefined
+                    }
+                    wifi={i.wifi_availability}
+                    name={i.brand?.name + " " + i?.name}
+                    type={i.category?.name}
                     brand={i?.brand?.name}
-                    price={i?.price}
+                    price={i?.price || "0"}
                     key={i?.id}
-                    square={
-                      i?.descriptions?.filter(
-                        (l: any) => l.title === "Площадь помещения: м²."
-                      )[0].description
-                    }
-                    compressor={
-                      i?.descriptions?.filter(
-                        (l: any) => l.title === "Тип компрессора:"
-                      )[0]?.description
-                    }
+                    square={i.area_of_room}
+                    compressor={i.compressor_type}
                     disabled={submitHaveBasket(i?.id, basketStore?.basketList)}
-                    addBasket={() => addBasket(i)}
-                    remooveElement={() => remooveElement(i?.id)}
                     hit={i?.hit}
-                    vendorcode={i?.vendorcode}
                   />
                 </div>
               </CarouselItem>

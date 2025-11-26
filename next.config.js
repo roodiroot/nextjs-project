@@ -6,7 +6,7 @@ const nextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
-    domains: ["api-shop.kondish.su"],
+    domains: ["strapi.kondish.su"],
   },
 };
 

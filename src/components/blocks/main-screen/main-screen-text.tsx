@@ -34,12 +34,13 @@ const MainScreenText: React.FC<{
           >
             Консультация
           </button>
-          <Link
-            href="/shop?type=1"
+          <a
+            target="_blank"
+            href="https://shop.kondish.su/catalog/kondczionery/split-sistemy"
             className=" text-sm font-semibold leading-6 text-gray-900"
           >
             Выбрать кондиционер <span aria-hidden="true">→</span>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

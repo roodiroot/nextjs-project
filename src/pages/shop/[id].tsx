@@ -15,62 +15,62 @@ import Path from "@/components/utils-component/Path";
 import Head from "next/head";
 
 const ProductPage = () => {
-  const {
-    fetchProduct,
-    restor,
-    product,
-    loading: storeLoading,
-    error: storeError,
-  } = useSelectProduct();
-  const basket = useBasketStore();
-  const router = useRouter();
-  const [disabled, setDisabled] = useState(
-    submitHaveBasket(Number(router.query.id), basket.basketList)
-  );
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const {
+  //   fetchProduct,
+  //   restor,
+  //   product,
+  //   loading: storeLoading,
+  //   error: storeError,
+  // } = useSelectProduct();
+  // const basket = useBasketStore();
+  // const router = useRouter();
+  // const [disabled, setDisabled] = useState(
+  //   submitHaveBasket(Number(router.query.id), basket.basketList)
+  // );
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    setDisabled(submitHaveBasket(Number(router.query.id), basket.basketList));
-  }, [submitHaveBasket(Number(router.query.id), basket.basketList)]);
+  // useEffect(() => {
+  //   setDisabled(submitHaveBasket(Number(router.query.id), basket.basketList));
+  // }, [submitHaveBasket(Number(router.query.id), basket.basketList)]);
 
-  useEffect(() => {
-    setLoading(storeLoading);
-    setError(storeError);
-  }, [storeError, storeLoading]);
+  // useEffect(() => {
+  //   setLoading(storeLoading);
+  //   setError(storeError);
+  // }, [storeError, storeLoading]);
 
-  useEffect(() => {
-    if (isNaN(Number(router.query.id))) {
-      return;
-    }
-    fetchProduct(Number(router.query.id));
-    return () => {
-      restor();
-    };
-  }, [router.query.id]);
+  // useEffect(() => {
+  //   if (isNaN(Number(router.query.id))) {
+  //     return;
+  //   }
+  //   fetchProduct(Number(router.query.id));
+  //   return () => {
+  //     restor();
+  //   };
+  // }, [router.query.id]);
 
-  const addToCart = () => {
-    // @ts-ignore
-    window.ym(93762617, "reachGoal", "addToCart");
-    basket.addInBasket(product);
-  };
-  const remooveElemet = () => {
-    basket.remooveElement(Number(router.query.id));
-  };
+  // const addToCart = () => {
+  //   // @ts-ignore
+  //   window.ym(93762617, "reachGoal", "addToCart");
+  //   basket.addInBasket(product);
+  // };
+  // const remooveElemet = () => {
+  //   basket.remooveElement(Number(router.query.id));
+  // };
 
-  if (error) {
-    return (
-      <Container>
-        <div className="text-slate-900 font-semibold ">
-          Ошибка загрузки элемента
-        </div>
-      </Container>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <Container>
+  //       <div className="text-slate-900 font-semibold ">
+  //         Ошибка загрузки элемента
+  //       </div>
+  //     </Container>
+  //   );
+  // }
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>{product.name}</title>
         <meta
           name="description"
@@ -82,10 +82,32 @@ const ProductPage = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head> */}
       <Container>
-        <Path name={product.name} />
-        <div
+        <Path
+        // name={product.name}
+        />
+        <div className="max-w-lg px-2 text-center mx-auto py-10">
+          <div className="text-lg font-bold text-balance">
+            Мы обновили наш каталог и перенесли на новый домен!
+          </div>
+          Теперь товары загружаются быстрее, а поиск работает аккуратнее.{" "}
+          <a
+            className="text-orange-500 hover:underline"
+            href="https://shop.kondish.su/catalog/kondczionery/split-sistemy"
+          >
+            Нажмите здесь, чтобы перейти в обновлённый каталог.
+          </a>
+        </div>
+      </Container>
+    </>
+  );
+};
+
+export default ProductPage;
+
+{
+  /* <div
           className="
             w-full
             h-full
@@ -102,7 +124,7 @@ const ProductPage = () => {
         pb-6
         "
           >
-            {/** IMAGE */}
+            
             <div className="flex-1">
               <div className="w-full px-6 py-4">
                 <SliderPhotos
@@ -111,7 +133,6 @@ const ProductPage = () => {
                 />
               </div>
             </div>
-            {/** TITLE PRODUCT */}
             <div
               className="
           flex-1
@@ -243,7 +264,6 @@ const ProductPage = () => {
               </div>
             </div>
           </div>
-          {/** DESCRIPTION BLOCK */}
           <div className="w-full flex gap-6 flex-col md:flex-row justify-start">
             <div className="w-full flex-1 max-w-[600px] px-6 py-4">
               <div className="rounded-md bg-rose-300 text-white font-bold p-6 w-full mb-10">
@@ -305,10 +325,5 @@ const ProductPage = () => {
               </div>
             </div>
           </div>
-        </div>
-      </Container>
-    </>
-  );
-};
-
-export default ProductPage;
+        </div> */
+}

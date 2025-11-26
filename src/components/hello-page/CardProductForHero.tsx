@@ -1,57 +1,50 @@
 import Image from "next/image";
-import { RxArrowTopRight } from "react-icons/rx";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import loader from "../../../public/image/loader.jpg";
-import blur from "../../../public/image/blur.png";
 import Button from "../navbar/Button";
 import Teg from "../shop/Teg";
-import { ExternalLink, ShoppingCart } from "lucide-react";
 
 interface CardProductProps {
-  id: number;
+  slug: string;
   name: string;
   type?: string;
   brand?: string;
-  srcImg: string;
+  srcImg?: string;
+  wifi?: string;
   price: string;
   compressor?: string;
   square?: string;
   disabled: boolean;
   hit?: boolean;
-  vendorcode?: number | string;
-  addBasket: () => void;
-  remooveElement: () => void;
-  search?: boolean;
 }
 
 const CardProductForHero: React.FC<CardProductProps> = ({
-  id,
+  slug,
   name,
   type,
   brand,
   srcImg,
+  wifi,
   price,
   square,
   compressor,
   disabled,
   hit,
-  vendorcode,
-  addBasket,
-  remooveElement,
-  search,
 }) => {
   const [disabledS, setDisabledS] = useState(disabled);
-  const router = useRouter();
-
-  const myLoader = () => {
-    return srcImg;
-  };
 
   useEffect(() => {
     setDisabledS(disabled);
   }, [disabled]);
+
+  const placeholder = "/img/placeholder.jpg";
+
+  const imageURL =
+    process.env.NEXT_PUBLIC_SERVER_URI && srcImg
+      ? process.env.NEXT_PUBLIC_SERVER_URI + srcImg
+      : placeholder;
+
+  console.log(srcImg);
 
   return (
     <div
@@ -76,9 +69,8 @@ const CardProductForHero: React.FC<CardProductProps> = ({
           "
       >
         <Image
-          loader={myLoader}
           unoptimized={true}
-          src={srcImg}
+          src={imageURL}
           width={290}
           height={230}
           alt="img"
@@ -106,13 +98,10 @@ const CardProductForHero: React.FC<CardProductProps> = ({
             h-auto
             "
         >
-          {brand && <Teg classic label={brand} />}
-          {/* {id && <Teg classic label={id} />} */}
-          {compressor === "инвертор" && <Teg nw label={"invertor"} />}
+          {/* {brand && <Teg classic label={brand} />} */}
+          {wifi === "Да" && <Teg yellow label={"Управление WiFi"} />}
+          {compressor === "Инвертор" && <Teg nw label={"invertor"} />}
           {hit && <Teg hit label={"hit"} />}
-        </div>
-        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-6 text-xs sm:text-sm text-zinc-400">
-          Код товара: {vendorcode}
         </div>
       </div>
       {/**TEXT BLOCk */}
@@ -135,7 +124,9 @@ const CardProductForHero: React.FC<CardProductProps> = ({
         <div className="flex flex-col flex-1">
           <div
             title={name}
-            onClick={(e) => router.push(`/shop/${id}`)}
+            onClick={() =>
+              window.open(`https://shop.kondish.su/product/${slug}`, "_blank")
+            }
             className="
             text-slate-900
             text-sm
@@ -185,8 +176,8 @@ const CardProductForHero: React.FC<CardProductProps> = ({
             justify-between
             "
             >
-              <span className="text-slate-900">Помещение до: м².</span>
-              <span className="text-slate-900 font-semibold">{square}</span>
+              <span className="text-slate-900">Помещение до:</span>
+              <span className="text-slate-900 font-semibold">{square} м².</span>
             </div>
           )}
           <div
@@ -212,54 +203,14 @@ const CardProductForHero: React.FC<CardProductProps> = ({
             gap-2
             "
         >
-          {!disabledS ? (
-            <>
-              <Button
-                onClick={addBasket}
-                disabled={disabledS}
-                label="В корзину"
-                className="hidden md:block"
-              />
-              <button
-                onClick={addBasket}
-                disabled={disabledS}
-                className="md:hidden p-2 rounded-lg bg-orange-500 text-white"
-              >
-                <ShoppingCart className="size-5 " />
-              </button>
-            </>
-          ) : (
-            <Button outline onClick={remooveElement} label="Удалить" />
-          )}
-
-          {/* <div
-            
-            className="
-              hidden
-              md:flex
-              cursor-pointer
-              relative
-              rounded-lg
-              hover:opacity-80
-              transition
-              w-full
-              whitespace-nowrap
-              text-sm
-              font-semibold
-              py-2 px-4
-              flex-row
-              items-center
-              "
-          >
-            Посмотреть
-            <RxArrowTopRight className="text-zinc-500" size={18} />
-          </div> */}
-          <div
-            onClick={(e) => router.push(`/shop/${id}`)}
-            className="p-2 border rounded-lg bg-white text-zinc-500 hover:bg-gray-100 cursor-pointer hidden md:flex"
-          >
-            <ExternalLink className="size-5 text-zinc-500" />
-          </div>
+          <Button
+            onClick={() =>
+              window.open(`https://shop.kondish.su/product/${slug}`, "_blank")
+            }
+            disabled={disabledS}
+            label="Перейти"
+            className="hidden md:block"
+          />
         </div>
       </div>
     </div>

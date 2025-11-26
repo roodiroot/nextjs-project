@@ -8,30 +8,30 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Search = () => {
-  const searchParams = useSearchParams();
-  const [productsList, setProductsList] = useState<any>([]);
-  const [count, setCount] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  // const searchParams = useSearchParams();
+  // const [productsList, setProductsList] = useState<any>([]);
+  // const [count, setCount] = useState(0);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState("");
 
-  const brandQuery = searchParams.get("search");
+  // const brandQuery = searchParams.get("search");
 
-  useEffect(() => {
-    (async () => {
-      setLoading(true);
-      await axios
-        .get(
-          `${process.env.NEXT_PUBLIC_SERVER_URI}/products/search?search=${brandQuery}`
-        )
-        .then((d) => {
-          console.log(d);
-          setProductsList(d.data.rows);
-          setCount(d.data.count);
-        })
-        .catch((e) => setError(JSON.stringify(e)))
-        .finally(() => setLoading(false));
-    })();
-  }, [brandQuery]);
+  // useEffect(() => {
+  //   (async () => {
+  //     setLoading(true);
+  //     await axios
+  //       .get(
+  //         `${process.env.NEXT_PUBLIC_SERVER_URI}/products/search?search=${brandQuery}`
+  //       )
+  //       .then((d) => {
+  //         console.log(d);
+  //         setProductsList(d.data.rows);
+  //         setCount(d.data.count);
+  //       })
+  //       .catch((e) => setError(JSON.stringify(e)))
+  //       .finally(() => setLoading(false));
+  //   })();
+  // }, [brandQuery]);
   return (
     <>
       <Head>
@@ -55,8 +55,8 @@ const Search = () => {
             "
         >
           <Heading
-            title={`Результаты поиска по запросу: "${brandQuery}"`}
-            subtitle={`Всего найдено товаров - (${count})`}
+          // title={`Результаты поиска по запросу: "${brandQuery}"`}
+          // subtitle={`Всего найдено товаров - (${count})`}
           />
           <div
             className="
@@ -66,12 +66,12 @@ const Search = () => {
                 gap-6
                 "
           >
-            <CardList
+            {/* <CardList
               loading={loading}
               error={error}
               products={productsList}
               search
-            />
+            /> */}
           </div>
         </div>
       </Container>

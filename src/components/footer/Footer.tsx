@@ -19,9 +19,13 @@ const Footer = () => {
               <Link href="/services" className="block hover:underline">
                 Цены на услуги
               </Link>
-              <Link href="/shop" className="block hover:underline">
+              <a
+                target="_blank"
+                href="https://shop.kondish.su/catalog/kondczionery/split-sistemy"
+                className="block hover:underline"
+              >
                 Магазин
-              </Link>
+              </a>
               <Link href="/contacts" className="block hover:underline">
                 Контакты
               </Link>
@@ -40,24 +44,36 @@ const Footer = () => {
           <div className="flex flex-col justify-between">
             <div className="mb-4 text-lg font-medium">Каталог</div>
             <nav className="mb-4 space-y-2">
-              <Link href="/shop?type=3" className="block hover:underline">
+              {/* <Link href="/shop?type=3" className="block hover:underline">
                 Внутренние блоки
-              </Link>
-              <Link href="/shop?type=1" className="block hover:underline">
+              </Link> */}
+              <a
+                target="_blank"
+                href="https://shop.kondish.su/catalog/kondczionery/split-sistemy"
+                className="block hover:underline"
+              >
                 Сплит-системы
-              </Link>
-              <Link href="/shop?type=2" className="block hover:underline">
+              </a>
+              {/* <Link href="/shop?type=2" className="block hover:underline">
                 Мульти сплит-системы
-              </Link>
+              </Link> */}
             </nav>
             <div className="mb-4 text-lg font-medium">Магазин</div>
             <nav className="mb-4 space-y-2">
-              <Link href="/brands" className="block hover:underline">
+              <a
+                href="https://shop.kondish.su/catalog/brands"
+                target="_blank"
+                className="block hover:underline"
+              >
                 Бренды
-              </Link>
-              <Link href="/types" className="block hover:underline">
+              </a>
+              <a
+                target="_blank"
+                href="https://shop.kondish.su/catalog"
+                className="block hover:underline"
+              >
                 Типы устройств
-              </Link>
+              </a>
             </nav>
           </div>
           <div className="flex flex-col justify-between">

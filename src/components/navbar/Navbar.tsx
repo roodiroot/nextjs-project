@@ -16,7 +16,6 @@ import NotificationProduct from "./NotificationProduct";
 import TopBaner from "../bunner/TopBaner";
 import { NavMenu } from "./NavigationMenu";
 import { cn } from "@/lib/utils";
-import SearchForShopExample from "../shop/SearchForShopExample";
 import SearchForShopExampleForNavbar from "../shop/SearchForShopExampleForNavbar";
 
 const Navbar: React.FC = () => {
@@ -64,7 +63,7 @@ const Navbar: React.FC = () => {
             <div className="flex-1 flex items-center justify-between border-l px-4 gap-5">
               <NavMenu className="hidden lg:flex" />
             </div>
-            <SearchForShopExampleForNavbar />
+            {/* <SearchForShopExampleForNavbar /> */}
             <div className="flex gap-6 items-center justify-between">
               <div className="hidden sm:block">
                 <a

@@ -7,6 +7,7 @@ import Heading from "../Heading";
 import InputClient from "../inputs/InputClient";
 import { toast } from "react-hot-toast";
 import CheckSlider from "../utils-component/CheckSlider";
+import { useSendMessage } from "@/hooks/sendMessage/useSendMessage";
 
 interface DataMessage {
   message: string;
@@ -16,6 +17,7 @@ const SubmitOrderModel = () => {
   const submitOrder = useSubmitOrder();
   const [policy, setPolicy] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { sendMessage } = useSendMessage();
 
   const {
     register,
@@ -29,7 +31,7 @@ const SubmitOrderModel = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
     const phone = "+7" + data.phone.replace(/[( | ) | -]/g, "").slice(1);
 
@@ -39,22 +41,15 @@ const SubmitOrderModel = () => {
       return;
     }
 
-    const message = `${data.name} тел:  \n${phone}`;
-    axios
-      .post("https://api-shop.kondish.su/message", {
-        message,
-      })
-      .then(() => {
-        toast.success("Ожидайте звонка");
-        // @ts-ignore
-        window.ym(93762617, "reachGoal", "target1");
-        submitOrder.onClose();
-        reset();
-      })
-      .catch((error) => toast.success("ошибка отправки формы"))
-      .finally(() => {
-        setIsLoading(false);
-      });
+    const { success } = await sendMessage({ name: data.name, phone });
+
+    if (success) {
+      // @ts-ignore
+      window.ym(93762617, "reachGoal", "target1");
+      submitOrder.onClose();
+      reset();
+    }
+    setIsLoading(false);
   };
 
   const bodyContent = (

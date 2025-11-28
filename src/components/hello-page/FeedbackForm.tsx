@@ -5,6 +5,7 @@ import axios from "axios";
 import Button from "../navbar/Button";
 import Input from "../inputs/Input";
 import CheckSlider from "../utils-component/CheckSlider";
+import { useSendMessage } from "@/hooks/sendMessage/useSendMessage";
 
 interface FeedbackFormProps {
   className?: string;
@@ -13,6 +14,7 @@ interface FeedbackFormProps {
 const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
   const [policy, setPolicy] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { sendMessage } = useSendMessage();
 
   const {
     register,
@@ -26,7 +28,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
     },
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     if (!policy) {
       toast.error("Согласитесь на обработку персональных данных");
       setIsLoading(false);
@@ -35,25 +37,20 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ className = "" }) => {
 
     setIsLoading(true);
     const phone = "+7" + data.phone.replace(/[( | ) | -]/g, "").slice(1);
-    const message = `${data.name} тел: \n${phone}`;
-    axios
-      .post("https://api-shop.kondish.su/message", {
-        message,
-      })
-      .then(() => {
-        toast.success("Ожидайте звонка");
-        // @ts-ignore
-        window.ym(93762617, "reachGoal", "target3");
-        reset({
-          name: "",
-          phone: "",
-        });
-      })
-      .catch((error) => toast.error("Ошибка отправки формы!"))
-      .finally(() => {
-        setIsLoading(false);
+
+    const { success } = await sendMessage({ name: data.name, phone });
+
+    if (success) {
+      // @ts-ignore
+      window.ym(93762617, "reachGoal", "target3");
+      reset({
+        name: "",
+        phone: "",
       });
+    }
+    setIsLoading(false);
   };
+
   return (
     <div
       className={`

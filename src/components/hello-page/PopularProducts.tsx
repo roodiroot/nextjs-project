@@ -18,8 +18,6 @@ const PopularProducts = () => {
 
   const { products, loading } = useProducts(paramsHit.toString());
 
-  console.log(products);
-
   const addBasket = (obj: any) => {
     // @ts-ignore
     window.ym(93762617, "reachGoal", "addToCart");

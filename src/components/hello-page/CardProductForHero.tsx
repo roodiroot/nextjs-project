@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import Button from "../navbar/Button";
 import Teg from "../shop/Teg";
+import Link from "next/link";
 
 interface CardProductProps {
   slug: string;
@@ -22,7 +23,6 @@ const CardProductForHero: React.FC<CardProductProps> = ({
   slug,
   name,
   type,
-  brand,
   srcImg,
   wifi,
   price,
@@ -48,16 +48,14 @@ const CardProductForHero: React.FC<CardProductProps> = ({
 
   return (
     <div
-      className={`
-        w-full
+      className="w-full relative
         h-full
         rounded-sm
         border
         flex
         flex-col
         shadow-sm
-        overflow-hidden
-      `}
+        overflow-hidden"
     >
       {/**IMAGE BLOCK */}
       <div
@@ -122,23 +120,25 @@ const CardProductForHero: React.FC<CardProductProps> = ({
       >
         {/**TITLE ROW */}
         <div className="flex flex-col flex-1">
-          <div
+          <a
+            href={`https://shop.kondish.su/product/${slug}`}
+            target="_blank"
+            rel="noopener"
+            className="absolute inset-0"
+          />
+          <h3
             title={name}
-            onClick={() =>
-              window.open(`https://shop.kondish.su/product/${slug}`, "_blank")
-            }
             className="
             text-slate-900
             text-sm
             sm:text-base
             font-bold
-            cursor-pointer
             hover:underline
             line-clamp-2
             "
           >
             {name}
-          </div>
+          </h3>
           <div
             className="
             text-zinc-500

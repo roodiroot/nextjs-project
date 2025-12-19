@@ -2,10 +2,8 @@ import Head from "next/head";
 import { useCallback, useRef } from "react";
 
 import Container from "@/components/Container";
-// import Bunner from "@/components/bunner/Bunner";
 import DescBlock from "@/components/hello-page/DescBlock";
 import FeedbackForm from "@/components/hello-page/FeedbackForm";
-import MainBlockV2 from "@/components/hello-page/MainBlockV2";
 import Owerviews from "@/components/hello-page/Owerviews";
 import PopularProducts from "@/components/hello-page/PopularProducts";
 import StepsWorking from "@/components/hello-page/steps-working";
@@ -13,6 +11,7 @@ import TableServiceOne from "@/components/services/table-service-one";
 import TableServiceTwo from "@/components/services/table-service-two";
 import CommandBlock from "@/components/hello-page/command-block";
 import BenefitsBlock from "@/components/hello-page/benefits-block";
+import MainBlockV3 from "@/components/hello-page/MainBlockV3";
 
 export default function Home() {
   const element = useRef<HTMLInputElement>(null);
@@ -34,7 +33,7 @@ export default function Home() {
         <link rel="icon" href="/favicon2.ico" />
       </Head>
       <div className={`pb-24`}>
-        <MainBlockV2 scrollToGallery={scrollToGallery} />
+        <MainBlockV3 scrollToGallery={scrollToGallery} />
         <Container className="mt-20">
           <PopularProducts />
         </Container>

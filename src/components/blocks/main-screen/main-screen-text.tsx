@@ -6,26 +6,14 @@ const MainScreenText: React.FC<{
   submitOrder: SubmitOrderState;
 }> = ({ scroll, submitOrder }) => {
   return (
-    <div className="relative px-6 py-32 sm:py-40 lg:pl-8 lg:py-56">
+    <div className="relative px-6 py-16 sm:py-40 lg:pl-14 lg:py-32">
       <div className="mx-auto max-w-2xl lg:max-w-xl lg:mx-0">
-        {/* <div className='hidden sm:mb-8 sm:flex sm:justify-start'>
-          <div
-            onClick={scroll}
-            className='relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20'
-          >
-            Более 3000 довольных клиентов за 11 лет.{" "}
-            <span className='cursor-pointer font-semibold text-orange-500'>
-              <span className='absolute inset-0' aria-hidden='true' />
-              Смотреть работы <span aria-hidden='true'>&rarr;</span>
-            </span>
-          </div>
-        </div> */}
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
           Продажа и установка кондиционеров
         </h1>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-          Выберите надежную технику, и&nbsp;создайте климат у&nbsp;себя дома,
-          с&nbsp;лучшей компанией в&nbsp;Москве и&nbsp;Московской области.
+          Комфортный климат для жизни. Надёжная техника и профессиональный
+          монтаж.
         </p>
         <div className="mt-10 flex items-center justify-start gap-x-6">
           <button

@@ -30,7 +30,7 @@ const PopularProducts = () => {
 
   return (
     <div className="w-full">
-      <Heading className="pb-12" title="Kondish рекомендует." />
+      <Heading className="pb-12" title="Kondish рекомендует" />
       {!loading && (
         <ProductsSaleCarousel
           products={products}

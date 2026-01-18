@@ -7,7 +7,7 @@ import {
 } from "./types";
 
 export const ABOUT_PATH = "/about";
-export const SHOP_PATH = "/shop?type=1";
+export const SHOP_PATH = "https://shop.kondish.su/catalog/kondczionery";
 export const SERVICE_PATH = "/services";
 export const VENTILATION_SISTEM = "/ventilation-systems";
 export const CONTACTS_PATH = "/contacts";

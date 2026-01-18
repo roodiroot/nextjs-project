@@ -6,7 +6,6 @@ import useBanner from "@/hooks/useBanner";
 import {
   INSTALLATION_CLIMBER,
   INSTALLATION_PIK,
-  SERVICE_PATH,
   SHOP_PATH,
   VENTILATION_SISTEM,
 } from "@/constans";
@@ -26,10 +25,10 @@ const MobilMemu: React.FC = () => {
             overflow-x-hidden
             overflow-y-auto
             transition
-            fixed 
-            inset-0 
+            fixed
+            inset-0
             bg-white
-            z-50 
+            z-50
             lg:hidden
             ${isOpen ? "pt-32" : "pt-16"}
             ${showMenu.isOpen ? "translate-x-0" : "translate-x-[-100%]"}

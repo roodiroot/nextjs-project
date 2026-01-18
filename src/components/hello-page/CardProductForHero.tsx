@@ -44,8 +44,6 @@ const CardProductForHero: React.FC<CardProductProps> = ({
       ? process.env.NEXT_PUBLIC_SERVER_URI + srcImg
       : placeholder;
 
-  console.log(srcImg);
-
   return (
     <div
       className="w-full relative
@@ -145,7 +143,7 @@ const CardProductForHero: React.FC<CardProductProps> = ({
             text-xs
             sm:text-sm
             font-light
-        
+
         "
           >
             {type}
@@ -196,8 +194,8 @@ const CardProductForHero: React.FC<CardProductProps> = ({
         {/**BUTTON ROW */}
         <div
           className="
-            flex 
-            flex-row 
+            flex
+            flex-row
             items-center
             w-full
             gap-2

@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
                 <a
                   href="tel:+79153294209"
                   className={cn(
-                    "whitespace-nowrap  rounded-sm text-md font-bold lg:text-orange-500 hover:underline",
+                    "whitespace-nowrap  rounded-sm text-md font-bold text-orange-500 hover:underline",
                     Y > 50 && "lg:text-orange-500"
                   )}
                 >

@@ -3,6 +3,7 @@ import { TbBrandTelegram, TbBrandWhatsapp } from "react-icons/tb";
 import { FaViber } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
+import Icon from "../widgets/icon";
 
 interface SocIconsProps {
   dark?: boolean;
@@ -17,19 +18,23 @@ const SocialIcons: React.FC<SocIconsProps> = ({ dark }) => {
   return (
     <div className="flex flex-row gap-2">
       <div
-        onClick={() => route(process.env.NEXT_PUBLIC_TG_LINK)}
+        onClick={() => {
+          route(process.env.NEXT_PUBLIC_TG_LINK);
+          //@ts-ignore
+          window.ym(93762617, "reachGoal", "telegram_target");
+        }}
         className={`
         ${dark ? "text-slate-900" : "text-slate-300 "}
         ${dark ? "border-slate-900 " : "border-slate-300 "}
-        relative 
-        w-8 
+        relative
+        w-8
         h-8
-        rounded-full 
-        border-2 
-        cursor-pointer 
-        transition 
-        hover:bg-blue-700/60
-        hover:scale-[1.1]                   
+        rounded-full
+        border-2
+        cursor-pointer
+        transition
+        bg-blue-700/60
+        hover:scale-[1.1]
         `}
       >
         <TbBrandTelegram
@@ -38,24 +43,28 @@ const SocialIcons: React.FC<SocIconsProps> = ({ dark }) => {
         />
       </div>
       <div
-        onClick={() => route(process.env.NEXT_PUBLIC_WHATSAPP_LINK)}
+        onClick={() => {
+          route(process.env.NEXT_PUBLIC_MAX_LINK);
+          //@ts-ignore
+          window.ym(93762617, "reachGoal", "max_target");
+        }}
         className={`
         ${dark ? "text-slate-900" : "text-slate-300 "}
         ${dark ? "border-slate-900 " : "border-slate-300 "}
-        relative 
-        w-8 
+        relative
+        w-8
         h-8
-        rounded-full 
-        border-2 
-        cursor-pointer 
-        transition 
-        hover:bg-green-500/70
-        hover:scale-[1.1]                            
+        rounded-full
+        border-2
+        cursor-pointer
+        transition
+        bg-green-500/70
+        hover:scale-[1.1]
         `}
       >
-        <TbBrandWhatsapp
-          size={20}
-          className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+        <Icon
+          variant="max"
+          className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-5"
         />
       </div>
       <div
@@ -63,15 +72,15 @@ const SocialIcons: React.FC<SocIconsProps> = ({ dark }) => {
         className={`
         ${dark ? "text-slate-900" : "text-slate-300 "}
         ${dark ? "border-slate-900 " : "border-slate-300 "}
-        relative 
-        w-8 
+        relative
+        w-8
         h-8
-        rounded-full 
-        border-2 
-        cursor-pointer 
-        transition 
-        hover:bg-indigo-600/60 
-        hover:scale-[1.1]                     
+        rounded-full
+        border-2
+        cursor-pointer
+        transition
+        bg-indigo-600/60
+        hover:scale-[1.1]
         `}
       >
         <FaViber
@@ -84,15 +93,15 @@ const SocialIcons: React.FC<SocIconsProps> = ({ dark }) => {
         className={`
         ${dark ? "text-slate-900" : "text-slate-300 "}
         ${dark ? "border-slate-900 " : "border-slate-300 "}
-        relative 
-        w-8 
+        relative
+        w-8
         h-8
-        rounded-full 
-        border-2 
-        cursor-pointer 
-        transition 
-        hover:bg-sky-600/60 
-        hover:scale-[1.1]           
+        rounded-full
+        border-2
+        cursor-pointer
+        transition
+        bg-sky-600/60
+        hover:scale-[1.1]
         `}
       >
         <VKIcon

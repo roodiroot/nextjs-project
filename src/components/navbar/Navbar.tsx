@@ -16,10 +16,9 @@ import NotificationProduct from "./NotificationProduct";
 import TopBaner from "../bunner/TopBaner";
 import { NavMenu } from "./NavigationMenu";
 import { cn } from "@/lib/utils";
-import SearchForShopExampleForNavbar from "../shop/SearchForShopExampleForNavbar";
 
 const Navbar: React.FC = () => {
-  const { isOpen, closeBanner, openBanner } = useBanner();
+  const { isOpen, closeBanner } = useBanner();
   const showMenu = useShowMobilMenu();
   const router = useRouter();
   const Y = useWindowScroll();

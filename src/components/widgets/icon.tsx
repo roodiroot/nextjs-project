@@ -2,23 +2,23 @@ import { cn } from "@/lib/utils";
 
 export interface IconProps {
   variant:
-    | "call"
-    | "burger"
-    | "ex"
-    | "rooby"
-    | "lock"
-    | "stellar"
-    | "grand"
-    | "dindin"
-    | "lamp"
-    | "vk"
-    | "tg"
-    | "ws"
-    | "left"
-    | "right"
-    | "star"
-    | "chat"
-    | "max";
+  | "call"
+  | "burger"
+  | "ex"
+  | "rooby"
+  | "lock"
+  | "stellar"
+  | "grand"
+  | "dindin"
+  | "lamp"
+  | "vk"
+  | "tg"
+  | "ws"
+  | "left"
+  | "right"
+  | "star"
+  | "chat"
+  | "max";
   className?: string;
 }
 const Icon: React.FC<IconProps> = ({ variant, className }) => {
@@ -45,53 +45,6 @@ const Icon: React.FC<IconProps> = ({ variant, className }) => {
   }
   if (variant === "max") {
     return (
-      // <svg
-      //   xmlns="http://www.w3.org/2000/svg"
-      //   // xml:space="preserve"
-      //   viewBox="0 0 1000 1000"
-      //   // className={className}
-      // >
-      //   <defs>
-      //     <linearGradient id="b">
-      //       <stop offset="0" stopColor="#00f" />
-      //       <stop offset="1" stopOpacity="0" />
-      //       <stop offset="1" stopOpacity="0" />
-      //     </linearGradient>
-      //     <linearGradient id="a">
-      //       <stop offset="0" stopColor="#4cf" />
-      //       <stop offset=".662" stopColor="#53e" />
-      //       <stop offset="1" stopColor="#93d" />
-      //     </linearGradient>
-      //     <linearGradient
-      //       id="c"
-      //       x1="117.847"
-      //       x2="1000"
-      //       y1="760.536"
-      //       y2="500"
-      //       gradientUnits="userSpaceOnUse"
-      //       href="#a"
-      //     />
-      //     <radialGradient
-      //       id="d"
-      //       cx="-87.392"
-      //       cy="1166.116"
-      //       r="500"
-      //       fx="-87.392"
-      //       fy="1166.116"
-      //       gradientTransform="rotate(51.356 1551.478 559.3)scale(2.42703433 1)"
-      //       gradientUnits="userSpaceOnUse"
-      //       href="#b"
-      //     />
-      //   </defs>
-      //   <rect width="1000" height="1000" fill="url(#c)" ry="249.681" />
-      //   <rect width="1000" height="1000" fill="url(#d)" ry="249.681" />
-      //   <path
-      //     fill="#fff"
-      //     fillRule="evenodd"
-      //     d="M508.211 878.328c-75.007 0-109.864-10.95-170.453-54.75-38.325 49.275-159.686 87.783-164.979 21.9 0-49.456-10.95-91.248-23.36-136.873-14.782-56.21-31.572-118.807-31.572-209.508 0-216.626 177.754-379.597 388.357-379.597 210.785 0 375.947 171.001 375.947 381.604.707 207.346-166.595 376.118-373.94 377.224m3.103-571.585c-102.564-5.292-182.499 65.7-200.201 177.024-14.6 92.162 11.315 204.398 33.397 210.238 10.585 2.555 37.23-18.98 53.837-35.587a189.8 189.8 0 0 0 92.71 33.032c106.273 5.112 197.08-75.794 204.215-181.95 4.154-106.382-77.67-196.486-183.958-202.574Z"
-      //     clipRule="evenodd"
-      //   />
-      // </svg>
       <svg
         width="88"
         height="88"
@@ -101,7 +54,7 @@ const Icon: React.FC<IconProps> = ({ variant, className }) => {
       >
         <path
           fillRule="evenodd"
-          clip-rule="evenodd"
+          clipRule="evenodd"
           d="M44.9454 87.7489C36.3093 87.7489 32.296 86.4826 25.3199 81.4177C20.9073 87.1157 6.93413 91.5687 6.32471 83.9502C6.32471 78.2312 5.06396 73.3985 3.63511 68.1225C1.93315 61.6226 0 54.384 0 43.8956C0 18.8455 20.4661 0 44.7143 0C68.9835 0 87.9997 19.7741 87.9997 44.1277C88.0812 68.1046 68.8185 87.621 44.9454 87.7489ZM45.3026 21.6523C33.4937 21.0403 24.2902 29.2497 22.2521 42.1229C20.5711 52.7802 23.5549 65.7589 26.0973 66.4342C27.316 66.7297 30.3839 64.2394 32.296 62.3191C35.4578 64.5128 39.1397 65.8303 42.9703 66.1388C55.2063 66.7299 65.6615 57.3742 66.483 45.0986C66.9613 32.7968 57.5403 22.3774 45.3026 21.6734V21.6523Z"
           fill="white"
         />

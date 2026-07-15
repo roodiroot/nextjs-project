@@ -21,6 +21,9 @@ const MainBlockV4: React.FC<MainBlockV4Props> = () => {
           className="w-full h-full object-cover"
           priority
         />
+        <h1 className="sr-only text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+          Продажа и установка кондиционеров в Москве. Хорошие кондиционеры с доставкой и установкой
+        </h1>
       </div>
     </div>
   );

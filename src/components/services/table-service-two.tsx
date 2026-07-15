@@ -76,7 +76,7 @@ const TableServiceTwo = () => {
       </table>
       <div className="w-full text-base text-slate-900">
         Для консультации или заказа установки звоните по телефонам{" "}
-        <a className="text-orange-500" href="tel:89153294209">
+        <a className="text-orange-500 whitespace-nowrap font-bold" href="tel:89153294209">
           8 (915) 329-42-09
         </a>
         ,{" "}
@@ -86,10 +86,9 @@ const TableServiceTwo = () => {
         </a> */}
       </div>
       <div className="w-full text-xs text-slate-500">
-        <span className="font-semibold">Внимание!</span> Услуга монтажа платная
-        и выполняется только с оборудованием, приобретённым у нас. Мы сделаем
-        более точный расчёт стоимости монтажа после консультации. Пожалуйста,
-        уточняйте стоимость и наличие услуг по телефону{" "}
+        <span className="font-semibold">Внимание!</span> Услуга монтажа платная и выполняется только
+        с оборудованием, приобретённым у нас. Мы сделаем более точный расчёт стоимости монтажа после
+        консультации. Пожалуйста, уточняйте стоимость и наличие услуг по телефону{" "}
         <span className="font-semibold">8 915 329-42-09</span>.
       </div>
     </div>

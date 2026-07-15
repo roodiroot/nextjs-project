@@ -12,7 +12,7 @@ const PopularProducts = () => {
     "filters[available]": "true",
     "filters[hit]": "true",
     // sort: "updatedAt:desc",
-    sort: "price:asc",
+    sort: "updatedAt:asc",
     populate: "*",
   });
 
@@ -42,10 +42,7 @@ const PopularProducts = () => {
       )}
       <div
         onClick={() =>
-          window.open(
-            "https://shop.kondish.su/catalog/kondczionery/split-sistemy",
-            "_blank"
-          )
+          window.open("https://shop.kondish.su/catalog/kondczionery/split-sistemy", "_blank")
         }
         className="text-orange-500 underline cursor-pointer text-xl mt-4"
       >

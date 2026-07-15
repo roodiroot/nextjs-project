@@ -12,6 +12,7 @@ import TableServiceTwo from "@/components/services/table-service-two";
 import CommandBlock from "@/components/hello-page/command-block";
 import BenefitsBlock from "@/components/hello-page/benefits-block";
 import MainBlockV3 from "@/components/hello-page/MainBlockV3";
+import MainBlockV4 from "@/components/hello-page/MainBlockV4";
 
 export default function Home() {
   const element = useRef<HTMLInputElement>(null);
@@ -21,9 +22,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>
-          Kóndish установка кондиционеров в Москве и Московской области.
-        </title>
+        <title>Kóndish установка кондиционеров в Москве и Московской области.</title>
         <meta
           name="description"
           content="Установка и подбор кондиционеров и сплит-систем в Москве и Московской области. | Более 12 лет устанавливаем климатическую технику в ваших домах."
@@ -33,8 +32,8 @@ export default function Home() {
         <link rel="icon" href="/favicon2.ico" />
       </Head>
       <div className={`pb-24`}>
-        <MainBlockV3 scrollToGallery={scrollToGallery} />
-        <Container className="mt-20">
+        <MainBlockV4 />
+        <Container className="mt-10 sm:mt-20">
           <PopularProducts />
         </Container>
         <Container>

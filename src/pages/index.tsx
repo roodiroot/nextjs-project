@@ -11,7 +11,6 @@ import TableServiceOne from "@/components/services/table-service-one";
 import TableServiceTwo from "@/components/services/table-service-two";
 import CommandBlock from "@/components/hello-page/command-block";
 import BenefitsBlock from "@/components/hello-page/benefits-block";
-import MainBlockV3 from "@/components/hello-page/MainBlockV3";
 import MainBlockV4 from "@/components/hello-page/MainBlockV4";
 
 export default function Home() {
@@ -33,7 +32,7 @@ export default function Home() {
       </Head>
       <div className={`pb-24`}>
         <MainBlockV4 />
-        <Container className="mt-10 sm:mt-20">
+        <Container className=" sm:mt-20">
           <PopularProducts />
         </Container>
         <Container>

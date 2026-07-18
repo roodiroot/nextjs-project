@@ -6,14 +6,14 @@ import MainScreenText from "../blocks/main-screen/main-screen-text";
 import MainScreenImg from "../blocks/main-screen/main-screen-img";
 
 interface MainBlockV3Props {
-  scrollToGallery: () => void;
+  scrollToGallery?: () => void;
 }
 
 const MainBlockV3: React.FC<MainBlockV3Props> = ({ scrollToGallery }) => {
   const { isOpen } = useBanner();
   const submitOrder = useSubmitOrder();
   const scroll = useCallback(() => {
-    scrollToGallery();
+    scrollToGallery?.();
   }, [scrollToGallery]);
   return (
     <div className={`relative px-2 sm:px-4 ${isOpen ? "-mt-24" : "-mt-16"}`}>

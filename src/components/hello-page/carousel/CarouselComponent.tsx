@@ -28,24 +28,16 @@ const ProductsSaleCarousel: React.FC<ProductsSaleCarouselProps> = ({
         align: "start",
         loop: true,
       }}
-      className="w-full "
+      className="w-[120%] sm:w-full"
     >
-      {/* <div className=""> */}
       <CarouselContent>
         {products
           ? products.map((i, index) => (
-              <CarouselItem
-                key={i.documentId}
-                className="basis-1/2 sm:basis-1/3 lg:basis-1/4 pl-2"
-              >
+              <CarouselItem key={i.documentId} className="basis-1/2 sm:basis-1/3 lg:basis-1/4 pl-2">
                 <div className="p-1 h-full">
                   <CardProductForHero
                     slug={i?.slug}
-                    srcImg={
-                      i.images?.length
-                        ? i?.images[0]?.formats?.small?.url
-                        : undefined
-                    }
+                    srcImg={i.images?.length ? i?.images[0]?.formats?.small?.url : undefined}
                     wifi={i.wifi_availability}
                     name={i.brand?.name + " " + i?.name}
                     type={i.category?.name}
@@ -62,9 +54,8 @@ const ProductsSaleCarousel: React.FC<ProductsSaleCarouselProps> = ({
             ))
           : null}
       </CarouselContent>
-      {/* </div> */}
-      <CarouselPrevious className="left-3 border-orange-500 text-white bg-orange-500 hover:bg-orange-400 hover:text-white/70" />
-      <CarouselNext className="right-3 border-orange-500 text-white bg-orange-500 hover:bg-orange-400 hover:text-white/70" />
+      <CarouselPrevious className="hidden sm:inline-flex left-3 border-orange-500 text-white bg-orange-500 hover:bg-orange-400 hover:text-white/70" />
+      <CarouselNext className="hidden sm:inline-flex  right-3 border-orange-500 text-white bg-orange-500 hover:bg-orange-400 hover:text-white/70" />
     </Carousel>
   );
 };

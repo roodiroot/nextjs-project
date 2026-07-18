@@ -29,8 +29,8 @@ const PopularProducts = () => {
   };
 
   return (
-    <div className="w-full">
-      <Heading className="pb-12" title="Kondish рекомендует" />
+    <div className="w-full overflow-hidden">
+      <Heading className="" title="Kondish рекомендует" />
       {!loading && (
         <ProductsSaleCarousel
           products={products}

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 import Button from "../navbar/Button";
 import Teg from "../shop/Teg";
-import Link from "next/link";
 
 interface CardProductProps {
   slug: string;
@@ -202,9 +201,7 @@ const CardProductForHero: React.FC<CardProductProps> = ({
             "
         >
           <Button
-            onClick={() =>
-              window.open(`https://shop.kondish.su/product/${slug}`, "_blank")
-            }
+            onClick={() => window.open(`https://shop.kondish.su/product/${slug}`, "_blank")}
             disabled={disabledS}
             label="Перейти"
             className="hidden md:block"

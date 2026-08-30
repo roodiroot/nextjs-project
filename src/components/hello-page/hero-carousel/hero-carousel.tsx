@@ -13,6 +13,7 @@ import ProgressIndicator from "./progress-indikator";
 
 const AUTOPLAY_DELAY = 5000;
 const heroScreens = [
+  "/image/hero-carousel/hero0.jpg",
   "/image/hero-carousel/hero2.jpg",
   "/image/hero-carousel/hero.jpg",
   "/image/hero-carousel/hero3.jpg",
@@ -82,7 +83,7 @@ const HeroCarousel = () => {
         </CarouselContent>
       </div>
       <div className="py-2 sm:py-3">
-        <div className="flex gap-1 sm:gap-2 justify-center">
+        <div className="flex gap-1 justify-center">
           {new Array(count).fill("").map((_, index) => {
             const isActive = current === index + 1;
             return (

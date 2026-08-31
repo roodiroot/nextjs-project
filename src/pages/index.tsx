@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useCallback, useRef } from "react";
+import { useRef } from "react";
 
 import Container from "@/components/Container";
 import DescBlock from "@/components/hello-page/DescBlock";
@@ -15,9 +15,9 @@ import MainBlockV4 from "@/components/hello-page/MainBlockV4";
 
 export default function Home() {
   const element = useRef<HTMLInputElement>(null);
-  const scrollToGallery = useCallback(() => {
-    element?.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
-  }, []);
+  // const scrollToGallery = useCallback(() => {
+  //   element?.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  // }, []);
   return (
     <>
       <Head>

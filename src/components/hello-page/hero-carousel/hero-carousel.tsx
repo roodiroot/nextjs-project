@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Carousel,
   CarouselContent,
@@ -10,19 +12,18 @@ import Autoplay from "embla-carousel-autoplay";
 
 import useSubmitOrder from "@/hooks/useSubmitOrder";
 import ProgressIndicator from "./progress-indikator";
+import { HeroScreens } from "@/lib/api/sliders";
 
 const AUTOPLAY_DELAY = 5000;
-const heroScreens = [
-  "/image/hero-carousel/hero0.jpg",
-  "/image/hero-carousel/hero2.jpg",
-  "/image/hero-carousel/hero.jpg",
-  "/image/hero-carousel/hero3.jpg",
-];
 
-const HeroCarousel = () => {
+interface HeroCarouselProps {
+  heroScreens?: HeroScreens[];
+}
+
+const HeroCarousel: React.FC<HeroCarouselProps> = ({ heroScreens }) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
+
   const autoplay = useRef(
     Autoplay({
       delay: AUTOPLAY_DELAY,
@@ -35,22 +36,29 @@ const HeroCarousel = () => {
   const submitOrder = useSubmitOrder();
 
   useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
 
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
+    onSelect();
+
+    api.on("select", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+    };
   }, [api]);
 
   const scrollToSlide = (index: number) => {
     api?.scrollTo(index);
     autoplay.current.reset();
   };
+
+  if (!heroScreens?.length) {
+    return null;
+  }
 
   return (
     <Carousel
@@ -62,39 +70,41 @@ const HeroCarousel = () => {
       plugins={[autoplay.current]}
       className="w-full overflow-hidden"
     >
-      <div className="relative max-w-7xl mx-auto mt-20 overflow-hidden rounded-lg md:rounded-3xl shadow-sm aspect-[11/5]">
+      <div className="relative mx-auto mt-20 aspect-[11/5] max-w-7xl overflow-hidden rounded-lg shadow-sm md:rounded-3xl">
         <CarouselContent>
-          {heroScreens.map((i) => (
-            <CarouselItem key={i}>
-              <div onClick={() => submitOrder.onOpen()}>
-                <div className="rounded-lg md:rounded-3xl overflow-hidden">
+          {heroScreens.map((slide) => (
+            <CarouselItem key={slide.documentId}>
+              <button
+                type="button"
+                onClick={() => submitOrder.onOpen()}
+                className="block h-full w-full"
+              >
+                <div className="overflow-hidden rounded-lg md:rounded-3xl">
                   <Image
-                    src={i}
+                    src={`${process.env.NEXT_PUBLIC_SERVER_URI}${slide.image?.url}`}
                     alt="main photo"
                     width={1402}
                     height={637}
-                    className="w-full h-full object-cover"
+                    className="h-full w-full object-cover"
                     priority
                   />
                 </div>
-              </div>
+              </button>
             </CarouselItem>
           ))}
         </CarouselContent>
       </div>
+
       <div className="py-2 sm:py-3">
-        <div className="flex gap-1 justify-center">
-          {new Array(count).fill("").map((_, index) => {
-            const isActive = current === index + 1;
-            return (
-              <ProgressIndicator
-                key={index}
-                active={isActive}
-                duration={AUTOPLAY_DELAY}
-                onClick={() => scrollToSlide(index)}
-              />
-            );
-          })}
+        <div className="flex justify-center gap-1">
+          {heroScreens.map((slide, index) => (
+            <ProgressIndicator
+              key={slide.documentId}
+              active={current === index}
+              duration={AUTOPLAY_DELAY}
+              onClick={() => scrollToSlide(index)}
+            />
+          ))}
         </div>
       </div>
     </Carousel>
